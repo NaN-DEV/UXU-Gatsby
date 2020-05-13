@@ -5,12 +5,16 @@ export const Section = styled.section`
   position: relative;
 `
 
+export const BoxMain = styled.div`
+  padding: 15px 0;
+`
+
 export const HeaderReviews = styled.h1`
   flex: 100%;
   display: flex;
   max-width: 100%;
+  padding-bottom: 1.5rem;
   justify-content: center;
-
   h1 {
     font-size: 30px;
     max-width: 300px;

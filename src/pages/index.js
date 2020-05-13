@@ -64,6 +64,80 @@ const IndexPage = () => {
               }
             }
           }
+          allDatoCmsBlog {
+            nodes {
+              id
+              title
+              slug
+              excerpt
+              category {
+                id
+                name
+                slug
+              }
+              author {
+                id
+                name
+                slug
+                avatar {
+                  alt
+                  title
+                  fixed {
+                    ...GatsbyDatoCmsFixed
+                  }
+                }
+              }
+              tag {
+                slug
+                id
+                name
+              }
+              mainImage {
+                alt
+                title
+                fixed {
+                  ...GatsbyDatoCmsFixed
+                }
+              }
+            }
+          }
+          allDatoCmsTutorial {
+            nodes {
+              id
+              title
+              slug
+              excerpt
+              mainImage {
+                alt
+                title
+                fixed {
+                  ...GatsbyDatoCmsFixed
+                }
+              }
+              author {
+                name
+                slug
+                id
+                avatar {
+                  alt
+                  title
+                  fixed {
+                    ...GatsbyDatoCmsFixed
+                  }
+                }
+              }
+              category {
+                id
+                name
+                slug
+              }
+              tag {
+                slug
+                id
+                name
+              }
+            }
+          }
         }
       `}
       render={data => {
@@ -78,12 +152,12 @@ const IndexPage = () => {
             <Section
               listArticleCarusel
               title="Co słychać na Blogu...?"
-              content={data.allDatoCmsReview.nodes}
+              content={data.allDatoCmsBlog.nodes}
             />
             <Section
               listArticleCarusel
               title="Nowe poradinki..."
-              content={data.allDatoCmsReview.nodes}
+              content={data.allDatoCmsTutorial.nodes}
             />
           </>
         )

@@ -11,15 +11,6 @@ export const Box = styled(Link)`
   border-left: 1px solid #bbbbbb;
   box-shadow: 5px 6px 0px #000000;
   border-bottom: 1px solid #bbbbbb;
-  .img {
-    transform: scale(1);
-    transition: all 0.3s;
-  }
-  &:hover {
-    .img {
-      transform: scale(1.1);
-    }
-  }
 `
 
 export const BoxImage = styled.div`
@@ -64,7 +55,9 @@ export const BoxContent = styled.div`
   overflow: hidden;
   a {
     margin-left: auto;
-    font-size: 1.5rem;
+  }
+  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
+    padding: 3rem;
   }
 `
 

@@ -88,7 +88,7 @@ const ModalComponent = props => {
                   }
                 }
                 allDatoCmsAllButtonLink(
-                  filter: { slug: { eq: "wycena-naprawy" } }
+                  filter: { slug: { eq: "zlec-naprawe" } }
                 ) {
                   nodes {
                     slug

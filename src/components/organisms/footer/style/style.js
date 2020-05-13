@@ -1,9 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
-const Footer = styled.footer`
+export const Footer = styled.footer`
   width: 100%;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
+  background-color: ${props => props.theme.muted};
 
   .row {
     align-items: center;
@@ -53,6 +55,14 @@ const Footer = styled.footer`
       justify-content: flex-end;
     }
   }
-`;
+`
 
-export default Footer;
+export const BoxLeft = styled.div`
+  flex: 50%;
+  max-width: 50%;
+  min-height: 300px;
+  position: relative;
+  background-color: ${props => props.theme.secondary};
+`
+
+export const BoxRight = styled.div``

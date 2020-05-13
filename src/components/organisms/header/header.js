@@ -117,9 +117,7 @@ class HeaderComponent extends React.Component {
                 }
               }
             }
-            allDatoCmsAllButtonLink(
-              filter: { slug: { eq: "wycena-naprawy" } }
-            ) {
+            allDatoCmsAllButtonLink(filter: { slug: { eq: "zlec-naprawe" } }) {
               nodes {
                 slug
                 name

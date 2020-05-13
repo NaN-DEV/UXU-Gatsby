@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 // IMPORT SETTINGS STYLE
 import theme from "../../../../layouts/theme/settings"
 import {
+  BoxMain,
   Section,
   ReviewUser,
   NameProducs,
@@ -19,8 +20,7 @@ import {
 
 // IMPORT COMPONENT
 import Row from "../../../atoms/row/row"
-import Icon from "../../../atoms/icon/icon"
-import Logo from "../../../atoms/logo/logo"
+import Box from "../../../molecules/box/box"
 import Carusel from "../../carousel/carousel"
 
 // CREATE NEW COMPONENT
@@ -47,31 +47,12 @@ const ReviewsComponent = props => {
 
           <Carusel {...settingsCarusel}>
             {content.map((item, index) => {
+              console.log(item)
               return (
                 <>
-                  <ReviewUser key={index} theme={theme}>
-                    <ReviewBoxImg theme={theme}>
-                      <Img
-                        alt={item.avatar.alt}
-                        title={item.avatar.title}
-                        fluid={item.avatar.fixed}
-                      />
-                    </ReviewBoxImg>
-                    <ReviewDescription theme={theme}>
-                      {item.opinion.substring(0, 50)}...
-                    </ReviewDescription>
-                    <ReviewNameUser theme={theme}>{item.name}</ReviewNameUser>
-                    <ReviewRatingUser theme={theme}>
-                      <p>
-                        <span>Tak nas ocenił na </span>
-                        <strong> {item.source} </strong>
-                        <span> dał nam </span>
-                        <strong>{item.rating}</strong>
-                        <Icon star width="30px" height="15px" secondary />
-                      </p>
-                    </ReviewRatingUser>
-                    <SourceRatingUser theme={theme}></SourceRatingUser>
-                  </ReviewUser>
+                  <BoxMain>
+                    <Box article content={item} />
+                  </BoxMain>
                 </>
               )
             })}

@@ -8,7 +8,7 @@ export const Section = styled.section`
   position: relative;
   min-height: calc(100vh - 204px);
   @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-    min-height: calc(100vh - 151px);
+    min-height: calc(100vh - 181px);
   }
 `
 
@@ -29,10 +29,10 @@ export const Box = styled.div`
     text-align: center;
   }
   @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-    min-height: calc(100vh - 151px);
+    min-height: calc(100vh - 181px);
 
     .row {
-      min-height: calc(100vh - 151px);
+      min-height: calc(100vh - 181px);
     }
 
     h1 {
@@ -72,6 +72,6 @@ export const Slide = styled(BackgroundImage)`
   width: 100%;
   min-height: calc(100vh - 204px);
   @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-    min-height: calc(100vh - 151px);
+    min-height: calc(100vh - 181px);
   }
 `

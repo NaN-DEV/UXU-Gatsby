@@ -29,10 +29,9 @@ const BoxComponent = props => {
   console.log(content)
   return (
     <>
-      <Box display={display} theme={theme} to={content.slug}>
+      <Box display={display} theme={theme}>
         <BoxImage theme={theme}>
           <Img
-            className="img"
             alt={content.mainImage.alt}
             title={content.mainImage.title}
             fluid={content.mainImage.fixed}
@@ -44,7 +43,10 @@ const BoxComponent = props => {
             <strong>Juz od : </strong>
             {content.fromPrice} PLN
           </BoxPrice>
-
+          <BoxDay theme={theme}>
+            <strong>Średni czas realizacji : </strong>
+            {content.averageLeadTime} DNI
+          </BoxDay>
           <BoxDescription theme={theme}>
             {content.excerpt.substr(0, 200)}...
           </BoxDescription>

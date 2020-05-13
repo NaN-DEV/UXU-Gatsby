@@ -22,7 +22,6 @@ const ListServiceSectionComponent = props => {
             <h1>Co możemy dla ciebie zrobić...?</h1>
           </Header>
           {content.map((item, index) => {
-            console.log((index + 1) % 3)
             return (
               <MainBox index={index} theme={theme}>
                 <Box

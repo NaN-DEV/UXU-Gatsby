@@ -38,7 +38,7 @@ export const NameProducs = styled.div`
 export const PhotoProducs = styled.div`
   flex: 100%;
   display: flex;
-  height: 300px;
+  height: 200px;
   max-width: 100%;
   align-items: center;
   justify-content: center;

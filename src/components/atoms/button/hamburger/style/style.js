@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components"
 
 // BUTTON
 export const Button = styled.button`
@@ -11,12 +11,15 @@ export const Button = styled.button`
     display: block;
     position: absolute;
     transition: ${props => props.theme.animation_time};
-    background: ${props => props.secondary ? props.theme.secondary : props.theme.primary};
+    background: ${props =>
+      props.secondary ? props.theme.secondary : props.theme.primary};
   }
   &:hover {
     span {
       background: ${props =>
-        props.secondary ? props.theme.secondary_hover : props.theme.primary_hover};
+        props.secondary
+          ? props.theme.secondary_hover
+          : props.theme.primary_hover};
     }
   }
   @media (min-width: ${props => props.theme.breakpoint_desktop}) {
@@ -32,7 +35,7 @@ export const Button = styled.button`
         }
       `}
   }
-`;
+`
 
 export const Box = styled.div`
   top: 0px;
@@ -100,7 +103,7 @@ export const Box = styled.div`
                top: 30px;
              }
              &:after {
-               content: 'MENU';
+               content: "MENU";
                top: 45px;
                margin: 0;
                padding: 0;
@@ -109,30 +112,32 @@ export const Box = styled.div`
                font-size: 18px;
                font-weight: bold;
                position: absolute;
-               letter-spacing: 1px;
+               letter-spacing: 2.55px;
                font-family: ${props.theme.font_family};
                transition: ${props.theme.animation_time};
-               color: ${props.secondary ? props.theme.secondary : props.theme.primary};
+               color: ${props.secondary
+                 ? props.theme.secondary
+                 : props.theme.primary};
              }
              ${props.toggleHover &&
-               css`
+             css`
+               top: 27px;
+               span:nth-child(1) {
                  top: 27px;
-                 span:nth-child(1) {
-                   top: 27px;
-                 }
-                 span:nth-child(2) {
-                   top: 14px;
-                 }
-                 span:nth-child(3) {
-                   top: 0px;
-                 }
-                 &:after {
-                   top: -27px;
-                   color: ${props.secondary
-                     ? props.theme.secondary_hover
-                     : props.theme.primary_hover};
-                 }
-               `}
+               }
+               span:nth-child(2) {
+                 top: 14px;
+               }
+               span:nth-child(3) {
+                 top: 0px;
+               }
+               &:after {
+                 top: -27px;
+                 color: ${props.secondary
+                   ? props.theme.secondary_hover
+                   : props.theme.primary_hover};
+               }
+             `}
            `}
    }
-`;
+`

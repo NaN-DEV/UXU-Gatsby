@@ -5,64 +5,40 @@ export const Footer = styled.footer`
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  align-items: center;
   background-color: ${props => props.theme.muted};
 
   .row {
+    padding: 10px 15px;
     align-items: center;
     justify-content: center;
   }
-
-  .logo {
-    flex: 100%;
-    width: 100%;
-  }
-
-  p {
-    font-size: 15px;
-    text-align: center;
-    margin: 15px 0 15px 0;
-  }
-
-  ul {
-    flex: 100%;
-    width: 100%;
-    margin-left: auto;
-
+  .links {
+    padding-top: 15px;
     a {
-      font-size: 15px;
+      font-family: ${props => props.theme.font_secondary};
     }
   }
 
-  @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-    .row {
-      justify-content: flex-start;
-    }
-
-    .logo {
-      flex: none;
-      width: auto;
-    }
-
-    p {
-      text-align: left;
-      margin: 0 0 0 30px;
-    }
-
-    ul {
-      flex: auto;
-      width: auto;
+  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
+    justify-content: flex-end;
+    .links {
+      padding-top: 0;
       margin-left: auto;
-      justify-content: flex-end;
+      a {
+        font-size: 1.5rem;
+      }
     }
   }
 `
 
-export const BoxLeft = styled.div`
-  flex: 50%;
-  max-width: 50%;
-  min-height: 300px;
-  position: relative;
-  background-color: ${props => props.theme.secondary};
+export const P = styled.p`
+  display: none;
+  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
+    display: block;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+    font-family: ${props => props.theme.font_secondary};
+  }
 `
-
-export const BoxRight = styled.div``

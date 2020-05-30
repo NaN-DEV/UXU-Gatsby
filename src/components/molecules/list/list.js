@@ -1,24 +1,32 @@
+// IMPORT PLUGIN
 import React from "react"
 
-// IMPORT COMPONENT
+// IMPORT SETTINGS STYLE
+import theme from "../../../layouts/settings"
 
-import LevelList from "./level/level"
+// IMPORT SETTINGS COMPONENT
+import Icon from "./icon/icon"
+import Menu from "./menu/menu"
+import Share from "./share/share"
+import Level from "./level/level"
 import Vertical from "./vertical/vertical"
-
+import Category from "./category/category"
 // CREATE NEW COMPONENT
 
 const ListComponent = props => {
-  const { level, vertical, items, menu, secondary, className } = props
+  const { level, icon, menu, items, vertical, category, share } = props
+
   return (
     <>
-      {level && (
-        <LevelList items={items} secondary={secondary} className={className} />
-      )}
-      {vertical && (
-        <Vertical items={items} secondary={secondary} className={className} />
-      )}
+      {menu && <Menu items={items} />}
+      {level && <Level items={items} {...props} />}
+      {icon && <Icon items={items} {...props} />}
+      {vertical && <Vertical items={items} {...props} />}
+      {category && <Category items={items} {...props} />}
+      {share && <Share items={items} {...props} />}
     </>
   )
 }
 
+// EXPORT NEW COMPONENT
 export default ListComponent

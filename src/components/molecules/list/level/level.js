@@ -1,35 +1,34 @@
 // IMPORT PLUGIN
 import React from "react"
-
-// IMPORT STYLE
-import List from "./style/style"
+import { Link } from "gatsby"
 
 // IMPORT SETTINGS STYLE
-import theme from "../../../../layouts/theme/settings"
+import theme from "../../../../layouts/settings"
 
-// IMPORT COMPONENT
-import Item from "./item/item"
+// IMPORT SETTINGS COMPONENT
+import { Ul, Li } from "./style/style"
 
 // CREATE NEW COMPONENT
-const ListLevelComponent = props => {
-  const { items, secondary, className } = props
-  const ArrayLength = items.length
 
+const ListLevelComponent = props => {
+  const { items, hashtag } = props
   return (
-    <List theme={theme} secondary={secondary ? 1 : 0} className={className}>
-      {items &&
-        items.map((item, i) => (
-          <Item
-            key={i}
-            url={item.url}
-            slug={`/${item.slug}`}
-            title={item.title || item.name}
-            secondary={secondary}
-            length={ArrayLength > 1 ? 1 : 0}
-          />
-        ))}
-    </List>
+    <>
+      <Ul theme={theme} {...props}>
+        {items &&
+          items.map((item, i) => {
+            return (
+              <Li theme={theme} key={i}>
+                <Link to={`/${item.slug}`} title={item.title}>
+                  {hashtag ? `#${item.title.replace(/\s/g, "_")}` : item.title}
+                </Link>
+              </Li>
+            )
+          })}
+      </Ul>
+    </>
   )
 }
 
+// EXPORT NEW COMPONENT
 export default ListLevelComponent

@@ -1,31 +1,32 @@
+// IMPORT PLUGIN
 import React from "react"
 
 // IMPORT COMPONENT START
-import Reviews from "./reviews/reviews"
-import HeroHome from "./heroHome/heroHome"
-import ListService from "./listService/listService"
-import ListArticleCarusel from "./listArticleCarusel/listArticleCarusel"
+import Row from "../../atoms/row/row"
+import SectionClassic from "./classic/classic"
 
 // CREATE NEW COMPONENT
+
 const SectionComponent = props => {
-  const {
-    content,
-    sectionHeroHome,
-    reviews,
-    listService,
-    listArticleCarusel,
-    title,
-  } = props
-  return (
-    <>
-      {reviews && <Reviews secondary content={content} />}
-      {listService && <ListService secondary content={content} />}
-      {sectionHeroHome && <HeroHome secondary content={content} />}
-      {listArticleCarusel && (
-        <ListArticleCarusel secondary title={title} content={content} />
-      )}
-    </>
-  )
+  const { children, contact } = props
+  if (contact) {
+    return (
+      <>
+        <SectionClassic>
+          <Row className="row">{children}</Row>
+        </SectionClassic>
+      </>
+    )
+  } else {
+    return (
+      <>
+        <SectionClassic>
+          <Row className="row">{children}</Row>
+        </SectionClassic>
+      </>
+    )
+  }
 }
 
+// EXPORT NEW COMPONENT
 export default SectionComponent

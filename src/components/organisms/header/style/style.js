@@ -2,103 +2,59 @@ import styled from "styled-components"
 
 export const Header = styled.header`
   top: 0;
+  margin: 0;
+  padding: 0;
   width: 100%;
+  height: 60px;
   z-index: 999;
+  display: flex;
   position: fixed;
-  transition: ${props => props.theme.animation_time};
+  align-items: center;
+  justify-content: flex-end;
   background-color: ${props => props.theme.secondary};
 
-  form {
-    padding: 0 3rem;
+  .row {
+    height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .search {
+    flex: 11.5rem;
+    max-width: 11.5rem;
+    margin-right: auto;
+    margin-left: ${props => props.theme.break};
+  }
+
+  .button {
+    margin-left: 1rem;
+  }
+
+  .none {
     display: none;
   }
 
-  .button-hamburger {
-    margin-left: auto;
+  .end {
+    margin-right: -6px;
   }
 
-  .bottom-element {
-    padding: 0;
-  }
+  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
+    .none {
+      display: flex;
+      margin-left: 1.5rem;
+    }
 
-  @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-    form {
-      display: block;
+    .search {
+      flex: 25rem;
+      max-width: 25rem;
     }
   }
 `
 
-export const HeaderBox = styled.div`
+export const BoxHeader = styled.div`
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 204px;
-  @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-    height: 181px;
-  }
+  height: 60px;
+  display: block;
 `
-
-export const HeaderElement = styled.div`
-  flex: 100%;
-  width: 100%;
-  display: flex;
-`
-export const BottomElement = styled.div`
-  flex: 100%;
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-  position: relative;
-  border-top: solid ${props => props.theme.border} ${props => props.theme.light};
-  border-bottom: solid ${props => props.theme.border}
-    ${props => props.theme.light};
-`
-export const ListElement = styled.ul`
-  flex: 100%;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-
-  li {
-    flex: 100%;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    a {
-      text-align: center;
-      font-size: ${props => props.theme.font_size_mobile_button};
-    }
-    p {
-      font-size: 12px;
-    }
-  }
-  li:nth-child(2) {
-    border-top: solid ${props => props.theme.border}
-      ${props => props.theme.light};
-    border-bottom: solid ${props => props.theme.border}
-      ${props => props.theme.light};
-  }
-  @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-    li {
-      flex: 33.3333%;
-      max-width: 33.3333%;
-      a {
-        font-size: 2rem;
-      }
-      p {
-        font-size: 1.5rem;
-      }
-    }
-    li:nth-child(2) {
-      border-top: solid 0 transparent;
-      border-bottom: solid 0 transparent;
-      border-left: solid ${props => props.theme.border}
-        ${props => props.theme.light};
-      border-right: solid ${props => props.theme.border}
-        ${props => props.theme.light};
-    }
-  }
-`
-
-export default Header

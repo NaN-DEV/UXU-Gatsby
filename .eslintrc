@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier", "prettier/react"],
+  "extends": ["airbnb", "prettier", "fv"],
   "env": {
     "jest": true
   },
@@ -16,7 +16,12 @@
   },
   "rules": {
     "react/prop-types": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
     "react/jsx-filename-extension": [
       1,
       {

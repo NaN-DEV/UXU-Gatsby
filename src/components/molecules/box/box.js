@@ -1,19 +1,32 @@
 // IMPORT PLUGIN
 import React from "react"
 
-// IMPORT COMPONENT START
-import Service from "../box/service/service"
-import Article from "../box/article/article"
-import Tutorial from "../box/tutorial/tutorial"
+// IMPORT SETTINGS STYLE
+import theme from "../../../layouts/settings"
 
-// CREATE NEW COMPONENT START
+// IMPORT COMPONENT ICON
+import BoxTag from "./tag/tag"
+import BoxAds from "./ads/ads"
+import BoxInfo from "./info/info"
+import BoxSkill from "./skill/skill"
+import BoxAuthor from "./author/author"
+import BoxClassic from "./classic/classic"
+import BoxiInfoService from "./infoservice/infoservice"
+
+// CREATE NEW COMPONENT
+
 const BoxComponent = props => {
-  const { content, service, article, tutorial } = props
+  const { classic, ads, children, content, author, tag, skill, info, infoService } = props
+
   return (
     <>
-      {service && <Service content={content} />}
-      {article && <Article content={content} />}
-      {tutorial && <Tutorial content={content} />}
+      {tag && <BoxTag content={content} />}
+      {ads && <BoxAds content={content} />}
+      {info && <BoxInfo content={content} />}
+      {skill && <BoxSkill content={content} />}
+      {author && <BoxAuthor content={content} />}
+      {infoService && <BoxiInfoService content={content} />}
+      {classic && <BoxClassic key="classic">{children}</BoxClassic>}
     </>
   )
 }

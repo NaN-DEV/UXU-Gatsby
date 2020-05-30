@@ -1,118 +1,64 @@
 // IMPORT PLUGIN
 import React from "react"
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 
 // IMPORT STYLES
 import Icon from "./style/style"
 
 // IMPORT SETTINGS STYLE
-import theme from "../../../layouts/theme/settings"
+import theme from "../../../layouts/settings"
 
 // IMPORT COMPONENT ICON
-import Star from "./star/star"
-import Cogs from "./cogs/cogs"
-import Users from "./users/users"
-import Brand from "./brand/brand"
-import Search from "./search/search"
-import Envelope from "./envelope/envelope"
-import Triangle from "./triangle/triangle"
-import Newspaper from "./newspaper/newspaper"
+import Heart from "./heart/heart"
+import Money from "./money/money"
+import Clock from "./clock/clock"
+import TokTok from "./tiktok/tiktok"
+import Twiter from "./twiter/twiter"
+import Skills from "./skills/skills"
+import YouTube from "./youtube/youtube"
+import Facebook from "./facebook/facebook"
+import Calendar from "./calendar/calendar"
+import Instagram from "./instagram/instagram"
+import HamburgerIcon from "./hamburger/hamburger"
+import NotificationIcon from "./notification/notification"
 
 // CREATE NEW COMPONENT
 
 const IconComponent = props => {
   const {
-    star,
-    cogs,
-    link,
-    brand,
-    users,
-    width,
-    height,
-    search,
-    triangle,
-    envelope,
-    newspaper,
-    secondary,
+    hover,
+    clock,
+    money,
+    calendar,
+    youtube,
+    facebook,
+    hamburger,
+    instagram,
     className,
-    widthMobile,
-    heightMobile,
+    notification,
+    skills,
+    tiktok,
+    twitter,
+    heart,
   } = props
 
   return (
     <>
-      {link ? (
-        <Icon
-          theme={theme}
-          new_width={width}
-          new_height={height}
-          className={className}
-          width_mobile={widthMobile}
-          triangle={triangle ? 1 : 0}
-          height_mobile={heightMobile}
-          secondary={secondary ? 1 : 0}
-        >
-          <Link to={link}>
-            {star && <Star />}
-            {cogs && <Cogs />}
-            {users && <Users />}
-            {brand && <Brand />}
-            {search && <Search />}
-            {envelope && <Envelope />}
-            {newspaper && <Newspaper />}
-            {triangle && (
-              <Triangle secondary={secondary} className={className} />
-            )}
-          </Link>
-        </Icon>
-      ) : (
-        <Icon
-          theme={theme}
-          new_width={width}
-          new_height={height}
-          className={className}
-          width_mobile={widthMobile}
-          triangle={triangle ? 1 : 0}
-          height_mmobile={heightMobile}
-          secondary={secondary ? 1 : 0}
-        >
-          {star && <Star />}
-          {cogs && <Cogs />}
-          {users && <Users />}
-          {brand && <Brand />}
-          {search && <Search />}
-          {envelope && <Envelope />}
-          {newspaper && <Newspaper />}
-          {triangle && <Triangle secondary={secondary} className={className} />}
-        </Icon>
-      )}
+      <Icon theme={theme} className={className} hover={hover}>
+        {heart && <Heart />}
+        {clock && <Clock />}
+        {money && <Money />}
+        {tiktok && <TikTok />}
+        {twitter && <Twiter />}
+        {youtube && <YouTube />}
+        {facebook && <Facebook />}
+        {calendar && <Calendar />}
+        {skills && <Skills />}
+        {instagram && <Instagram />}
+        {hamburger && <HamburgerIcon />}
+        {notification && <NotificationIcon />}
+      </Icon>
     </>
   )
 }
 
 export default IconComponent
-
-IconComponent.propTypes = {
-  link: PropTypes.string,
-  search: PropTypes.bool,
-  width: PropTypes.string,
-  height: PropTypes.string,
-  triangle: PropTypes.bool,
-  secondary: PropTypes.bool,
-  className: PropTypes.string,
-  widthMobile: PropTypes.string,
-  heightMobile: PropTypes.string,
-}
-
-IconComponent.defaultProps = {
-  link: null,
-  width: null,
-  height: null,
-  search: false,
-  triangle: false,
-  className: null,
-  secondary: false,
-  widthMobile: null,
-  heightMobile: null,
-}

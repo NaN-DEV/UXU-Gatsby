@@ -28,11 +28,9 @@ import Row from "../../../atoms/row/row"
 // CREATE NEW COMPONENT
 const BoxAuthorComponent = props => {
   const { content } = props
-  console.log(content)
   const telephone = `${content.telephoneNumber}`
   const desciption = `${content.desciption}`
   const old = new Date().getFullYear() - parseInt(content.birthday)
-  console.log(old)
   return (
     <>
       <Row>

@@ -30,3 +30,16 @@ export const Li = styled.li`
     width: auto;
   }
 `
+export const A = styled.a`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: ${props => props.theme.muted};
+  }
+`

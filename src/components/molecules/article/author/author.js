@@ -18,7 +18,7 @@ import Icon from "../../../atoms/icon/icon"
 
 const ArticleAuthorComponent = props => {
   const { content } = props
-  console.log(content)
+
   return (
     <>
       <Article theme={theme} title={`${content.firstName} ${content.lastName}`}>

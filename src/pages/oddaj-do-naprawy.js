@@ -9,67 +9,63 @@ import Article from "../components/molecules/article/article"
 
 // CREATE NEW COMPONENT
 
-const IndexPage = () => {
+const ServiceCategory = props => {
   const contentBoxAds = {
-    title: "Problem z komputerem ? Zajmiemy się nim !",
+    title: `Uzyskaj darmową wycenę naprawy`,
+    description: `Nie masz zdrowia do formularzy ?`,
     button: [
-      {
-        id: "box-ads-home-repair",
-        title: "Zgłoś online",
-        slug: "oddaj-do-naprawy",
-      },
       {
         id: "box-ads-home-telephone",
         tel: 888881441,
       },
     ],
   }
+
   return (
     <>
       <StaticQuery
         query={graphql`
-          query oddajdonaprawy {
-            allDatoCmsService {
+          query addRepair {
+            allDatoCmsBlog {
               nodes {
                 id
-                slug
                 title
                 excerpt
-                repairCost
-                repairAverageTime
                 mainImage {
-                  alt
-                  title
                   fixed {
                     ...GatsbyDatoCmsFixed
                   }
                 }
-                author {
+                slug
+                tag {
+                  name
                   id
-                  nick
                   slug
+                }
+                category {
+                  id
+                }
+                author {
                   firstName
                   lastName
+                  nick
+                  slug
                   avatar {
-                    alt
-                    title
                     fixed {
                       ...GatsbyDatoCmsFixed
                     }
                   }
                 }
-                tag {
-                  id
-                  name
-                  slug
+                meta {
+                  firstPublishedAt(formatString: "MMM DD")
                 }
               }
             }
-            allDatoCmsServicesCategory {
+            allDatoCmsBlogCategory {
               nodes {
-                id
                 name
                 slug
+                id
               }
             }
           }
@@ -77,17 +73,8 @@ const IndexPage = () => {
         render={data => {
           return (
             <>
-              <Layout siteBar="home" content={contentBoxAds}>
-                <List
-                  services
-                  category
-                  active={0}
-                  title="Usługi"
-                  items={data.allDatoCmsServicesCategory.nodes}
-                />
-                {data.allDatoCmsService.nodes.map((content, i) => {
-                  return <Article short services key={i} content={content} />
-                })}
+              <Layout siteBar="repair" content={contentBoxAds}>
+                ok
               </Layout>
             </>
           )
@@ -98,4 +85,4 @@ const IndexPage = () => {
 }
 
 // EXPORT NEW COMPONENT
-export default IndexPage
+export default ServiceCategory

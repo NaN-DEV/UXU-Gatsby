@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from "gatsby"
 import theme from "../../../layouts/settings"
 
 // IMPORT STYLES
-import { SiteBar, Header, BoxSiteBar, SiteBarGlue } from "./style/style"
+import { SiteBar, Header, BoxSiteBar, SiteBarGlue, Step } from "./style/style"
 
 // IMPORT COMPONENT START
 import Box from "../../molecules/box/box"
@@ -31,6 +31,8 @@ const SiteBarComponent = props => {
     info,
     infoService,
     addRepair,
+    repair,
+    help,
   } = props
   const socialMediaLink = [
     { name: "Facebook", url: "https://www.facebook.com/UXUPL/" },
@@ -200,6 +202,28 @@ const SiteBarComponent = props => {
                     <BoxSiteBar glue={glue} theme={theme}>
                       <Header theme={theme}>Umiejętności</Header>
                       <List vertical hashtag skill items={data.allDatoCmsSkil.nodes} />
+                    </BoxSiteBar>
+                  </>
+                )}
+                {repair && (
+                  <>
+                    <BoxSiteBar glue={glue} theme={theme}>
+                      <Step theme={theme} first>
+                        Co możemy dla Ciebie zrobić ?
+                      </Step>
+                      <Step theme={theme} second>
+                        Jak nam dostarczysz sprzęt ?
+                      </Step>
+                      <Step theme={theme} third>
+                        Idziesz jak burza ! Już konczymy:)
+                      </Step>
+                    </BoxSiteBar>
+                  </>
+                )}
+                {help && (
+                  <>
+                    <BoxSiteBar glue={glue} theme={theme}>
+                      <Box help />
                     </BoxSiteBar>
                   </>
                 )}

@@ -13,7 +13,9 @@ const ButtonSumbitComponent = props => {
 
   return (
     <>
-      <ButtonSumbit>{title}</ButtonSumbit>
+      <ButtonSumbit type="submit" theme={theme}>
+        {title}
+      </ButtonSumbit>
     </>
   )
 }

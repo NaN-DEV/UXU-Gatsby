@@ -1,62 +1,79 @@
 import styled, { css } from "styled-components"
 
 export const SiteBar = styled.div`
+  display: block;
   ${props =>
-    props.desctop
-      ? css`
-          display: none;
-          @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-            display: block;
-            padding-top: ${props => `${props.top}rem`};
-            ${props =>
-              props.share
-                ? css`
-                    flex: 114px;
-                    max-width: 114px;
-                  `
-                : css`
-                    flex: 200px;
-                    max-width: 215px;
-                  `};
-          }
-        `
-      : css`
-          display: block;
-          ${props =>
-            props.share &&
-            css`
-              left: 0;
-              bottom: 0;
-              flex: 100%;
-              height: 60px;
-              width: 100vw;
-              display: flex;
-              z-index: 99999;
-              position: fixed;
-              max-width: 100%;
-              background-color: ${props => props.theme.secondary};
-              border-top: 3px solid ${props => props.theme.primary};
-            `};
+    props.share &&
+    css`
+      left: 0;
+      bottom: 0;
+      flex: 100%;
+      height: 60px;
+      width: 100vw;
+      display: flex;
+      z-index: 99999;
+      position: fixed;
+      max-width: 100%;
+      background-color: ${props => props.theme.secondary};
+      border-top: 3px solid ${props => props.theme.primary};
+    `};
 
-          @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-            padding-top: ${props => `${props.top}rem`};
-            ${props =>
-              props.share
-                ? css`
-                    left: auto;
-                    flex: 114px;
-                    bottom: auto;
-                    max-width: 114px;
-                    position: relative;
-                    background-color: transparent;
-                    border-top: 0px solid transparent;
-                  `
-                : css`
-                    flex: 200px;
-                    max-width: 215px;
-                  `};
-          }
-        `}
+  @media (min-width: ${props => props.theme.breakpoint_desktop}) {
+    padding-top: ${props => `${props.top}rem`};
+    ${props =>
+      props.share
+        ? css`
+            left: auto;
+            flex: 114px;
+            bottom: auto;
+            max-width: 114px;
+            position: relative;
+            background-color: transparent;
+            border-top: 0px solid transparent;
+          `
+        : css`
+            flex: 200px;
+            max-width: 215px;
+          `};
+  }
+  ${props =>
+    props.desctop &&
+    css`
+      display: none;
+      @media (min-width: ${props => props.theme.breakpoint_desktop}) {
+        display: block;
+        padding-top: ${props => `${props.top}rem`};
+        ${props =>
+          props.share
+            ? css`
+                flex: 114px;
+                max-width: 114px;
+              `
+            : css`
+                flex: 200px;
+                max-width: 215px;
+              `};
+      }
+    `}
+  ${props =>
+    props.tablet &&
+    css`
+      display: none;
+      @media (min-width: ${props => props.theme.breakpoint_tablet}) {
+        display: block;
+        padding-top: ${props => `${props.top}rem`};
+        ${props =>
+          props.share
+            ? css`
+                flex: 114px;
+                max-width: 114px;
+              `
+            : css`
+                flex: 200px;
+                max-width: 215px;
+              `};
+      }
+    `}
 `
 
 export const Header = styled.div`
@@ -116,4 +133,45 @@ export const BoxSiteBar = styled.div`
              }
            `}
      }
+`
+export const Step = styled.div`
+  min-height: ${props => (props.first ? "50vh" : "100vh")};
+  display: flex;
+  font-size: 2.3rem;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  font-family: ${props => props.theme.font_secondary};
+  z-index: 0;
+  &::before {
+    z-index: -1;
+    width: 100%;
+    top: calc(50% - 17rem);
+    ${props =>
+      props.first
+        ? css`
+            content: "1";
+          `
+        : `${
+            props.second
+              ? css`
+                  content: "2";
+                `
+              : css`
+                  content: "3";
+                `
+          }`}
+
+    position: absolute;
+    font-size: 25rem;
+    color: ${props => props.theme.muted};
+  }
+  @media (min-width: ${props => props.theme.breakpoint_desktop}) {
+    &::before {
+      font-size: 35rem;
+      top: calc(50% - 23rem);
+    }
+  }
 `

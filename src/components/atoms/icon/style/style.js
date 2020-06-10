@@ -1,15 +1,15 @@
 import styled, { css } from "styled-components"
 
 const Icon = styled.div`
-  width: auto;
-  height: 24px;
   display: block;
   position: relative;
+  width: ${props => (props.width ? props.width : "auto")};
+  height: ${props => (props.height ? props.height : "24px")};
   svg {
-    width: auto;
-    height: 24px;
     display: block;
     position: relative;
+    width: ${props => (props.width ? props.width : "auto")};
+    height: ${props => (props.height ? props.height : "24px")};
   }
 `
 

@@ -13,7 +13,7 @@ const BlogCategory = props => {
   const contentBoxAds = {
     title: `Blog technologiczny`,
   }
-  console.log()
+
   return (
     <>
       <StaticQuery

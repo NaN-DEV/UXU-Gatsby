@@ -31,7 +31,7 @@ const ServiceCategory = props => {
       },
     ],
   }
-  console.log()
+
   return (
     <>
       <StaticQuery

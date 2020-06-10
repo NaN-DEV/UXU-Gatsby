@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import theme from "../../../../layouts/settings"
 
 // IMPORT SETTINGS STYLE
-import { Ul, Li } from "./style/style"
+import { Ul, Li, A } from "./style/style"
 
 // IMPORT COMPONENT
 import Icon from "../../../atoms/icon/icon"
@@ -15,6 +15,7 @@ import Icon from "../../../atoms/icon/icon"
 
 const ListLevelComponent = props => {
   const { items, hashtag } = props
+
   return (
     <>
       <Ul theme={theme} {...props}>
@@ -32,13 +33,13 @@ const ListLevelComponent = props => {
                   </Link>
                 )}
                 {item.url && (
-                  <Link to={`/${item.url}`} title={item.name}>
+                  <A href={item.url} title={item.name} target="_blank">
                     {item.name === "TikTok" && <Icon tiktok />}
                     {item.name === "YouTube" && <Icon youtube />}
                     {item.name === "Twitter" && <Icon twitter />}
                     {item.name === "Facebook" && <Icon facebook />}
                     {item.name === "Instagram" && <Icon instagram />}
-                  </Link>
+                  </A>
                 )}
               </Li>
             )

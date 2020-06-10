@@ -49,7 +49,7 @@ const TagPage = props => {
                   let displayPost = content.skil.filter(skill => {
                     return skill.id === props.pageContext.content.id
                   })
-                  console.log(content)
+
                   if (displayPost.length > 0) {
                     return <Article author key={i} content={content} />
                   }

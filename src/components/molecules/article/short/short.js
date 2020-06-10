@@ -51,9 +51,11 @@ const ArticleShortComponent = props => {
           to={`/autor/${content.author.slug}`}
           title={`${content.author.firstName} ${content.author.lastName}`}
         >
-          <BoxAutorImg>
-            <Img fluid={content.author.avatar.fixed} />
-          </BoxAutorImg>
+          {content.author.avatar.fixed && (
+            <BoxAutorImg>
+              <Img fluid={content.author.avatar.fixed} />
+            </BoxAutorImg>
+          )}
           <BoxAutorData theme={theme}>
             <BoxAutorName
               theme={theme}
@@ -153,11 +155,11 @@ const ArticleShortComponent = props => {
             <Button
               slug={
                 services
-                  ? `/uslugi/artykul/${content.slug}`
+                  ? `uslugi/artykul/${content.slug}`
                   : `${
                       blog
-                        ? `/blog/artykul/${content.slug}`
-                        : `${tutorial && `/poradniki/artykul/${content.slug}`}`
+                        ? `blog/artykul/${content.slug}`
+                        : `${tutorial && `poradniki/artykul/${content.slug}`}`
                     }`
               }
               title="Więcej"

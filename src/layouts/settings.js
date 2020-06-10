@@ -21,7 +21,7 @@ const settings = {
   // SETTINGS BREAKPOINT START
   breakpoint_mobile: "525px",
   breakpoint_tablet: "768px",
-  breakpoint_desktop: "1024px",
+  breakpoint_desktop: "1280px",
 
   // SETTINGS MAXWIDTH START
   max_width: "198rem",

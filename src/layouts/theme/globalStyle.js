@@ -24,7 +24,7 @@ body {
    color: ${props => props.theme.primary};
    font-family: ${props => props.theme.font_primary}; 
     ${props =>
-      props.contact
+      props.yellow
         ? css`
             background-color: ${props.theme.secondary};
           `
@@ -93,6 +93,14 @@ ul{
 section{
     overflow: hidden;
     position: relative;
+}
+
+form{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
 }
 `
 

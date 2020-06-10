@@ -1,6 +1,5 @@
 // IMPORT PLUGIN
 import React from "react"
-import PropTypes from "prop-types"
 
 // IMPORT SETTINGS STYLE
 import theme from "../../../layouts/settings"
@@ -14,41 +13,32 @@ import ButtonCategory from "./category/category"
 // CREATE NEW COMPONENT
 
 const ButttonComponent = props => {
-  const { submit, icon, small, box, category } = props
+  const { submit, icon, small, box, category, disabled } = props
   if (submit) {
     return (
       <>
-        <ButtonSumbit {...props} small={small} />
+        <ButtonSumbit disabled={disabled} {...props} small={small} />
       </>
     )
   } else if (category) {
     return (
       <>
-        <ButtonCategory {...props} small={small} box={box} />
+        <ButtonCategory disabled={disabled} {...props} small={small} box={box} />
       </>
     )
   } else if (icon) {
     return (
       <>
-        <ButtonIcon {...props} small={small} box={box} />
+        <ButtonIcon disabled={disabled} {...props} small={small} box={box} />
       </>
     )
   } else {
     return (
       <>
-        <ButtonClassic {...props} small={small} />
+        <ButtonClassic disabled={disabled} {...props} small={small} />
       </>
     )
   }
-}
-
-ButttonComponent.propTypes = {
-  submit: PropTypes.bool,
-  small: PropTypes.bool,
-  icon: PropTypes.string,
-}
-ButttonComponent.defaultProps = {
-  small: false,
 }
 
 // EXPORT NEW COMPONENT

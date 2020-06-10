@@ -20,6 +20,12 @@ import Calendar from "./calendar/calendar"
 import Instagram from "./instagram/instagram"
 import HamburgerIcon from "./hamburger/hamburger"
 import NotificationIcon from "./notification/notification"
+import Tools from "./tools/tools"
+import Rocket from "./rocket/rocket"
+import Ask from "./ask/ask"
+import Box from "./box/box"
+import Map from "./map/map"
+import Protection from "./protection/protection"
 
 // CREATE NEW COMPONENT
 
@@ -39,11 +45,17 @@ const IconComponent = props => {
     tiktok,
     twitter,
     heart,
+    tools,
+    rocket,
+    ask,
+    box,
+    map,
+    protection,
   } = props
 
   return (
     <>
-      <Icon theme={theme} className={className} hover={hover}>
+      <Icon theme={theme} className={className} hover={hover} {...props}>
         {heart && <Heart />}
         {clock && <Clock />}
         {money && <Money />}
@@ -53,6 +65,12 @@ const IconComponent = props => {
         {facebook && <Facebook />}
         {calendar && <Calendar />}
         {skills && <Skills />}
+        {tools && <Tools />}
+        {rocket && <Rocket />}
+        {ask && <Ask />}
+        {box && <Box />}
+        {map && <Map />}
+        {protection && <Protection />}
         {instagram && <Instagram />}
         {hamburger && <HamburgerIcon />}
         {notification && <NotificationIcon />}

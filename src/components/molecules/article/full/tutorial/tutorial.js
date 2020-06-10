@@ -40,7 +40,6 @@ import Button from "../../../../atoms/button/button"
 
 const ArticleFullServiceComponent = props => {
   const { content, services, blog, tutorial } = props
-  console.log(content)
   let disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: content.id },

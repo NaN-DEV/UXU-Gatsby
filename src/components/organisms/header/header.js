@@ -7,7 +7,7 @@ import theme from "../../../layouts/settings"
 // IMPORT COMPONENT START
 import Row from "../../atoms/row/row"
 import Logo from "../../atoms/logo/logo"
-import Form from "../../molecules/form/form"
+import Input from "../../atoms/input/input"
 import Button from "../../atoms/button/button"
 
 // IMPORT STYLES
@@ -16,7 +16,6 @@ import { Header, BoxHeader } from "./style/style"
 // CREATE NEW COMPONENT
 
 const HeaderComponent = props => {
-  const search = [{ input: { type: "search", placeholder: "Szukaj..." } }]
   const boxLink = [
     { id: "main-menu-home", slug: "", title: "Strona Główna" },
     { id: "main-menu-service", slug: "uslugi", title: "Usługi" },
@@ -29,7 +28,9 @@ const HeaderComponent = props => {
       <Header theme={theme}>
         <Row className="row">
           <Logo />
-          <Form items={search} className="search" />
+          <form className="search">
+            <Input type="search" placeholder="Szukaj..." />
+          </form>
           <Button
             small={true}
             title="Oddaj do naprawy"

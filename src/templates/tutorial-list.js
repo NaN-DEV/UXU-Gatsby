@@ -20,7 +20,7 @@ const TutorialsCategory = props => {
       (props.pageContext.content.name && props.pageContext.content.name)
     }`,
   }
-  console.log()
+
   return (
     <>
       <StaticQuery

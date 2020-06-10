@@ -27,7 +27,7 @@ const Root = props => {
       <>
         <GlobalStyle theme={theme} />
         <Header />
-        <Box ads content={content} />
+        <Box ads big content={content} />
         <Row>
           <SideBar socialMedia desctop blog tutorials top={9} />
           <Section>{children}</Section>
@@ -41,7 +41,7 @@ const Root = props => {
       <>
         <GlobalStyle theme={theme} />
         <Header />
-        <Box ads content={content} />
+        <Box ads big content={content} />
         <Row>
           <SideBar socialMedia desctop blog tutorials top={9} />
           <Section>{children}</Section>
@@ -68,7 +68,7 @@ const Root = props => {
       <>
         <GlobalStyle theme={theme} />
         <Header />
-        <Box ads content={content} />
+        <Box ads big content={content} />
         <Row>
           <SideBar blog desctop top={2.4} />
           <Section>{children}</Section>
@@ -95,7 +95,7 @@ const Root = props => {
       <>
         <GlobalStyle theme={theme} />
         <Header />
-        <Box ads content={content} />
+        <Box ads big content={content} />
         <Row>
           <SideBar desctop tutorials top={2.4} />
           <Section>{children}</Section>
@@ -109,7 +109,7 @@ const Root = props => {
       <>
         <GlobalStyle theme={theme} />
         <Header />
-        <Box ads content={content} />
+        <Box ads big content={content} />
         <Row>
           <SideBar desctop tutorials top={2.4} />
           <Section>{children}</Section>
@@ -123,7 +123,7 @@ const Root = props => {
       <>
         <GlobalStyle theme={theme} />
         <Header />
-        <Box author content={content} />
+        <Box big author content={content} />
         <Row>
           <SideBar skill desctop top={2.4} />
           <Section>{children}</Section>
@@ -137,7 +137,7 @@ const Root = props => {
       <>
         <GlobalStyle theme={theme} />
         <Header />
-        <Box tag content={content} />
+        <Box big tag content={content} />
         <Row>
           <SideBar desctop top={2.4} />
           <Section>{children}</Section>
@@ -151,7 +151,7 @@ const Root = props => {
       <>
         <GlobalStyle theme={theme} />
         <Header />
-        <Box skill content={content} />
+        <Box big skill content={content} />
         <Row>
           <SideBar team desctop top={2.4} />
           <Section>{children}</Section>
@@ -163,13 +163,25 @@ const Root = props => {
   } else if (siteBar === "contact") {
     return (
       <>
-        <GlobalStyle theme={theme} contact />
+        <GlobalStyle theme={theme} yellow />
         <Header />
-        <Box ads content={content} />
+        <Box big ads content={content} />
         <Row>
-          <SideBar team desctop top={2.4} />
-          <Section>{children}</Section>
-          <SideBar desctop top={2.4} />
+          <Section contact>{children}</Section>
+        </Row>
+        <Footer />
+      </>
+    )
+  } else if (siteBar === "repair") {
+    return (
+      <>
+        <GlobalStyle theme={theme} yellow />
+        <Header />
+        <Box big ads big content={content} />
+        <Row>
+          <SideBar repair tablet top={0.9} />
+          <Section repair>{children}</Section>
+          <SideBar help glue desctop top={0} />
         </Row>
         <Footer />
       </>

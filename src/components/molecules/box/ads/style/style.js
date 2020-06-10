@@ -13,7 +13,7 @@ export const Title = styled.h1`
   display: block;
   margin: 0 auto;
   font-size: 3.3rem;
-  max-width: 90rem;
+  max-width: ${props => (props.big ? "120rem" : "90rem")};
   text-align: center;
   font-family: ${props => props.theme.font_secondary};
   @media (min-width: ${props => props.theme.breakpoint_tablet}) {
@@ -27,7 +27,7 @@ export const Description = styled.p`
   width: 100%;
   display: block;
   font-size: 2.3rem;
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 0 0;
   text-align: center;
   @media (min-width: ${props => props.theme.breakpoint_tablet}) {
     font-size: 3.3rem;

@@ -6,7 +6,7 @@ import theme from "../../../layouts/settings"
 
 // IMPORT SETTINGS COMPONENT
 import ButtonIcon from "./icon/icon"
-import ButtonSumbit from "./submit/submit"
+import ButtonSumbit from "./submitButton/submitButton"
 import ButtonClassic from "./classic/classic"
 import ButtonCategory from "./category/category"
 
@@ -16,7 +16,7 @@ const ButttonComponent = props => {
   if (submit) {
     return (
       <>
-        <ButtonSumbit disabled={disabled} onClick={onClick} {...props} small={small} />
+        <ButtonSumbit disabled={disabled} onClick={onClick} small={small} />
       </>
     )
   } else if (category) {

@@ -35,8 +35,7 @@ function SEO({ description, lang, meta, title, url, image, author }) {
                 htmlAttributes={{
                   lang,
                 }}
-                title={title}
-                titleTemplate={`%s ${data.datoCmsSite.globalSeo.titleSuffix}`}
+                title={title ? title : data.datoCmsSite.globalSeo.titleSuffix}
                 meta={[
                   {
                     name: `author`,

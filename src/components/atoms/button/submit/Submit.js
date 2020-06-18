@@ -5,7 +5,7 @@ import React from "react"
 import theme from "../../../../layouts/settings"
 
 // IMPORT  STYLE
-import ButtonSumbit from "./style/style"
+import { ButtonSumbit } from "./style/style"
 
 // CREATE NEW COMPONENT
 const ButtonSumbitComponent = props => {

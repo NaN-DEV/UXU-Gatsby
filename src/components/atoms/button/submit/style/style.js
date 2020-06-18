@@ -43,8 +43,6 @@ const button = css`
   }
 `
 
-const ButtonSumbit = styled.button`
+export const ButtonSumbit = styled.button`
   ${button}
 `
-
-export default ButtonSumbit

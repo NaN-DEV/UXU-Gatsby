@@ -1,21 +1,27 @@
 // IMPORT PLUGIN
 import React from "react"
 
-// IMPORT SETTINGS STYLE
-import theme from "../../../../layouts/settings"
-
 // IMPORT COMPONENT
 import Repair from "./repair/repair"
 
 // CREATE NEW COMPONENT
 
 const RadioComponent = props => {
-  const { item, name, click } = props
+  const { name, click, id, active, icon, additional, title, description } = props
 
   if (item.type === "repair") {
     return (
       <>
-        <Repair item={item} name={name} click={click} />
+        <Repair
+          name={name}
+          click={click}
+          id={id}
+          active={active ? true : false}
+          icon={icon}
+          additional={additional}
+          title={title}
+          description={description}
+        />
       </>
     )
   } else {

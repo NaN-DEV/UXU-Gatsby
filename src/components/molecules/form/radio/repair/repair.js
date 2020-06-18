@@ -13,7 +13,7 @@ import { Selection, Input, Label, Strong, Title, Description } from "./style/sty
 // CREATE NEW COMPONENT
 
 const RadioRepairComponent = props => {
-  const { item, name, click } = props
+  const { name, click, id, active, icon, additional, title, description } = props
 
   const scroll = e => {
     const yOffset = -35
@@ -30,55 +30,49 @@ const RadioRepairComponent = props => {
   return (
     <>
       <Selection theme={theme}>
-        {item.active ? (
+        {active ? (
           <>
-            <Input
-              id={item.id}
-              name={name}
-              type="radio"
-              theme={theme}
-              onClick={() => scroll(click)}
-            />
-            <Label for={item.id} theme={theme} active={item.active}>
-              {item.icon === "ask" && <Icon ask className="icon" />}
-              {item.icon === "box" && <Icon box className="icon" />}
-              {item.icon === "map" && <Icon map className="icon" />}
-              {item.icon === "tools" && <Icon tools className="icon" />}
-              {item.icon === "protection" && <Icon protection className="icon" />}
-              {item.additional && (
-                <Strong theme={theme} active={item.active}>
-                  {item.additional}
+            <Input id={id} name={name} type="radio" theme={theme} onClick={() => scroll(click)} />
+            <Label for={id} theme={theme} active={active ? true : false}>
+              {icon === "ask" && <Icon ask className="icon" />}
+              {icon === "box" && <Icon box className="icon" />}
+              {icon === "map" && <Icon map className="icon" />}
+              {icon === "tools" && <Icon tools className="icon" />}
+              {icon === "protection" && <Icon protection className="icon" />}
+              {additional && (
+                <Strong theme={theme} active={active ? true : false}>
+                  {additional}
                 </Strong>
               )}
-              {item.icon === "rocket" && <Icon rocket className="icon" />}
-              <Title theme={theme} active={item.active}>
-                {item.title}
+              {icon === "rocket" && <Icon rocket className="icon" />}
+              <Title theme={theme} active={active}>
+                {title}
               </Title>
-              <Description theme={theme} active={item.active}>
-                {item.description}
+              <Description theme={theme} active={active}>
+                {description}
               </Description>
             </Label>
           </>
         ) : (
           <>
-            <Input id={item.id} name={name} type="radio" theme={theme} disabled />
-            <Label for={item.id} theme={theme} active={item.active}>
-              {item.icon === "ask" && <Icon ask className="icon" />}
-              {item.icon === "box" && <Icon box className="icon" />}
-              {item.icon === "map" && <Icon map className="icon" />}
-              {item.icon === "tools" && <Icon tools className="icon" />}
-              {item.icon === "protection" && <Icon protection className="icon" />}
-              {item.additional && (
-                <Strong theme={theme} active={item.active}>
-                  {item.additional}
+            <Input id={id} name={name} type="radio" theme={theme} disabled />
+            <Label for={id} theme={theme} active={active}>
+              {icon === "ask" && <Icon ask className="icon" />}
+              {icon === "box" && <Icon box className="icon" />}
+              {icon === "map" && <Icon map className="icon" />}
+              {icon === "tools" && <Icon tools className="icon" />}
+              {icon === "protection" && <Icon protection className="icon" />}
+              {additional && (
+                <Strong theme={theme} active={active}>
+                  {additional}
                 </Strong>
               )}
-              {item.icon === "rocket" && <Icon rocket className="icon" />}
-              <Title theme={theme} active={item.active}>
-                {item.title}
+              {icon === "rocket" && <Icon rocket className="icon" />}
+              <Title theme={theme} active={active}>
+                {title}
               </Title>
-              <Description theme={theme} active={item.active}>
-                {item.description}
+              <Description theme={theme} active={active}>
+                {description}
               </Description>
             </Label>
           </>

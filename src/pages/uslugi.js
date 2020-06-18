@@ -4,6 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 
 // IMPORT COMPONENT
 import Layout from "../layouts/index"
+import Seo from "../components/atoms/seo/seo"
 import List from "../components/molecules/list/list"
 import Article from "../components/molecules/article/article"
 
@@ -92,6 +93,10 @@ const ServiceCategory = props => {
                 {data.allDatoCmsService.nodes.map((content, i) => {
                   return <Article short key={i} content={content} />
                 })}
+                <Seo
+                  title="Oferujemy pomoc w naprawie Komputerów , Laptopów , Tabletów , Smartfonów"
+                  description="UXU - kadego dnia robimy to co kochamy czyli uzdrawianiem technologicznych cacuszek takich jak komputery ,laptopy , smartfony , tablety"
+                />
               </Layout>
             </>
           )

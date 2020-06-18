@@ -13,11 +13,11 @@ import ButtonCategory from "./category/category"
 // CREATE NEW COMPONENT
 
 const ButttonComponent = props => {
-  const { submit, icon, small, box, category, disabled } = props
+  const { submit, icon, small, box, category, disabled, onClick } = props
   if (submit) {
     return (
       <>
-        <ButtonSumbit disabled={disabled} {...props} small={small} />
+        <ButtonSumbit disabled={disabled} onClick={onClick} {...props} small={small} />
       </>
     )
   } else if (category) {

@@ -4,6 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 
 // IMPORT COMPONENT
 import Layout from "../layouts/index"
+import Seo from "../components/atoms/seo/seo"
 import List from "../components/molecules/list/list"
 import Article from "../components/molecules/article/article"
 
@@ -72,6 +73,10 @@ const ServiceCategory = props => {
                 {data.allDatoCmsTutorial.nodes.map((content, i) => {
                   return <Article short tutorial key={i} content={content} />
                 })}
+                <Seo
+                  title="Poradniki napraw Komputerów , Laptopów , Tabletów , Smartfonów"
+                  description="Technologia to nasza pasja dla tego te chętnie dzielimy się wiedzą odnośnie obsługi technicznej takich urządzeń jak komputery , laptopy , tablety , smartfony"
+                />
               </Layout>
             </>
           )

@@ -4,6 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 
 // IMPORT COMPONENT
 import Layout from "../layouts/index"
+import Seo from "../components/atoms/seo/seo"
 import List from "../components/molecules/list/list"
 import Article from "../components/molecules/article/article"
 
@@ -74,34 +75,6 @@ const ServiceCategory = props => {
                   name
                   slug
                 }
-                repairStep {
-                  ... on DatoCmsPktVideo {
-                    id
-                    title
-                    video {
-                      url
-                      title
-                      provider
-                      providerUid
-                      thumbnailUrl
-                      width
-                      height
-                    }
-                    description
-                  }
-                  ... on DatoCmsPkt {
-                    id
-                    description
-                    title
-                    image {
-                      alt
-                      title
-                      fixed {
-                        ...GatsbyDatoCmsFixed
-                      }
-                    }
-                  }
-                }
               }
             }
             allDatoCmsServicesCategory {
@@ -132,6 +105,11 @@ const ServiceCategory = props => {
                     return <Article short services key={i} content={content} />
                   }
                 })}
+                <Seo
+                  title={`${props.pageContext.content.name} lista usług`}
+                  description={`${contentBoxAds.title} Znajdziesz tutaj pełną listę usług dla : ${props.pageContext.content.name}`}
+                  url={`https://uxu.pl/uslugi/lista/${props.pageContext.content.slug}`}
+                />
               </Layout>
             </>
           )

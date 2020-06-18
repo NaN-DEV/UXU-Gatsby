@@ -1,17 +1,22 @@
 import styled, { css } from "styled-components"
 
 const button = css`
+  width: 100%;
   padding: 15px;
   margin: 0 auto;
   font-size: 2.4rem;
   text-align: center;
   border-radius: 3px;
   white-space: nowrap;
-  width: 100%;
   color: ${props => props.theme.muted};
-  background-color: ${props => props.theme.primary};
   font-family: ${props => props.theme.font_secondary};
-  box-shadow: 3px 3px 0px ${props => props.theme.dark};
+  background-color: ${props => (props.disabled ? props.theme.dark : props.theme.primary)};
+  box-shadow: 3px 3px 0px ${props => (props.disabled ? props.theme.primary : props.theme.dark)};
+  ${props =>
+    props.disabled &&
+    css`
+      cursor: no-drop !important;
+    `}
   &:hover {
     color: ${props => props.theme.muted};
     background-color: ${props => props.theme.dark};

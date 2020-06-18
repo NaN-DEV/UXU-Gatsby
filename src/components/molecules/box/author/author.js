@@ -38,14 +38,15 @@ const BoxAuthorComponent = props => {
           <BoxContent theme={theme}>
             <BoxAvatar theme={theme}>
               <Img
+                style={{ height: "100%" }}
                 fluid={content.avatar.fixed}
                 title={`${content.firstName} ${content.lastName}`}
               />
             </BoxAvatar>
             <BoxDataAuthor theme={theme}>
               <BoxName theme={theme}>{`${content.firstName} ${content.lastName}`}</BoxName>
-              <BoxNick theme={theme}>{content.nick}</BoxNick>
-              <BoxDecription theme={theme}>{desciption.slice(0, 40)}</BoxDecription>
+              <BoxNick theme={theme}>{`@${content.nick}`}</BoxNick>
+              <BoxDecription theme={theme}>{desciption.slice(0, 80)}</BoxDecription>
               <BoxTelephone theme={theme} href={`tel:${telephone}`}>{`+48 ${telephone.replace(
                 /(.{3})/g,
                 " $&"

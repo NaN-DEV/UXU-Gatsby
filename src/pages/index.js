@@ -4,6 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 
 // IMPORT COMPONENT
 import Layout from "../layouts/index"
+import Seo from "../components/atoms/seo/seo"
 import List from "../components/molecules/list/list"
 import Article from "../components/molecules/article/article"
 
@@ -72,12 +73,29 @@ const IndexPage = () => {
                 slug
               }
             }
+            datoCmsSite {
+              globalSeo {
+                fallbackSeo {
+                  description
+                  title
+                  twitterCard
+                }
+                siteName
+                titleSuffix
+                twitterAccount
+                facebookPageUrl
+              }
+            }
           }
         `}
         render={data => {
           return (
             <>
               <Layout siteBar="home" content={contentBoxAds}>
+                <Seo
+                  title={`${data.datoCmsSite.globalSeo.fallbackSeo.title}`}
+                  description={data.datoCmsSite.globalSeo.fallbackSeo.description}
+                />
                 <List
                   services
                   category

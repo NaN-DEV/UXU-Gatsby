@@ -97,10 +97,10 @@ export const Tag = styled.p`
 export const BoxElementTitle = styled.h2`
   flex: 100%;
   max-width: 100%;
-  text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 1.5rem 0;
+  text-align: center;
   font-family: ${props => props.theme.font_secondary};
   @media (min-width: ${props => props.theme.breakpoint_tablet}) {
     font-size: 2.4rem;
@@ -108,18 +108,19 @@ export const BoxElementTitle = styled.h2`
   }
 `
 export const Step = styled.div`
-  height: 16rem;
-  display: flex;
+  z-index: 0;
+  top: 8.5rem;
   width: 18rem;
+  display: flex;
+  height: 16rem;
+  margin: 0 auto;
+  overflow: hidden;
   font-size: 2.4rem;
   font-weight: bold;
+  position: relative;
   text-align: center;
   align-items: center;
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
   font-family: ${props => props.theme.font_secondary};
-  z-index: 0;
   &::before {
     z-index: -1;
     width: 100%;

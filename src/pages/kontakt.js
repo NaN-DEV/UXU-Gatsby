@@ -3,7 +3,9 @@ import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 
 // IMPORT COMPONENT
+
 import Layout from "../layouts/index"
+import Seo from "../components/atoms/seo/seo"
 import List from "../components/molecules/list/list"
 import Article from "../components/molecules/article/article"
 
@@ -68,7 +70,10 @@ const ServiceCategory = props => {
           return (
             <>
               <Layout siteBar="contact" content={contentBoxAds}>
-                ok
+                <Seo
+                  title="Kontakt"
+                  description="Szukasz kontaktu do naszego serwisu albo masz ochortę pogadać znami na inny temat ? Śmiało pisz nie gryziemy."
+                />
               </Layout>
             </>
           )

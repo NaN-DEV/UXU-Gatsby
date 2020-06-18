@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import BgImg from "gatsby-background-image"
 
 export const Article = styled.article`
@@ -38,13 +38,31 @@ export const MainTitle = styled.h1`
     font-size: 5rem;
   }
 `
+
 export const BoxDataArticle = styled.div`
-  width: 82%;
   display: flex;
   display: block;
   margin: 0 auto;
   flex-wrap: wrap;
+  justify-content: center;
+  ${props =>
+    props.video &&
+    css`
+      margin: 3rem auto;
+    `}
+  ${props =>
+    props.blockquote
+      ? css`
+          width: 100%;
+          margin: 3rem 0;
+          padding: 3rem 0;
+          background-color: #29292e;
+        `
+      : css`
+          width: 82%;
+        `}
 `
+
 export const BoxAuthorData = styled(Link)`
   color: #64707d;
   font-weight: 500;
@@ -109,9 +127,6 @@ export const BoxExcerpt = styled.p`
   padding: 3rem 0;
   text-align: left;
   font-size: 1.5rem;
-  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
-    font-size: 2.4rem;
-  }
 `
 export const StepListTitle = styled.h1`
   font-weight: 600;
@@ -178,5 +193,90 @@ export const StepDescription = styled.div`
     width: 60%;
     font-size: 2.4rem;
     padding-left: 1.5rem;
+  }
+`
+export const BoxHeader = styled.h1`
+  font-weight: 600;
+  font-size: 1.5rem;
+  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
+    font-size: 3rem;
+  }
+`
+export const BoxTextContent = styled.div`
+  display: block;
+  font-size: 1.5rem;
+  padding: 1.5rem 0;
+  ol {
+    list-style: none;
+    li {
+      font-size: 1.5rem;
+      position: relative;
+      counter-increment: step-counter;
+      padding: 1rem 0rem 0.5rem 4.3rem;
+      &::before {
+        width: 2.5rem;
+        padding: 3px 0;
+        text-align: center;
+        border-radius: 3px;
+        margin-right: 0.5rem;
+        display: inline-block;
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 8px;
+        content: counter(step-counter);
+        color: ${props => props.theme.muted};
+        background-color: ${props => props.theme.primary};
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    li {
+      padding: 0.5rem 0rem 0.5rem 2.5rem;
+      font-size: 1.5rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        text-align: center;
+        display: block;
+        position: absolute;
+        left: -1rem;
+        top: 0.6rem;
+        color: ${props => props.theme.muted};
+        margin: 0 1.25rem 0 0.75rem;
+        background-color: ${props => props.theme.primary};
+      }
+    }
+  }
+  @media (min-width: ${props => props.theme.breakpoint_mobile}) {
+    font-size: 1.5rem;
+    ol {
+      li {
+        &::before {
+          width: 3.7rem;
+        }
+      }
+    }
+    ul {
+      li {
+        &::before {
+          margin: 0.4rem 1.85rem 0.4rem 1.35rem;
+        }
+      }
+    }
+  }
+`
+export const BlockQuote = styled.div`
+  width: 82%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: ${props => props.theme.muted};
+  font-family: ${props => props.theme.font_secondary};
+  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
+    font-size: 2.4rem;
   }
 `

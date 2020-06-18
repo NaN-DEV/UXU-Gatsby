@@ -4,6 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 
 // IMPORT COMPONENT
 import Layout from "../layouts/index"
+import Seo from "../components/atoms/seo/seo"
 import List from "../components/molecules/list/list"
 import Article from "../components/molecules/article/article"
 
@@ -106,6 +107,12 @@ const AuthorPage = props => {
                     return <Article short tutorial key={i} content={content} />
                   }
                 })}
+                <Seo
+                  title={`Potrzebujesz pomocy w naprawie ${displayMainAuthor[0].firstName} ${displayMainAuthor[0].lastName} pomoże Ci`}
+                  description={`W UXU pracują pasjonaci dlatego też chętnie dzielimy się swoją wiedzą. Znajdziesz tutaj poradniki autorstwa ${displayMainAuthor[0].firstName} ${displayMainAuthor[0].lastName}`}
+                  image={displayMainAuthor[0].avatar.url}
+                  author={`${displayMainAuthor[0].firstName} ${displayMainAuthor[0].lastName}`}
+                />
               </Layout>
             </>
           )

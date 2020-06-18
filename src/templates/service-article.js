@@ -4,6 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 
 // IMPORT COMPONENT
 import Layout from "../layouts/index"
+import Seo from "../components/atoms/seo/seo"
 import List from "../components/molecules/list/list"
 import Article from "../components/molecules/article/article"
 
@@ -30,40 +31,14 @@ const ServiceArticle = props => {
                 meta {
                   firstPublishedAt(formatString: "DD MMM")
                 }
-                repairStep {
-                  ... on DatoCmsPktVideo {
-                    id
-                    title
-                    description
-                    video {
-                      url
-                      title
-                      provider
-                      providerUid
-                      thumbnailUrl
-                      width
-                      height
-                    }
-                  }
-                  ... on DatoCmsPkt {
-                    id
-                    description
-                    title
-                    image {
-                      alt
-                      title
-                      fixed {
-                        ...GatsbyDatoCmsFixed
-                      }
-                    }
-                  }
-                }
+
                 category {
                   id
                 }
 
                 mainImage {
                   alt
+                  url
                   title
                   fixed {
                     ...GatsbyDatoCmsFixed
@@ -107,6 +82,37 @@ const ServiceArticle = props => {
                     }
                   }
                 }
+                content {
+                  ... on DatoCmsHeader {
+                    id
+                    header
+                  }
+                  ... on DatoCmsBlockQuote {
+                    id
+                    content
+                  }
+                  ... on DatoCmsTextContent {
+                    id
+                    textContent
+                  }
+                  ... on DatoCmsImage {
+                    id
+                    image {
+                      alt
+                      title
+                      fixed {
+                        ...GatsbyDatoCmsFixed
+                      }
+                    }
+                  }
+                  ... on DatoCmsVideo {
+                    id
+                    video {
+                      url
+                      title
+                    }
+                  }
+                }
               }
             }
             allDatoCmsServicesCategory {
@@ -124,10 +130,13 @@ const ServiceArticle = props => {
           })
 
           let info = {
+            url: displayArticle[0].slug,
             title: displayArticle[0].title,
+            excerpt: displayArticle[0].excerpt,
             id: displayArticle[0].author.id,
             slug: displayArticle[0].author.slug,
             nick: displayArticle[0].author.nick,
+            mainImage: displayArticle[0].mainImage,
             avatar: displayArticle[0].author.avatar,
             repairCost: displayArticle[0].repairCost,
             lastName: displayArticle[0].author.lastName,
@@ -135,10 +144,19 @@ const ServiceArticle = props => {
             repairAverageTime: displayArticle[0].repairAverageTime,
           }
 
+          console.log(info)
+
           return (
             <>
               <Layout siteBar="serviceArticle" share={share} infoService={info}>
                 <Article full fullService content={displayArticle[0]} />
+                <Seo
+                  title={info.title}
+                  description={info.excerpt}
+                  image={info.mainImage.url}
+                  author={`${info.firstName} ${info.lastName}`}
+                  url={`https://uxu.pl/uslugi/artykul/${info.url}`}
+                />
               </Layout>
             </>
           )

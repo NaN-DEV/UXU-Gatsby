@@ -11,7 +11,6 @@ import ButtonClassic from "./classic/classic"
 import ButtonCategory from "./category/category"
 
 // CREATE NEW COMPONENT
-
 const ButttonComponent = props => {
   const { submit, icon, small, box, category, disabled, onClick } = props
   if (submit) {

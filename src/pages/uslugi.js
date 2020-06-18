@@ -91,8 +91,9 @@ const ServiceCategory = props => {
                   items={data.allDatoCmsServicesCategory.nodes}
                 />
                 {data.allDatoCmsService.nodes.map((content, i) => {
-                  return <Article short key={i} content={content} />
+                  return <Article short services key={i} content={content} />
                 })}
+
                 <Seo
                   title="Oferujemy pomoc w naprawie Komputerów , Laptopów , Tabletów , Smartfonów"
                   description="UXU - kadego dnia robimy to co kochamy czyli uzdrawianiem technologicznych cacuszek takich jak komputery ,laptopy , smartfony , tablety"

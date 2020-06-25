@@ -7,11 +7,13 @@ import Layout from "../layouts/index"
 import Seo from "../components/atoms/seo/seo"
 import List from "../components/molecules/list/list"
 import Article from "../components/molecules/article/article"
+import Pagination from "../components/molecules/pagination/pagination"
 
 // CREATE NEW COMPONENT
 
 export default class ServiceCategory extends React.Component {
   render() {
+    console.log(this.props)
     const contentBoxAds = {
       title: `Problem z ${
         (this.props.pageContext.content.name === "laptopy" && "laptopem") ||
@@ -52,6 +54,11 @@ export default class ServiceCategory extends React.Component {
             title={`${this.props.pageContext.content.name} lista usług`}
             description={`${contentBoxAds.title} Znajdziesz tutaj pełną listę usług dla : ${this.props.pageContext.content.name}`}
             url={`https://uxu.pl/uslugi/lista/${this.props.pageContext.content.slug}`}
+          />
+          <Pagination
+            currentPage={this.props.pageContext.currentPage}
+            numPages={this.props.pageContext.numPages}
+            slug={`/uslugi/${this.props.pageContext.content.slug}`}
           />
         </Layout>
       </>

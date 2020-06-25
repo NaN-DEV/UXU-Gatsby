@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const Ul = styled.ul`
   flex: 100%;
@@ -10,21 +10,51 @@ export const Ul = styled.ul`
 
   @media (min-width: ${props => props.theme.breakpoint_tablet}) {
     flex: none;
-    width: auto;
+    display: inline-block;
+    text-align: center;
   }
 `
 export const Li = styled.li`
   flex: 100%;
   width: 100%;
-  padding: 0.5rem 0;
-  font-size: 1.5rem;
+  border-radius: 3px;
   text-align: center;
+  margin: 3rem 1.5rem;
+  font-family: "Roboto Mono", monospace;
+  ${props =>
+    props.disablet
+      ? css`
+          cursor: no-drop;
+          color: ${props => props.theme.muted};
+          background-color: ${props => props.theme.dark};
+          box-shadow: 3px 3px 0px ${props => props.theme.primary};
+        `
+      : css`
+          color: ${props => props.theme.muted};
+          background-color: ${props => props.theme.primary};
+          box-shadow: 3px 3px 0px ${props => props.theme.dark};
+          &:hover {
+            color: ${props => props.theme.muted};
+            background-color: ${props => props.theme.dark};
+            box-shadow: 3px 3px 0px ${props => props.theme.primary};
+          }
+        `}
+  p {
+    display: block;
+    line-height: 1;
+    font-weight: bold;
+    padding: 7.5px 15px;
+    color: #ffffff !important;
+  }
   a {
-    font-size: 1.5rem;
+    display: block;
+    line-height: 1;
+    padding: 7.5px 15px;
+    color: #ffffff !important;
   }
   @media (min-width: ${props => props.theme.breakpoint_tablet}) {
     flex: auto;
     width: auto;
-    padding: 0 0 0 1.5rem;
+    display: inline-block;
   }
 `

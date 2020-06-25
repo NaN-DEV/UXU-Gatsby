@@ -115,6 +115,7 @@ exports.createPages = async ({ graphql, actions }) => {
         component: require.resolve(`./src/templates/service-list-all.js`),
         context: {
           index,
+          numPages,
           content: category,
           currentPage: i + 1,
           limit: postsPerPage,
@@ -141,6 +142,7 @@ exports.createPages = async ({ graphql, actions }) => {
         component: require.resolve(`./src/templates/service-list-category.js`),
         context: {
           index,
+          numPages,
           content: category,
           currentPage: i + 1,
           limit: postsPerPage,

@@ -12,7 +12,6 @@ import { Ul, Li } from "./style/style"
 
 const PaginationComponent = props => {
   const { currentPage, numPages, slug } = props
-  console.log(numPages)
   return (
     <>
       <Ul theme={theme} {...props}>
@@ -25,12 +24,12 @@ const PaginationComponent = props => {
         ) : (
           <>
             <Li theme={theme}>
-              <Link to={`/${slug}${currentPage > 1 && `/${currentPage - 1}`}`}>Wstecz</Link>
+              <Link to={`/${slug}${currentPage === 2 ? `` : `/${currentPage - 1}`}`}>Wstecz</Link>
             </Li>
           </>
         )}
 
-        {currentPage === numPages - 1 ? (
+        {currentPage === numPages ? (
           <>
             <Li theme={theme} disablet>
               <p>Dalej</p>

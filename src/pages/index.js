@@ -30,7 +30,7 @@ const IndexPage = () => {
       <StaticQuery
         query={graphql`
           query Home {
-            allDatoCmsService {
+            allDatoCmsService(limit: 3) {
               nodes {
                 id
                 slug
@@ -44,6 +44,10 @@ const IndexPage = () => {
                   fixed {
                     ...GatsbyDatoCmsFixed
                   }
+                }
+                category {
+                  id
+                  name
                 }
                 author {
                   id
@@ -89,6 +93,48 @@ const IndexPage = () => {
           }
         `}
         render={data => {
+          const sortCategoryArticlea = (allCategory, allArticle) => {
+            const ArrayListSortArticle = []
+            allCategory.forEach(item => {
+              ArrayListSortArticle.push([])
+            })
+            allCategory.forEach((category, indexCaregory) => {
+              allArticle.forEach((article, indexArticle) => {
+                let articleSwitch
+                article.category.forEach(item => {
+                  if (item.id === category.id) {
+                    articleSwitch = true
+                  } else {
+                    return null
+                  }
+                })
+                if (articleSwitch) {
+                  ArrayListSortArticle[indexCaregory].push(article)
+                }
+              })
+            })
+            return { kupa: ArrayListSortArticle }
+          }
+
+          const sortCategoryArticle = (allCategory, allArticle, limitArray) => {
+            MainArray
+
+            const slug = ""
+            const name = ""
+            const limit = 0
+            const article = []
+
+            allCategory.forEach(item => {
+              article.push([])
+            })
+
+            return { slug: slug, name: name, limit: limit, article: article }
+          }
+
+          const test = { spoko: "ookxx" }
+          console.log((test.kupa = "spoko"))
+          console.log(test)
+
           return (
             <>
               <Layout siteBar="home" content={contentBoxAds}>

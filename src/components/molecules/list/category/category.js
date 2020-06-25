@@ -32,7 +32,7 @@ const ListCategoryComponent = props => {
                     title={item.name}
                     slug={`${
                       services
-                        ? `uslugi/lista/${item.slug}`
+                        ? `uslugi/${item.slug}`
                         : `${
                             author
                               ? `autor/${item.slug}`

@@ -15,6 +15,9 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           slug
           title
+          category {
+            id
+          }
         }
       }
       allDatoCmsTutorialsCategory {
@@ -29,6 +32,9 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           slug
           title
+          category {
+            id
+          }
         }
       }
       allDatoCmsServicesCategory {
@@ -43,6 +49,9 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           slug
           title
+          category {
+            id
+          }
         }
       }
       allDatoCmsTag {
@@ -69,16 +78,82 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  queryResults.data.allDatoCmsServicesCategory.nodes.forEach((content, index) => {
-    createPage({
-      path: `uslugi/lista/${content.slug}`,
-      component: require.resolve(`./src/templates/service-list.js`),
-      context: { content, index },
+
+  const sortCategoryArticlea = (allCategory, allArticle) => {
+    const ArrayListSortArticle = []
+    allCategory.forEach(item => {
+      ArrayListSortArticle.push([])
+    })
+    allCategory.forEach((category, indexCaregory) => {
+      allArticle.forEach((article, indexArticle) => {
+        let articleSwitch
+        article.category.forEach(item => {
+          if (item.id === category.id) {
+            articleSwitch = true
+          } else {
+            return null
+          }
+        })
+        if (articleSwitch) {
+          ArrayListSortArticle[indexCaregory].push(article)
+        }
+      })
+    })
+    return ArrayListSortArticle
+  }
+
+  // BUILD LIST SERVICE ALL
+  queryResults.data.allDatoCmsServicesCategory.nodes.forEach((item, index) => {
+    const category = item
+    const posts = queryResults.data.allDatoCmsService.nodes
+    const postsPerPage = 3
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/uslugi/` : `/uslugi/${i + 1}`,
+        component: require.resolve(`./src/templates/service-list-all.js`),
+        context: {
+          index,
+          content: category,
+          currentPage: i + 1,
+          limit: postsPerPage,
+          category: category.id,
+          skip: i * postsPerPage,
+        },
+      })
     })
   })
+
+  // BUILD LIST SERVICE IN CATEGORY
+  sortCategoryArticlea(
+    queryResults.data.allDatoCmsServicesCategory.nodes,
+    queryResults.data.allDatoCmsService.nodes
+  ).forEach((item, index) => {
+    const category = queryResults.data.allDatoCmsServicesCategory.nodes[index]
+    const posts = item
+    const postsPerPage = 3
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/uslugi/${category.slug}` : `/uslugi/${category.slug}/${i + 1}`,
+        component: require.resolve(`./src/templates/service-list-category.js`),
+        context: {
+          index,
+          content: category,
+          currentPage: i + 1,
+          limit: postsPerPage,
+          category: category.id,
+          skip: i * postsPerPage,
+        },
+      })
+    })
+  })
+
   queryResults.data.allDatoCmsService.nodes.forEach((content, index) => {
     createPage({
-      path: `uslugi/artykul/${content.slug}`,
+      path: `uslugi/${content.slug}`,
       component: require.resolve(`./src/templates/service-article.js`),
       context: { content, index },
     })

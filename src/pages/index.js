@@ -7,6 +7,7 @@ import Layout from "../layouts/index"
 import Seo from "../components/atoms/seo/seo"
 import List from "../components/molecules/list/list"
 import Article from "../components/molecules/article/article"
+import Pagination from "../components/molecules/pagination/pagination"
 
 // CREATE NEW COMPONENT
 
@@ -30,7 +31,7 @@ const IndexPage = () => {
       <StaticQuery
         query={graphql`
           query Home {
-            allDatoCmsService(limit: 3) {
+            allDatoCmsService {
               nodes {
                 id
                 slug
@@ -93,48 +94,7 @@ const IndexPage = () => {
           }
         `}
         render={data => {
-          const sortCategoryArticlea = (allCategory, allArticle) => {
-            const ArrayListSortArticle = []
-            allCategory.forEach(item => {
-              ArrayListSortArticle.push([])
-            })
-            allCategory.forEach((category, indexCaregory) => {
-              allArticle.forEach((article, indexArticle) => {
-                let articleSwitch
-                article.category.forEach(item => {
-                  if (item.id === category.id) {
-                    articleSwitch = true
-                  } else {
-                    return null
-                  }
-                })
-                if (articleSwitch) {
-                  ArrayListSortArticle[indexCaregory].push(article)
-                }
-              })
-            })
-            return { kupa: ArrayListSortArticle }
-          }
-
-          const sortCategoryArticle = (allCategory, allArticle, limitArray) => {
-            MainArray
-
-            const slug = ""
-            const name = ""
-            const limit = 0
-            const article = []
-
-            allCategory.forEach(item => {
-              article.push([])
-            })
-
-            return { slug: slug, name: name, limit: limit, article: article }
-          }
-
-          const test = { spoko: "ookxx" }
-          console.log((test.kupa = "spoko"))
-          console.log(test)
-
+          const numPages = Math.ceil(data.allDatoCmsService.nodes.length / 3)
           return (
             <>
               <Layout siteBar="home" content={contentBoxAds}>
@@ -150,8 +110,11 @@ const IndexPage = () => {
                   items={data.allDatoCmsServicesCategory.nodes}
                 />
                 {data.allDatoCmsService.nodes.map((content, i) => {
-                  return <Article short services key={i} content={content} />
+                  if (i < 3) {
+                    return <Article short services key={i} content={content} />
+                  }
                 })}
+                <Pagination currentPage={1} numPages={numPages} slug="/uslugi" />
               </Layout>
             </>
           )

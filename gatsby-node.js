@@ -153,14 +153,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
   queryResults.data.allDatoCmsService.nodes.forEach((content, index) => {
     createPage({
-      path: `uslugi/${content.slug}`,
+      path: `uslugi/artykul/${content.slug}`,
       component: require.resolve(`./src/templates/service-article.js`),
       context: { content, index },
     })
   })
   queryResults.data.allDatoCmsTutorialsCategory.nodes.forEach((content, index) => {
     createPage({
-      path: `poradniki/lista/${content.slug}`,
+      path: `poradniki/${content.slug}`,
       component: require.resolve(`./src/templates/tutorial-list.js`),
       context: { content, index },
     })
@@ -174,7 +174,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   queryResults.data.allDatoCmsBlogCategory.nodes.forEach((content, index) => {
     createPage({
-      path: `blog/lista/${content.slug}`,
+      path: `blog/${content.slug}`,
       component: require.resolve(`./src/templates/blog-list.js`),
       context: { content, index },
     })

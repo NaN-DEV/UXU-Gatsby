@@ -3,32 +3,50 @@ import React from "react"
 import { Link } from "gatsby"
 
 // IMPORT SETTINGS STYLE
-import theme from "../../../../layouts/settings"
+import theme from "../../../layouts/settings"
 
 // IMPORT SETTINGS COMPONENT
 import { Ul, Li } from "./style/style"
 
 // CREATE NEW COMPONENT
 
-const ListLevelComponent = props => {
-  const { items, hashtag } = props
+const PaginationComponent = props => {
+  const { currentPage, numPages, slug } = props
+  console.log(numPages)
   return (
     <>
       <Ul theme={theme} {...props}>
-        {items &&
-          items.map((item, i) => {
-            return (
-              <Li theme={theme} key={i}>
-                <Link to={`/${item.slug}`} title={item.title}>
-                  {hashtag ? `#${item.title.replace(/\s/g, "_")}` : item.title}
-                </Link>
-              </Li>
-            )
-          })}
+        {currentPage === 1 ? (
+          <>
+            <Li theme={theme} disablet>
+              <p>Wstecz</p>
+            </Li>
+          </>
+        ) : (
+          <>
+            <Li theme={theme}>
+              <Link to={`/${slug}${currentPage > 1 && `/${currentPage - 1}`}`}>Wstecz</Link>
+            </Li>
+          </>
+        )}
+
+        {currentPage === numPages - 1 ? (
+          <>
+            <Li theme={theme} disablet>
+              <p>Dalej</p>
+            </Li>
+          </>
+        ) : (
+          <>
+            <Li theme={theme}>
+              <Link to={`/${slug}${currentPage && `/${currentPage + 1}`}`}>Dalej</Link>
+            </Li>
+          </>
+        )}
       </Ul>
     </>
   )
 }
 
 // EXPORT NEW COMPONENT
-export default ListLevelComponent
+export default PaginationComponent

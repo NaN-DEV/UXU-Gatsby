@@ -94,7 +94,6 @@ const SectionContactComponent = props => {
             }, odebraliśmy twoje pytanie. Odpoowiemy ci w max 24h`
           )
           resetForm()
-          console.log(res)
         })
         .catch(err => {
           console.log(err)

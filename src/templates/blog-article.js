@@ -143,7 +143,7 @@ const BlogArticle = props => {
             locationCity: displayArticle[0].author.locationCity,
             locationCountry: displayArticle[0].author.locationCountry,
           }
-          console.log(info)
+
           return (
             <>
               <Layout siteBar="blogArticle" info={info}>

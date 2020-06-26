@@ -1,6 +1,7 @@
 // IMPORT PLUGIN
 import React from "react"
 import { Link } from "gatsby"
+import PropTypes from "prop-types"
 
 // IMPORT SETTINGS STYLE
 import theme from "../../../layouts/settings"
@@ -11,7 +12,63 @@ import { Ul, Li } from "./style/style"
 // CREATE NEW COMPONENT
 
 const PaginationComponent = props => {
-  const { currentPage, numPages, slug } = props
+  const { currentPage, numPages, showPages, slug } = props
+
+  const showNumberPages = () => {
+    const listButton = []
+    for (let i = 0; numPages >= currentPage + i; i++) {
+      if (showPages > i) {
+        if (currentPage === 1) {
+          listButton.push(
+            <>
+              {i + currentPage === currentPage ? (
+                <>
+                  <Li theme={theme} disablet>
+                    <p>{i + currentPage}</p>
+                  </Li>
+                </>
+              ) : (
+                <>
+                  <Li theme={theme}>
+                    <Link to={`${slug}${i + currentPage <= 1 ? `` : `/${i + currentPage}`}`}>
+                      {i + currentPage}
+                    </Link>
+                  </Li>
+                </>
+              )}
+            </>
+          )
+        } else if (currentPage > 1 && showPages - 1 > i) {
+          listButton.push(
+            <>
+              {i + currentPage === currentPage ? (
+                <>
+                  <Li theme={theme}>
+                    <Link to={`${slug}${currentPage - 1 <= 1 ? `` : `/${currentPage - 1}`}`}>
+                      {currentPage - 1}
+                    </Link>
+                  </Li>
+                  <Li theme={theme} disablet>
+                    <p>{i + currentPage}</p>
+                  </Li>
+                </>
+              ) : (
+                <>
+                  <Li theme={theme}>
+                    <Link to={`${slug}${i + currentPage <= 1 ? `` : `/${i + currentPage}`}`}>
+                      {i + currentPage}
+                    </Link>
+                  </Li>
+                </>
+              )}
+            </>
+          )
+        }
+      }
+    }
+    return listButton
+  }
+
   return (
     <>
       <Ul theme={theme} {...props}>
@@ -24,10 +81,12 @@ const PaginationComponent = props => {
         ) : (
           <>
             <Li theme={theme}>
-              <Link to={`/${slug}${currentPage === 2 ? `` : `/${currentPage - 1}`}`}>Wstecz</Link>
+              <Link to={`${slug}${currentPage === 2 ? `` : `/${currentPage - 1}`}`}>Wstecz</Link>
             </Li>
           </>
         )}
+
+        {showNumberPages()}
 
         {currentPage === numPages ? (
           <>
@@ -38,7 +97,7 @@ const PaginationComponent = props => {
         ) : (
           <>
             <Li theme={theme}>
-              <Link to={`/${slug}${currentPage && `/${currentPage + 1}`}`}>Dalej</Link>
+              <Link to={`${slug}${currentPage && `/${currentPage + 1}`}`}>Dalej</Link>
             </Li>
           </>
         )}
@@ -49,3 +108,11 @@ const PaginationComponent = props => {
 
 // EXPORT NEW COMPONENT
 export default PaginationComponent
+
+PaginationComponent.propTypes = {
+  showPages: PropTypes.number,
+}
+
+PaginationComponent.defaultProps = {
+  showPages: 3,
+}

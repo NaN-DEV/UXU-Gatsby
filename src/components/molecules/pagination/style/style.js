@@ -4,6 +4,7 @@ export const Ul = styled.ul`
   flex: 100%;
   width: 100%;
   display: flex;
+  margin: 3rem 0;
   flex-wrap: wrap;
   list-style: none;
   justify-content: center;
@@ -19,7 +20,7 @@ export const Li = styled.li`
   width: 100%;
   border-radius: 3px;
   text-align: center;
-  margin: 3rem 1.5rem;
+  margin: 1.5rem 0.3rem 1.5rem 0;
   font-family: "Roboto Mono", monospace;
   ${props =>
     props.disablet
@@ -55,6 +56,7 @@ export const Li = styled.li`
   @media (min-width: ${props => props.theme.breakpoint_tablet}) {
     flex: auto;
     width: auto;
+    margin: 1.5rem;
     display: inline-block;
   }
 `

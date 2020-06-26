@@ -34,10 +34,6 @@ import {
 const validate = values => {
   const errors = {}
 
-  if (true) {
-    console.log(values)
-  }
-
   if (!values.service && !values.service.length > 0) {
     errors.service = "Co nam oddajesz ?"
   }
@@ -146,7 +142,6 @@ const SectionReapairComponent = props => {
             } twoje zgłoszenie zostało przyjęte`
           )
           resetForm()
-          console.log(res)
         })
         .catch(err => {
           console.log(err)

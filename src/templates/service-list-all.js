@@ -13,7 +13,6 @@ import Pagination from "../components/molecules/pagination/pagination"
 
 export default class ServiceCategory extends React.Component {
   render() {
-    console.log(this.props.pathContext)
     const contentBoxAds = {
       title: `Problem z ${
         (this.props.pageContext.content.name === "laptopy" && "laptopem") ||

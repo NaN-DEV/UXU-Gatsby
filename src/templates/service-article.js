@@ -144,8 +144,6 @@ const ServiceArticle = props => {
             repairAverageTime: displayArticle[0].repairAverageTime,
           }
 
-          console.log(info)
-
           return (
             <>
               <Layout siteBar="serviceArticle" share={share} infoService={info}>

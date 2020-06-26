@@ -77,10 +77,9 @@ const ArticleFullServiceComponent = props => {
       }
     }
   `)
-  console.log(data)
+
   const { content, services, blog, tutorial } = props
 
-  console.log(content)
   let disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: content.id },

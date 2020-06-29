@@ -88,7 +88,11 @@ module.exports = {
           {
             userAgent: "*",
             allow: "/",
-            disallow: ["https://www.uxu.pl/autor/", "https://www.uxu.pl/kontakt"],
+            disallow: [
+              "https://www.uxu.pl/autor/",
+              "https://www.uxu.pl/kontakt",
+              "https://www.uxu.pl/autor/melon",
+            ],
           },
         ],
       },

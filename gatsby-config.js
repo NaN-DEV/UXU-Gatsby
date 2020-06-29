@@ -77,5 +77,19 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.uxu.pl",
+        sitemap: "https://www.uxu.pl/sitemap.xml",
+        policy: [
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: ["https://www.uxu.pl/autor/", "https://www.uxu.pl/kontakt"],
+          },
+        ],
+      },
+    },
   ],
 }

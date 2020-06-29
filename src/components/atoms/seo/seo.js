@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql, Link } from "gatsby"
 
-function SEO({ description, lang, meta, title, url, image, author }) {
+function SEO({ description, lang, meta, title, url, image, author, schema }) {
   return (
     <>
       <StaticQuery
@@ -75,6 +75,10 @@ function SEO({ description, lang, meta, title, url, image, author }) {
                     type: "text/javascript",
                     innerHTML:
                       "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-168799110-2');",
+                  },
+                  {
+                    type: "application/ld+json",
+                    innerHTML: schema,
                   },
                 ]}
               />

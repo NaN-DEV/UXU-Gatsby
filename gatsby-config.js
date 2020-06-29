@@ -5,8 +5,10 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    siteUrl: `https://www.uxu.pl`,
   },
   plugins: [
+    { resolve: `gatsby-plugin-sitemap` },
     { resolve: `gatsby-plugin-sharp` },
     { resolve: `gatsby-plugin-next-seo` },
     { resolve: `gatsby-plugin-react-svg` },

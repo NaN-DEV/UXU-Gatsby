@@ -4,7 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 
 // IMPORT COMPONENT
 import Layout from "../layouts/index"
-
+import Seo from "../components/atoms/seo/seo"
 import List from "../components/molecules/list/list"
 import Article from "../components/molecules/article/article"
 import { createGlobalStyle } from "styled-components"
@@ -148,6 +148,12 @@ const BlogArticle = props => {
             <>
               <Layout siteBar="blogArticle" info={info}>
                 <Article full fullBlog content={displayArticle[0]} />
+                <Seo
+                  description={displayArticle[0].excerpt}
+                  image={displayMainTag[0].mainImage.fixed}
+                  url={`https://uxu.pl/blog/artykul/${displayMainTag[0].slug}`}
+                  title={isplayArticle[0].title}
+                />
               </Layout>
             </>
           )

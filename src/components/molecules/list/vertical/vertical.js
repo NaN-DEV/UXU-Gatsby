@@ -53,10 +53,10 @@ const ListVerticalComponent = props => {
       `
                           : `${
                               blog
-                                ? `blog/lista/${item.slug}`
+                                ? `blog/${item.slug}`
                                 : `${
                                     tutorials
-                                      ? `poradniki/lista/${item.slug}`
+                                      ? `poradniki/${item.slug}`
                                       : `${
                                           author
                                             ? `autor/${item.slug}`

@@ -82,7 +82,6 @@ const ArticleFullBlogComponent = props => {
               )
             })}
           </BoxTag>
-          <BoxExcerpt theme={theme}>{content.excerpt}</BoxExcerpt>
         </BoxDataArticle>
         {content.content.map((item, index) => {
           if (item.__typename === "DatoCmsHeader") {
@@ -139,7 +138,8 @@ const ArticleFullBlogComponent = props => {
             )
           }
         })}
-        <BoxDataArticle></BoxDataArticle>
+      </Article>
+      <Article theme={theme} padding>
         <BoxDataArticle>
           <DiscussionEmbed style={{ width: "100%" }} {...disqusConfig} />
         </BoxDataArticle>

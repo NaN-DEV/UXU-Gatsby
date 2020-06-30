@@ -8,6 +8,14 @@ export const Article = styled.article`
   flex-wrap: wrap;
   border-radius: 3px;
   margin-bottom: 1.5rem;
+  ${props =>
+    props.padding
+      ? css`
+          padding: 3rem 0;
+        `
+      : css`
+          padding-bottom: 3rem;
+        `}
   border: 1px solid ${props => props.theme.dark};
   background-color: ${props => props.theme.muted};
   box-shadow: 1px 1px 3px 0px ${props => props.theme.dark};
@@ -35,7 +43,7 @@ export const MainTitle = styled.h1`
   font-size: 2.4rem;
   padding: 3rem 0 1.5rem 0;
   @media (min-width: ${props => props.theme.breakpoint_tablet}) {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 `
 
@@ -138,7 +146,7 @@ export const BoxHeader = styled.h1`
   font-weight: 600;
   font-size: 1.5rem;
   @media (min-width: ${props => props.theme.breakpoint_tablet}) {
-    font-size: 5rem;
+    font-size: 3rem;
   }
 `
 export const BoxTextContent = styled.div`
@@ -183,10 +191,8 @@ export const BoxTextContent = styled.div`
     }
   }
   @media (min-width: ${props => props.theme.breakpoint_mobile}) {
-    font-size: 2.4rem;
     ol {
       li {
-        font-size: 2.4rem;
         &::before {
           width: 3.7rem;
         }
@@ -194,7 +200,6 @@ export const BoxTextContent = styled.div`
     }
     ul {
       li {
-        font-size: 2.4rem;
         &::before {
           margin: 0.4rem 1.85rem 0.4rem 1.35rem;
         }
@@ -208,7 +213,4 @@ export const BlockQuote = styled.div`
   font-size: 1.5rem;
   color: ${props => props.theme.muted};
   font-family: ${props => props.theme.font_secondary};
-  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
-    font-size: 2.4rem;
-  }
 `

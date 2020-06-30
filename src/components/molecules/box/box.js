@@ -33,14 +33,14 @@ const BoxComponent = props => {
 
   return (
     <>
-      {tag && <BoxTag content={content} />}
-      {ads && <BoxAds content={content} big={big ? 1 : 0} />}
-      {info && <BoxInfo content={content} />}
-      {skill && <BoxSkill content={content} />}
-      {author && <BoxAuthor content={content} />}
-      {help && <BoxHelp content={help} />}
-      {infoService && <BoxiInfoService content={content} />}
-      {classic && <BoxClassic>{children}</BoxClassic>}
+      {tag && <BoxTag content={content} {...props} />}
+      {ads && <BoxAds content={content} {...props} big={big ? 1 : 0} />}
+      {info && <BoxInfo content={content} {...props} />}
+      {skill && <BoxSkill content={content} {...props} />}
+      {author && <BoxAuthor content={content} {...props} />}
+      {help && <BoxHelp content={help} {...props} />}
+      {infoService && <BoxiInfoService content={content} {...props} />}
+      {classic && <BoxClassic {...props}>{children}</BoxClassic>}
     </>
   )
 }

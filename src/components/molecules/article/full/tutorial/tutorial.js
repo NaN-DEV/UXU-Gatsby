@@ -72,7 +72,7 @@ const ArticleFullServiceComponent = props => {
                   <Link
                     key={tag.id}
                     title={tag.name}
-                    to={`/tag/${tag.slug}`}
+                    to={`/tag/${tag.slug}/poradniki/`}
                     style={{
                       color: `${tag.color.colorTxt.hex}`,
                       backgroundColor: `${tag.color.colorBackground.hex}`,

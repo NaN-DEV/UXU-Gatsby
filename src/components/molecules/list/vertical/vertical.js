@@ -11,7 +11,19 @@ import { Ul, Li, A } from "./style/style"
 // CREATE NEW COMPONENT
 
 const ListVerticalComponent = props => {
-  const { items, hashtag, monkeysing, tag, blog, tutorials, author, skill } = props
+  const {
+    items,
+    hashtag,
+    monkeysing,
+    tag,
+    blog,
+    tutorials,
+    author,
+    skill,
+    boxTagblog,
+    boxTagservice,
+    boxTagtutorial,
+  } = props
 
   return (
     <>
@@ -25,7 +37,20 @@ const ListVerticalComponent = props => {
                     <Link
                       to={`/${
                         tag
-                          ? `tag/${item.slug}`
+                          ? `${
+                              boxTagblog
+                                ? `${`tag/${item.slug}`}/blog/`
+                                : `${
+                                    boxTagservice
+                                      ? `${`tag/${item.slug}/uslugi/`}`
+                                      : `${
+                                          boxTagtutorial
+                                            ? `${`tag/${item.slug}/poradniki/`}`
+                                            : `${`tag/${item.slug}/`}`
+                                        }`
+                                  }`
+                            }
+      `
                           : `${
                               blog
                                 ? `blog/lista/${item.slug}`

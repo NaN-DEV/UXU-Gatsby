@@ -14,7 +14,8 @@ import Button from "../../../atoms/button/button"
 
 // CREATE NEW COMPONENT
 const BoxTagComponent = props => {
-  const { content } = props
+  const { content, boxTagblog, boxTagservice, boxTagtutorial } = props
+  console.log(props)
 
   return (
     <>
@@ -25,10 +26,20 @@ const BoxTagComponent = props => {
             {content.tag && (
               <>
                 <BoxTag theme={theme}>
-                  <List vertical hashtag tag items={content.tag} />
+                  {boxTagblog && <List vertical hashtag tag boxTagblog items={content.tag} />}
+                  {boxTagservice && <List vertical hashtag tag boxTagservice items={content.tag} />}
+                  {boxTagtutorial && (
+                    <List vertical hashtag tag boxTagtutorial items={content.tag} />
+                  )}
                 </BoxTag>
               </>
             )}
+            <Button
+              className="button"
+              big
+              slug={content.slug}
+              title={`Co to jest ${content.name} ?`}
+            />
           </Row>
         </Box>
       </Row>

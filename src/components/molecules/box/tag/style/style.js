@@ -7,6 +7,9 @@ export const Box = styled.div`
   background-color: ${props => props.theme.muted};
   box-shadow: 3px 3px 0px ${props => props.theme.dark};
   border: ${props => props.theme.border} solid ${props => props.theme.primary};
+  .button {
+    margin: 1.5rem auto;
+  }
 `
 
 export const Title = styled.h1`

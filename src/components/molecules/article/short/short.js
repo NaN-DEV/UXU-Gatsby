@@ -88,7 +88,9 @@ const ArticleShortComponent = props => {
                     services
                       ? `/tag/${tag.slug}/uslugi/`
                       : `${
-                          blog ? `/tag/${tag.slug}` : `${tutorial && `/tag/${tag.slug}/poradniki/`}`
+                          blog
+                            ? `/tag/${tag.slug}/blog`
+                            : `${tutorial && `/tag/${tag.slug}/poradniki/`}`
                         }`
                   }
                   title={tag.name}

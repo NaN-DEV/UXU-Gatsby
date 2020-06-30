@@ -34,56 +34,23 @@ import Button from "../../../../atoms/button/button"
 
 // CREATE NEW COMPONENT
 
-const ArticleFullBlogComponent = props => {
+const ArticleFullTagComponent = props => {
   const { content, services, blog, tutorial } = props
-
   let disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: content.id },
   }
-
+  console.log(props.listType)
   return (
     <>
       <Article theme={theme}>
-        <BackgroundImage theme={theme} fluid={content.mainImage.fixed} />
+        {content.mainImage.fixed && (
+          <BackgroundImage theme={theme} fluid={content.mainImage.fixed} />
+        )}
+
         <BoxContent theme={theme}>
-          <MainTitle theme={theme}>{content.title}</MainTitle>
+          <MainTitle theme={theme}>{content.name}</MainTitle>
         </BoxContent>
-        <BoxDataArticle theme={theme}>
-          <BoxAuthorData theme={theme}>
-            <BoxAutorImg to={`/author/${content.author.slug}`} theme={theme}>
-              <Img
-                fluid={content.author.avatar.fixed}
-                title={`${content.author.firstName} ${content.author.lastName}`}
-              />
-            </BoxAutorImg>
-            <BoxAutorName
-              theme={theme}
-            >{`${content.author.firstName} ${content.author.lastName}`}</BoxAutorName>
-            <BoxAddPostDate theme={theme}>{content.meta.firstPublishedAt}</BoxAddPostDate>
-          </BoxAuthorData>
-          <BoxTag theme={theme}>
-            {content.tag.map(tag => {
-              return (
-                <>
-                  <Link
-                    key={tag.id}
-                    title={tag.name}
-                    to={`/tag/${tag.slug}/blog/`}
-                    style={{
-                      color: `${tag.color.colorTxt.hex}`,
-                      backgroundColor: `${tag.color.colorBackground.hex}`,
-                    }}
-                  >
-                    <span>#</span>
-                    {tag.name}
-                  </Link>
-                </>
-              )
-            })}
-          </BoxTag>
-          <BoxExcerpt theme={theme}>{content.excerpt}</BoxExcerpt>
-        </BoxDataArticle>
         {content.content.map((item, index) => {
           if (item.__typename === "DatoCmsHeader") {
             return (
@@ -139,7 +106,16 @@ const ArticleFullBlogComponent = props => {
             )
           }
         })}
-        <BoxDataArticle></BoxDataArticle>
+      </Article>
+      <List
+        tag
+        category
+        active={0}
+        items={props.listType}
+        title={props.listTypeName}
+        style={{ margin: "3rem 0" }}
+      />
+      <Article theme={theme} padding>
         <BoxDataArticle>
           <DiscussionEmbed style={{ width: "100%" }} {...disqusConfig} />
         </BoxDataArticle>
@@ -149,4 +125,4 @@ const ArticleFullBlogComponent = props => {
 }
 
 // EXPORT NEW COMPONENT
-export default ArticleFullBlogComponent
+export default ArticleFullTagComponent

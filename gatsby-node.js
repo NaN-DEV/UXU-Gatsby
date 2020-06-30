@@ -174,6 +174,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { content, index },
     })
   })
+
   queryResults.data.allDatoCmsBlogCategory.nodes.forEach((content, index) => {
     createPage({
       path: `blog/${content.slug}`,
@@ -212,6 +213,13 @@ exports.createPages = async ({ graphql, actions }) => {
   queryResults.data.allDatoCmsTag.nodes.forEach((content, index) => {
     createPage({
       path: `tag/${content.slug}`,
+      component: require.resolve(`./src/templates/tag-info.js`),
+      context: { content, index },
+    })
+  })
+  queryResults.data.allDatoCmsTag.nodes.forEach((content, index) => {
+    createPage({
+      path: `tag/${content.slug}/blog`,
       component: require.resolve(`./src/templates/tag-list-blog.js`),
       context: { content, index },
     })

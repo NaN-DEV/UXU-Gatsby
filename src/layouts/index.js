@@ -20,7 +20,20 @@ import Section from "../components/organisms/section/section"
 // CREATE NEW COMPONENT
 
 const Root = props => {
-  const { children, siteBar, boxAds, author, content, share, info, infoService } = props
+  const {
+    children,
+    siteBar,
+    boxAds,
+    author,
+    content,
+    share,
+    info,
+    infoService,
+    boxTag,
+    boxTagblog,
+    boxTagservice,
+    boxTagtutorial,
+  } = props
 
   if (siteBar === "home") {
     return (
@@ -137,12 +150,27 @@ const Root = props => {
       <>
         <GlobalStyle theme={theme} />
         <Header />
-        <Box big tag content={content} />
-        <Row>
-          <SideBar desctop top={2.4} />
-          <Section>{children}</Section>
-          <SideBar desctop top={2.4} />
-        </Row>
+        {boxTag ? (
+          <>
+            {boxTagblog && <Box big tag boxTagblog content={content} />}
+            {boxTagservice && <Box big tag boxTagservice content={content} />}
+            {boxTagtutorial && <Box big tag boxTagtutorial content={content} />}
+            <Row>
+              <SideBar desctop top={2.4} />
+              <Section>{children}</Section>
+              <SideBar desctop top={2.4} />
+            </Row>
+          </>
+        ) : (
+          <>
+            <Row>
+              <SideBar share glue desctop top={1.5} />
+              <Section>{children}</Section>
+              <SideBar tag glue desctop top={1.5} />
+            </Row>
+          </>
+        )}
+
         <Footer />
       </>
     )

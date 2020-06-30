@@ -10,12 +10,12 @@ import Article from "../components/molecules/article/article"
 
 // CREATE NEW COMPONENT
 
-const TagPageBlog = props => {
+const TagPageInfo = props => {
   return (
     <>
       <StaticQuery
         query={graphql`
-          query tagCategoryBlog {
+          query tagInfo {
             allDatoCmsTag {
               nodes {
                 id
@@ -108,38 +108,22 @@ const TagPageBlog = props => {
             { name: "Poradniki", slug: `${displayMainTag[0].slug}/poradniki/` },
             { name: "Uslugi", slug: `${displayMainTag[0].slug}/uslugi/` },
           ]
-
-          const contentBox = {
-            title: "Sprawdź inne tagi",
-            tag: [...data.allDatoCmsTag.nodes],
-            name: props.pageContext.content.name,
-            slug: `/tag/${props.pageContext.content.slug}`,
-          }
-
+          console.log(displayMainTag[0].mainImage.fixed)
           return (
             <>
-              <Layout siteBar="tag" boxTagblog boxTag content={contentBox}>
-                <List
-                  tag
-                  category
-                  active={1}
-                  items={typePost}
-                  title={props.pageContext.content.name}
+              <Layout siteBar="tag">
+                <Article
+                  full
+                  fullTag
+                  listType={typePost}
+                  content={displayMainTag[0]}
+                  listTypeName={props.pageContext.content.name}
                 />
-
-                {data.allDatoCmsBlog.nodes.map((content, i) => {
-                  let displayPost = content.tag.filter(tag => {
-                    return tag.id === props.pageContext.content.id
-                  })
-                  if (displayPost.length > 0) {
-                    return <Article short blog key={i} content={content} />
-                  }
-                })}
                 <Seo
+                  title={`Co to jest ${props.pageContext.content.name} ?`}
                   description={displayMainTag[0].excerpt}
                   image={displayMainTag[0].mainImage.fixed}
-                  url={`https://uxu.pl/tag/${displayMainTag[0].slug}/blog/`}
-                  title={`Lista wpisów na blogu powiązanych z ${props.pageContext.content.name} ?`}
+                  url={`https://uxu.pl/tag/${displayMainTag[0].slug}`}
                 />
               </Layout>
             </>
@@ -151,4 +135,4 @@ const TagPageBlog = props => {
 }
 
 // EXPORT NEW COMPONENT
-export default TagPageBlog
+export default TagPageInfo

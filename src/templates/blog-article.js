@@ -32,6 +32,7 @@ const BlogArticle = props => {
                 }
                 mainImage {
                   alt
+                  url
                   title
                   fixed {
                     ...GatsbyDatoCmsFixed
@@ -150,7 +151,7 @@ const BlogArticle = props => {
                 <Article full fullBlog content={displayArticle[0]} />
                 <Seo
                   description={displayArticle[0].excerpt}
-                  image={displayArticle[0].mainImage.fixed}
+                  image={displayArticle[0].mainImage.url}
                   url={`https://uxu.pl/blog/artykul/${displayArticle[0].slug}`}
                   title={displayArticle[0].title}
                 />

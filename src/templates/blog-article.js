@@ -150,9 +150,9 @@ const BlogArticle = props => {
                 <Article full fullBlog content={displayArticle[0]} />
                 <Seo
                   description={displayArticle[0].excerpt}
-                  image={displayMainTag[0].mainImage.fixed}
-                  url={`https://uxu.pl/blog/artykul/${displayMainTag[0].slug}`}
-                  title={displayMainTag[0].title}
+                  image={displayArticle[0].mainImage.fixed}
+                  url={`https://uxu.pl/blog/artykul/${displayArticle[0].slug}`}
+                  title={displayArticle[0].title}
                 />
               </Layout>
             </>

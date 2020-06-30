@@ -152,7 +152,7 @@ const BlogArticle = props => {
                   description={displayArticle[0].excerpt}
                   image={displayMainTag[0].mainImage.fixed}
                   url={`https://uxu.pl/blog/artykul/${displayMainTag[0].slug}`}
-                  title={isplayArticle[0].title}
+                  title={displayMainTag[0].title}
                 />
               </Layout>
             </>

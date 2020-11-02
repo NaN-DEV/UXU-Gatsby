@@ -75,13 +75,6 @@ const SiteBarComponent = props => {
                 id
               }
             }
-            allDatoCmsTutorialsCategory {
-              nodes {
-                id
-                slug
-                name
-              }
-            }
 
             allDatoCmsTag {
               nodes {
@@ -128,19 +121,7 @@ const SiteBarComponent = props => {
                     </BoxSiteBar>
                   </>
                 )}
-                {tutorials && (
-                  <>
-                    <BoxSiteBar glue={glue} theme={theme}>
-                      <Header theme={theme}>Poradniki</Header>
-                      <List
-                        vertical
-                        hashtag
-                        tutorials
-                        items={data.allDatoCmsTutorialsCategory.nodes}
-                      />
-                    </BoxSiteBar>
-                  </>
-                )}
+
                 {share && addRepair && (
                   <>
                     <BoxSiteBar theme={theme} glue={glue} share={share}>

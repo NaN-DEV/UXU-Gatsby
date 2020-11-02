@@ -36,13 +36,6 @@ exports.createPages = async ({ graphql, actions }) => {
           firstName
         }
       }
-      allDatoCmsSkil {
-        nodes {
-          id
-          slug
-          name
-        }
-      }
     }
   `)
 

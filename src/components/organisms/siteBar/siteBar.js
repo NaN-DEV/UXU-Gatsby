@@ -92,13 +92,6 @@ const SiteBarComponent = props => {
                 lastName
               }
             }
-            allDatoCmsSkil {
-              nodes {
-                name
-                slug
-                id
-              }
-            }
           }
         `}
         render={data => {
@@ -172,14 +165,7 @@ const SiteBarComponent = props => {
                     </BoxSiteBar>
                   </>
                 )}
-                {skill && (
-                  <>
-                    <BoxSiteBar glue={glue} theme={theme}>
-                      <Header theme={theme}>Umiejętności</Header>
-                      <List vertical hashtag skill items={data.allDatoCmsSkil.nodes} />
-                    </BoxSiteBar>
-                  </>
-                )}
+
                 {repair && (
                   <>
                     <BoxSiteBar glue={glue} theme={theme}>

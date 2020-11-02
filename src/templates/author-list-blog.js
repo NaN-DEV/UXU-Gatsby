@@ -37,11 +37,6 @@ const AuthorPage = props => {
                     ...GatsbyDatoCmsFixed
                   }
                 }
-                skil {
-                  name
-                  slug
-                  id
-                }
               }
             }
             allDatoCmsBlog {

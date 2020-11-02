@@ -53,11 +53,6 @@ const BoxHelpComponent = props => {
                     ...GatsbyDatoCmsFixed
                   }
                 }
-                skil {
-                  name
-                  slug
-                  id
-                }
               }
             }
           }

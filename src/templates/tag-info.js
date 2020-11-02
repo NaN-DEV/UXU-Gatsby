@@ -104,9 +104,7 @@ const TagPageInfo = props => {
 
           let typePost = [
             { name: "Co to jest ?", slug: `${displayMainTag[0].slug}` },
-            { name: "Blog", slug: `${displayMainTag[0].slug}/blog/` },
-            { name: "Poradniki", slug: `${displayMainTag[0].slug}/poradniki/` },
-            { name: "Uslugi", slug: `${displayMainTag[0].slug}/uslugi/` },
+            { name: "Lista artykułów", slug: `${displayMainTag[0].slug}/blog/` },
           ]
           console.log(displayMainTag[0].mainImage.fixed)
           return (

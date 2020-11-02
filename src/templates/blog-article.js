@@ -130,29 +130,14 @@ const BlogArticle = props => {
             return article.id === props.pageContext.content.id
           })
 
-          let info = {
-            type: "blog",
-            title: displayArticle[0].title,
-            id: displayArticle[0].author.id,
-            slug: displayArticle[0].author.slug,
-            nick: displayArticle[0].author.nick,
-            avatar: displayArticle[0].author.avatar,
-            lastName: displayArticle[0].author.lastName,
-            birthday: displayArticle[0].author.birthday,
-            firstName: displayArticle[0].author.firstName,
-            desciption: displayArticle[0].author.desciption,
-            locationCity: displayArticle[0].author.locationCity,
-            locationCountry: displayArticle[0].author.locationCountry,
-          }
-
           return (
             <>
-              <Layout siteBar="blogArticle" info={info}>
+              <Layout siteBar="blogArticle">
                 <Article full fullBlog content={displayArticle[0]} />
                 <Seo
                   description={displayArticle[0].excerpt}
                   image={displayArticle[0].mainImage.url}
-                  url={`https://uxu.pl/blog/artykul/${displayArticle[0].slug}`}
+                  url={`https://uxu.pl/artykul/${displayArticle[0].slug}`}
                   title={displayArticle[0].title}
                 />
               </Layout>

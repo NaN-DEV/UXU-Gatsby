@@ -19,7 +19,6 @@ import {
   Section,
   BoxForm,
   BoxDataCompany,
-  BoxDataCompanyBranch,
   List,
   ListTitle,
   ListLI,
@@ -118,7 +117,7 @@ const SectionContactComponent = props => {
                       name="subject"
                       className="error"
                       selected="Wybierz temat *"
-                      option={["Pomoc techniczna", "Obsługa klienta", "Inne"]}
+                      option={["Prawa autorskie", "Współpraca", "Inne"]}
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.subject}
@@ -131,7 +130,7 @@ const SectionContactComponent = props => {
                       id="subject"
                       name="subject"
                       selected="Wybierz temat *"
-                      option={["Pomoc techniczna", "Obsługa klienta", "Inne"]}
+                      option={["Prawa autorskie", "Współpraca", "Inne"]}
                       onBlur={formik.handleBlur}
                       onChange={formik.handleChange}
                       value={formik.values.subject}
@@ -304,33 +303,10 @@ const SectionContactComponent = props => {
               </ListLI>
               <ListLI first>
                 <ListName>MAIL :</ListName>
-                <ListLink href="mailto:biuro@uxu.pl">biuro@uxu.pl</ListLink>
+                <ListLink href="mailto:hello@nan.nz">hello@nan.nz</ListLink>
               </ListLI>
             </List>
           </BoxDataCompany>
-          <BoxDataCompanyBranch theme={theme}>
-            <BoxDataCompanyBranchHeader theme={theme}>NASZE ODDZIAŁY</BoxDataCompanyBranchHeader>
-            <List>
-              <ListTitle>UXU GORZÓW WLKP.</ListTitle>
-              <ListLI>ul. Lużycka 4/11</ListLI>
-              <ListLI>66-400 Gorzów Wielkopolski</ListLI>
-              <ListLI>Polska</ListLI>
-              <ListLI>
-                <ListName>TEL :</ListName>
-                <ListLink href="tel:+48888881441">+48 888 881 441</ListLink>
-              </ListLI>
-            </List>
-            <List>
-              <ListTitle>UXU WARSZAWA</ListTitle>
-              <ListLI>ul. Serwituty 25</ListLI>
-              <ListLI>02-233 Warszawa</ListLI>
-              <ListLI>Polska</ListLI>
-              <ListLI>
-                <ListName>TEL :</ListName>
-                <ListLink href="tel:+48888881441">+48 888 881 441</ListLink>
-              </ListLI>
-            </List>
-          </BoxDataCompanyBranch>
         </Row>
       </Section>
     </>

@@ -82,13 +82,7 @@ const SiteBarComponent = props => {
                 name
               }
             }
-            allDatoCmsServicesCategory {
-              nodes {
-                id
-                name
-                slug
-              }
-            }
+
             allDatoCmsTag {
               nodes {
                 name
@@ -118,19 +112,19 @@ const SiteBarComponent = props => {
           return (
             <>
               <SiteBar theme={theme} top={top} {...props}>
-                {socialMedia && (
-                  <>
-                    <BoxSiteBar glue={glue} theme={theme}>
-                      <Header theme={theme}>Social media</Header>
-                      <List icon items={data.allDatoCmsContactDetail.nodes[0].socialMedia} />
-                    </BoxSiteBar>
-                  </>
-                )}
                 {blog && (
                   <>
                     <BoxSiteBar glue={glue} theme={theme}>
                       <Header theme={theme}>Na blogu</Header>
                       <List vertical hashtag blog items={data.allDatoCmsBlogCategory.nodes} />
+                    </BoxSiteBar>
+                  </>
+                )}
+                {socialMedia && (
+                  <>
+                    <BoxSiteBar glue={glue} theme={theme}>
+                      <Header theme={theme}>Social media</Header>
+                      <List icon items={data.allDatoCmsContactDetail.nodes[0].socialMedia} />
                     </BoxSiteBar>
                   </>
                 )}

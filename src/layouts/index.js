@@ -42,9 +42,9 @@ const Root = props => {
         <Header />
         <Box ads big content={content} />
         <Row>
-          <SideBar socialMedia desctop blog tutorials top={9} />
+          <SideBar desctop blog socialMedia top={9} />
           <Section>{children}</Section>
-          <SideBar chat team desctop tag top={9} />
+          <SideBar desctop tag top={9} />
         </Row>
         <Footer />
       </>
@@ -69,9 +69,9 @@ const Root = props => {
         <GlobalStyle theme={theme} />
         <Header />
         <Row>
-          <SideBar share={share} addRepair glue top={1.5} />
+          <SideBar share={share} glue top={1.5} />
           <Section>{children}</Section>
-          <SideBar infoService={infoService} glue desctop top={1.5} />
+          <SideBar glue desctop top={1.5} />
         </Row>
         <Footer />
       </>

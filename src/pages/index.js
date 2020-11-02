@@ -13,71 +13,13 @@ import Pagination from "../components/molecules/pagination/pagination"
 
 const IndexPage = () => {
   const contentBoxAds = {
-    title: "Problem z komputerem ? Zajmiemy się nim!",
-    button: [
-      {
-        id: "box-ads-home-repair",
-        title: "Zgłoś online",
-        slug: "oddaj-do-naprawy",
-      },
-      {
-        id: "box-ads-home-telephone",
-        tel: 888881441,
-      },
-    ],
+    title: "BLOG O SEO & PR",
   }
   return (
     <>
       <StaticQuery
         query={graphql`
           query Home {
-            allDatoCmsService {
-              nodes {
-                id
-                slug
-                title
-                excerpt
-                repairCost
-                repairAverageTime
-                mainImage {
-                  alt
-                  title
-                  fixed {
-                    ...GatsbyDatoCmsFixed
-                  }
-                }
-                category {
-                  id
-                  name
-                }
-                author {
-                  id
-                  nick
-                  slug
-                  firstName
-                  lastName
-                  avatar {
-                    alt
-                    title
-                    fixed {
-                      ...GatsbyDatoCmsFixed
-                    }
-                  }
-                }
-                tag {
-                  id
-                  name
-                  slug
-                }
-              }
-            }
-            allDatoCmsServicesCategory {
-              nodes {
-                id
-                name
-                slug
-              }
-            }
             datoCmsSite {
               globalSeo {
                 fallbackSeo {
@@ -91,10 +33,51 @@ const IndexPage = () => {
                 facebookPageUrl
               }
             }
+            allDatoCmsBlog {
+              nodes {
+                id
+                title
+                excerpt
+                mainImage {
+                  fixed {
+                    ...GatsbyDatoCmsFixed
+                  }
+                }
+                slug
+                tag {
+                  name
+                  id
+                  slug
+                }
+                category {
+                  id
+                }
+                author {
+                  firstName
+                  lastName
+                  nick
+                  slug
+                  avatar {
+                    fixed {
+                      ...GatsbyDatoCmsFixed
+                    }
+                  }
+                }
+                meta {
+                  firstPublishedAt(formatString: "MMM DD")
+                }
+              }
+            }
+            allDatoCmsBlogCategory {
+              nodes {
+                name
+                slug
+                id
+              }
+            }
           }
         `}
         render={data => {
-          const numPages = Math.ceil(data.allDatoCmsService.nodes.length / 3)
           return (
             <>
               <Layout siteBar="home" content={contentBoxAds}>
@@ -102,19 +85,9 @@ const IndexPage = () => {
                   title={`${data.datoCmsSite.globalSeo.fallbackSeo.title}`}
                   description={data.datoCmsSite.globalSeo.fallbackSeo.description}
                 />
-                <List
-                  services
-                  category
-                  active={0}
-                  title="Usługi"
-                  items={data.allDatoCmsServicesCategory.nodes}
-                />
-                {data.allDatoCmsService.nodes.map((content, i) => {
-                  if (i < 3) {
-                    return <Article short services key={i} content={content} />
-                  }
+                {data.allDatoCmsBlog.nodes.map((content, i) => {
+                  return <Article short blog key={i} content={content} />
                 })}
-                <Pagination currentPage={1} numPages={numPages} slug="/uslugi" />
               </Layout>
             </>
           )

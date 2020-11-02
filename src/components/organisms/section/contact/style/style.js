@@ -4,7 +4,6 @@ export const Section = styled.section`
   flex: 100%;
   width: 100%;
   overflow: hidden;
-
   position: relative;
   .row {
     padding: 0;
@@ -79,45 +78,6 @@ export const ListName = styled.strong`
 
 export const ListLink = styled.a`
   font-weight: normal;
-`
-
-export const BoxDataCompanyBranch = styled.div`
-  flex: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
-  position: relative;
-  padding: 6rem 3rem;
-
-  ul {
-    margin: 0;
-    flex: 100%;
-    max-width: 100%;
-    position: relative;
-  }
-  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
-    ul {
-      flex: 50%;
-      max-width: 50%;
-    }
-  }
-  @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-    ul {
-      flex: 33.333%;
-      max-width: 33.333%;
-    }
-  }
-`
-export const BoxDataCompanyBranchHeader = styled.h1`
-  flex: 100%;
-  max-width: 100%;
-  font-size: 3rem;
-  text-align: center;
-  position: relative;
-  padding-bottom: 6rem;
-  @media (min-width: ${props => props.theme.breakpoint_desktop}) {
-    font-size: 6rem;
-  }
 `
 
 export const BoxFormElement = styled.div`

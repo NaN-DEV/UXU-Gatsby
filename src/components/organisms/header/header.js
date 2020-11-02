@@ -17,26 +17,14 @@ import { Header, BoxHeader } from "./style/style"
 
 const HeaderComponent = props => {
   const boxLink = [
-    { id: "main-menu-home", slug: "", title: "Strona Główna" },
-    { id: "main-menu-service", slug: "uslugi", title: "Usługi" },
-    { id: "main-menu-tutorial", slug: "poradniki", title: "Poradniki" },
-    { id: "main-menu-blog", slug: "blog", title: "Blog" },
-    { id: "main-menu-contact", slug: "kontakt", title: "Kontakt" },
+    { id: "about", slug: "about", title: "O mnie" },
+    { id: "contact", slug: "contact", title: "Kontakt" },
   ]
   return (
     <>
       <Header theme={theme}>
         <Row className="row">
           <Logo />
-          <form className="search">
-            <Input type="search" placeholder="Szukaj..." />
-          </form>
-          <Button
-            small={true}
-            title="Oddaj do naprawy"
-            slug="oddaj-do-naprawy"
-            className="button none"
-          />
           <Button title="Menu" box={boxLink} icon="hamburger" className="button end" />
         </Row>
       </Header>

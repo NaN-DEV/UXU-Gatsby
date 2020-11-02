@@ -63,38 +63,14 @@ const ArticleShortComponent = props => {
             <BoxAutorNick theme={theme}>{content.author.nick}</BoxAutorNick>
           </BoxAutorData>
         </BoxAutor>
-        <BoxTitle
-          theme={theme}
-          to={
-            services
-              ? `/uslugi/artykul/${content.slug}`
-              : `${
-                  blog
-                    ? `/blog/artykul/${content.slug}`
-                    : `${tutorial && `/poradniki/artykul/${content.slug}`}`
-                }`
-          }
-          title={content.title}
-        >
+        <BoxTitle theme={theme} to={`/artykul/${content.slug}`} title={content.title}>
           {content.title}
         </BoxTitle>
         <BoxTag theme={theme}>
           {content.tag.map(tag => {
             return (
               <>
-                <Link
-                  key={tag.id}
-                  to={
-                    services
-                      ? `/tag/${tag.slug}/uslugi/`
-                      : `${
-                          blog
-                            ? `/tag/${tag.slug}/blog`
-                            : `${tutorial && `/tag/${tag.slug}/poradniki/`}`
-                        }`
-                  }
-                  title={tag.name}
-                >
+                <Link key={tag.id} to={`/tag/${tag.slug}`} title={tag.name}>
                   <span>#</span>
                   {tag.name}
                 </Link>
@@ -154,18 +130,7 @@ const ArticleShortComponent = props => {
           )}
 
           <BoxButtonMore>
-            <Button
-              slug={
-                services
-                  ? `uslugi/artykul/${content.slug}`
-                  : `${
-                      blog
-                        ? `blog/artykul/${content.slug}`
-                        : `${tutorial && `poradniki/artykul/${content.slug}`}`
-                    }`
-              }
-              title="Więcej"
-            />
+            <Button slug={`/artykul/${content.slug}`} title="Więcej" />
           </BoxButtonMore>
         </BoxFooter>
       </Article>

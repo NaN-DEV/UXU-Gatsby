@@ -104,21 +104,12 @@ const TagPageBlog = props => {
 
           let typePost = [
             { name: "Co to jest ?", slug: `${displayMainTag[0].slug}` },
-            { name: "Blog", slug: `${displayMainTag[0].slug}/blog/` },
-            { name: "Poradniki", slug: `${displayMainTag[0].slug}/poradniki/` },
-            { name: "Uslugi", slug: `${displayMainTag[0].slug}/uslugi/` },
+            { name: "Lista artykułów", slug: `${displayMainTag[0].slug}/blog/` },
           ]
-
-          const contentBox = {
-            title: "Sprawdź inne tagi",
-            tag: [...data.allDatoCmsTag.nodes],
-            name: props.pageContext.content.name,
-            slug: `/tag/${props.pageContext.content.slug}`,
-          }
 
           return (
             <>
-              <Layout siteBar="tag" boxTagblog boxTag content={contentBox}>
+              <Layout siteBar="tag">
                 <List
                   tag
                   category

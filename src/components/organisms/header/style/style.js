@@ -27,23 +27,14 @@ export const Header = styled.header`
   }
 
   .button {
-    margin-left: 1rem;
+    margin-left: auto;
   }
 
   .none {
     display: none;
   }
 
-  .end {
-    margin-right: -6px;
-  }
-
   @media (min-width: ${props => props.theme.breakpoint_tablet}) {
-    .none {
-      display: flex;
-      margin-left: 1.5rem;
-    }
-
     .search {
       flex: 25rem;
       max-width: 25rem;

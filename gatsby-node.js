@@ -21,17 +21,6 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
 
-      allDatoCmsTutorial {
-        nodes {
-          id
-          slug
-          title
-          category {
-            id
-          }
-        }
-      }
-
       allDatoCmsTag {
         nodes {
           name

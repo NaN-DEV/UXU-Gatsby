@@ -13,7 +13,7 @@ import Pagination from "../components/molecules/pagination/pagination"
 
 const IndexPage = () => {
   const contentBoxAds = {
-    title: "BLOG O SEO & PR",
+    title: "BLOG PROGRAMISTY",
   }
   return (
     <>

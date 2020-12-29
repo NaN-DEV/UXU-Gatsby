@@ -48,7 +48,7 @@ const ArticleShortComponent = props => {
         <BackgroundImage theme={theme} fluid={content.mainImage.fixed} />
         <BoxAutor
           theme={theme}
-          to={`/autor/${content.author.slug}`}
+          to={`/expert/${content.author.slug}`}
           title={`${content.author.firstName} ${content.author.lastName}`}
         >
           {content.author.avatar.fixed && (
@@ -63,7 +63,7 @@ const ArticleShortComponent = props => {
             <BoxAutorNick theme={theme}>{content.author.nick}</BoxAutorNick>
           </BoxAutorData>
         </BoxAutor>
-        <BoxTitle theme={theme} to={`/artykul/${content.slug}`} title={content.title}>
+        <BoxTitle theme={theme} to={`/article/${content.slug}`} title={content.title}>
           {content.title}
         </BoxTitle>
         <BoxTag theme={theme}>
@@ -80,57 +80,8 @@ const ArticleShortComponent = props => {
         </BoxTag>
 
         <BoxFooter>
-          {services && (
-            <BoxOption
-              theme={theme}
-              title={`Maksymalny czas naprawy : ${content.repairAverageTime} DNI`}
-            >
-              {`DO: ${content.repairAverageTime} DNI`}
-            </BoxOption>
-          )}
-          {services && (
-            <BoxOption theme={theme} title={`koszt usługi : ${content.repairCost} PLN`}>
-              {`KOSZT : ${content.repairCost} PLN`}
-            </BoxOption>
-          )}
-          {blog && (
-            <BoxOption theme={theme} title={`opublikowno : ${content.meta.firstPublishedAt}`}>
-              {`${content.meta.firstPublishedAt}`}
-            </BoxOption>
-          )}
-          {tutorial && (
-            <BoxOption
-              theme={theme}
-              title={`Poziom trudności : ${content.difficultyLevel === 3 && "Trudne"}`}
-            >
-              {content.difficultyLevel === 3 && (
-                <>
-                  <Danger theme={theme} />
-                  <TxtDanger theme={theme}>Trudne</TxtDanger>
-                </>
-              )}
-              {content.difficultyLevel === 2 && (
-                <>
-                  <Waring theme={theme} />
-                  <TxtWaring theme={theme}>Średnie</TxtWaring>
-                </>
-              )}
-              {content.difficultyLevel === 1 && (
-                <>
-                  <Succes theme={theme} />
-                  <TxtSucces theme={theme}>Łatwe</TxtSucces>
-                </>
-              )}
-            </BoxOption>
-          )}
-          {tutorial && (
-            <BoxOption theme={theme} title={`Wymagany czas : ${content.repairTime} min.`}>
-              <Icon clock /> {`Wymagany czas ${content.repairTime} min.`}
-            </BoxOption>
-          )}
-
           <BoxButtonMore>
-            <Button slug={`/artykul/${content.slug}`} title="Więcej" />
+            <Button slug={`article/${content.slug}`} title="Więcej" />
           </BoxButtonMore>
         </BoxFooter>
       </Article>

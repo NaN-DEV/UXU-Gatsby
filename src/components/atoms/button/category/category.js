@@ -20,7 +20,7 @@ const ButtonClassicComponent = props => {
     )
   } else if (slug) {
     return (
-      <ButtonClassicSlug {...props} title={title} theme={theme} small={small} to={`/${slug}`}>
+      <ButtonClassicSlug {...props} title={title} theme={theme} small={small} to={slug}>
         {title}
       </ButtonClassicSlug>
     )

@@ -17,10 +17,10 @@ html{
 body {
    margin: 0;
    padding: 0;
-   font-weight: 400;
    line-height: 1.3;
    font-size: 2.4rem;
    font-style: normal;
+   font-weight: normal;
    color: ${props => props.theme.primary};
    font-family: ${props => props.theme.font_primary}; 
     ${props =>

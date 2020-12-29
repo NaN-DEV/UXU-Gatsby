@@ -1,7 +1,7 @@
 const settings = {
   // SETTINGS FONT START
   font_primary: `'Montserrat', sans-serif`,
-  font_secondary: `'Roboto Mono', monospace`,
+  font_secondary: `'Roboto', sans-serif`,
 
   // SETTINGS COLOR START
   dark: "#64707d",

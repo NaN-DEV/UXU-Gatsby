@@ -39,7 +39,7 @@ const ListVerticalComponent = props => {
                         tag
                           ? `${
                               boxTagblog
-                                ? `${`tag/${item.slug}`}/blog/`
+                                ? `${`category/${item.slug}`}`
                                 : `${
                                     boxTagservice
                                       ? `${`tag/${item.slug}/uslugi/`}`
@@ -53,7 +53,7 @@ const ListVerticalComponent = props => {
       `
                           : `${
                               blog
-                                ? `blog/${item.slug}`
+                                ? `category/${item.slug}`
                                 : `${
                                     tutorials
                                       ? `poradniki/${item.slug}`

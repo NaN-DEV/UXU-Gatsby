@@ -41,21 +41,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`400`, `500`, `600`, `700`],
-          },
-          {
-            family: `Roboto Mono`,
-            variants: [`400`, `700`],
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-source-datocms`,
       options: {
         // You can find your read-only API token under the Settings > API tokens

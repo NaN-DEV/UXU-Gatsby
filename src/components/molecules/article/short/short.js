@@ -80,9 +80,7 @@ const ArticleShortComponent = props => {
         </BoxTag>
 
         <BoxFooter>
-          <BoxButtonMore>
-            <Button slug={`article/${content.slug}`} title="Więcej" />
-          </BoxButtonMore>
+          <BoxButtonMore></BoxButtonMore>
         </BoxFooter>
       </Article>
     </>

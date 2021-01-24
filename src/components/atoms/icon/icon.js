@@ -1,82 +1,76 @@
 // IMPORT PLUGIN
 import React from "react"
+import PropTypes from "prop-types"
 
 // IMPORT STYLES
-import Icon from "./style/style"
+import BoxIcon from "./style/style"
 
 // IMPORT SETTINGS STYLE
-import theme from "../../../layouts/settings"
+import settings from "../../../layouts/settings"
 
-// IMPORT COMPONENT ICON
-import Heart from "./heart/heart"
-import Money from "./money/money"
-import Clock from "./clock/clock"
-import TokTok from "./tiktok/tiktok"
-import Twiter from "./twiter/twiter"
-import Skills from "./skills/skills"
-import YouTube from "./youtube/youtube"
-import Facebook from "./facebook/facebook"
-import Calendar from "./calendar/calendar"
-import Instagram from "./instagram/instagram"
-import HamburgerIcon from "./hamburger/hamburger"
-import NotificationIcon from "./notification/notification"
-import Tools from "./tools/tools"
-import Rocket from "./rocket/rocket"
-import Ask from "./ask/ask"
-import Box from "./box/box"
-import Map from "./map/map"
-import Protection from "./protection/protection"
+// IMPORT SVG
+
+import Logo from "../../../assets/brand/logo.svg"
+import Hamburger from "../../../assets/icon/hamburger.svg"
 
 // CREATE NEW COMPONENT
-
 const IconComponent = props => {
-  const {
-    hover,
-    clock,
-    money,
-    calendar,
-    youtube,
-    facebook,
-    hamburger,
-    instagram,
-    className,
-    notification,
-    skills,
-    tiktok,
-    twitter,
-    heart,
-    tools,
-    rocket,
-    ask,
-    box,
-    map,
-    protection,
-  } = props
+  const { id, key, type, parameters } = props
 
-  return (
-    <>
-      <Icon theme={theme} className={className} hover={hover} {...props}>
-        {heart && <Heart />}
-        {clock && <Clock />}
-        {money && <Money />}
-        {tiktok && <TikTok />}
-        {twitter && <Twiter />}
-        {youtube && <YouTube />}
-        {facebook && <Facebook />}
-        {calendar && <Calendar />}
-        {skills && <Skills />}
-        {tools && <Tools />}
-        {rocket && <Rocket />}
-        {ask && <Ask />}
-        {box && <Box />}
-        {map && <Map />}
-        {protection && <Protection />}
-        {instagram && <Instagram />}
-        {hamburger && <HamburgerIcon />}
-        {notification && <NotificationIcon />}
-      </Icon>
-    </>
-  )
+  switch (type) {
+    case "logo":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Logo />
+        </BoxIcon>
+      )
+    case "hamburger":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Hamburger />
+        </BoxIcon>
+      )
+    default:
+      return "Please add type icon :) "
+  }
+}
+
+// PropTpyes
+IconComponent.propTypes = {
+  id: PropTypes.string,
+  key: PropTypes.string,
+  parameters: PropTypes.shape({
+    size: PropTypes.number,
+    theme: PropTypes.string,
+    style: PropTypes.object,
+    className: PropTypes.string,
+  }),
+}
+
+// PropTpyes default
+IconComponent.defaultProps = {
+  id: null,
+  key: null,
+  parameters: PropTypes.shape({
+    size: 40,
+    style: null,
+    theme: false,
+    className: null,
+  }),
 }
 
 export default IconComponent

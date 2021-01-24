@@ -2,33 +2,53 @@
 import React from "react"
 
 // IMPORT SETTINGS STYLE
-import theme from "../../../layouts/settings"
+import settings from "../../../layouts/settings"
 
 // IMPORT COMPONENT START
 import Row from "../../atoms/row/row"
-import Logo from "../../atoms/logo/logo"
-import Input from "../../atoms/input/input"
+import Icon from "../../atoms/icon/icon"
 import Button from "../../atoms/button/button"
 
 // IMPORT STYLES
-import { Header, BoxHeader } from "./style/style"
+import { Header, ListLink, MenuBox, BreakHeader } from "./style/style"
 
 // CREATE NEW COMPONENT
 
 const HeaderComponent = props => {
-  const boxLink = [
-    { id: "about", slug: "about", title: "O mnie" },
-    { id: "contact", slug: "contact", title: "Kontakt" },
-  ]
   return (
     <>
-      <Header theme={theme}>
+      <Header theme={{ settings: settings }}>
         <Row className="row">
-          <Logo />
-          <Button title="Menu" box={boxLink} icon="hamburger" className="button end" />
+          <Button
+            type="linkIn"
+            parameters={{ className: "logo" }}
+            content={{ to: "/", title: "UXU" }}
+          >
+            <Icon type="logo" parameters={{ theme: "primary", size: 3 }} />
+          </Button>
+          <Button
+            type="button"
+            content={{ title: "menu" }}
+            parameters={{ style: { marginLeft: "auto" }, className: "hamburger" }}
+          >
+            <Icon type="hamburger" parameters={{ theme: "primary", size: 3 }} />
+            <MenuBox className="box" theme={{ settings: settings }}>
+              <ListLink theme={{ settings: settings }}>
+                <Button
+                  type="linkOut"
+                  content={{ to: "https://www.nan.nz/expert/pawel-niedzwiecki", title: "O mnie" }}
+                >
+                  O mnie
+                </Button>
+                <Button type="linkIn" content={{ to: "contact", title: "Kontakt" }}>
+                  Kontakt
+                </Button>
+              </ListLink>
+            </MenuBox>
+          </Button>
         </Row>
       </Header>
-      <BoxHeader />
+      <BreakHeader />
     </>
   )
 }

@@ -1,227 +1,117 @@
-// IMPORT PLUGIN
+// import plugin
 import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 
-// IMPORT STYLE
-import GlobalStyle from "./theme/globalStyle"
+// import style
+import GlobalStyle from "./style/globalStyle"
 
-// IMPORT SETTINGS STYLE
-import theme from "./settings"
+// import settings style
+import settings from "./settings/settings"
 
-// IMPORT COMPONENT
-
-// IMPORT COMPONENT
+// import component
 import Row from "../components/atoms/row/row"
-import Box from "../components/molecules/box/box"
 import Header from "../components/organisms/header/header"
 import Footer from "../components/organisms/footer/footer"
-import SideBar from "../components/organisms/siteBar/siteBar"
-import Section from "../components/organisms/section/section"
 
-// CREATE NEW COMPONENT
-
+// create new component
 const Root = props => {
-  const {
-    children,
-    siteBar,
-    boxAds,
-    author,
-    content,
-    share,
-    info,
-    infoService,
-    boxTag,
-    boxTagblog,
-    boxTagservice,
-    boxTagtutorial,
-  } = props
+  const { content, parameters, children } = props
 
-  if (siteBar === "home") {
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Header />
-        <Box ads big content={content} />
-        <Row>
-          <SideBar desctop blog socialMedia top={9} />
-          <Section>{children}</Section>
-          <SideBar desctop tag top={9} />
-        </Row>
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "serviceCategory") {
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Header />
-        <Box ads big content={content} />
-        <Row>
-          <SideBar socialMedia desctop blog tutorials top={9} />
-          <Section>{children}</Section>
-          <SideBar chat team tag desctop top={9} />
-        </Row>
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "serviceArticle") {
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Header />
-        <Row>
-          <SideBar share={share} glue top={1.5} />
-          <Section>{children}</Section>
-          <SideBar glue desctop top={1.5} />
-        </Row>
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "blogCategory") {
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Header />
-        <Box ads big content={content} />
-        <Row>
-          <SideBar blog desctop top={2.4} />
-          <Section>{children}</Section>
-          <SideBar socialMedia team tag desctop top={2.4} />
-        </Row>
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "blogArticle") {
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Header />
-        <Row>
-          <SideBar share glue desctop top={1.5} />
-          <Section>{children}</Section>
-          <SideBar info={info} glue desctop top={1.5} />
-        </Row>
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "tutorialCategory") {
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Header />
-        <Box ads big content={content} />
-        <Row>
-          <SideBar desctop tutorials top={2.4} />
-          <Section>{children}</Section>
-          <SideBar socialMedia team tag desctop top={2.4} />
-        </Row>
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "tutorialArticle") {
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Header />
-        <Box ads big content={content} />
-        <Row>
-          <SideBar desctop tutorials top={2.4} />
-          <Section>{children}</Section>
-          <SideBar socialMedia author tag desctop top={2.4} />
-        </Row>
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "author") {
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Header />
-        <Box big author content={content} />
-        <Row>
-          <SideBar skill desctop top={2.4} />
-          <Section>{children}</Section>
-          <SideBar desctop top={2.4} />
-        </Row>
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "tag") {
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Header />
-        {boxTag ? (
-          <>
-            {boxTagblog && <Box big tag boxTagblog content={content} />}
-            {boxTagservice && <Box big tag boxTagservice content={content} />}
-            {boxTagtutorial && <Box big tag boxTagtutorial content={content} />}
-            <Row>
-              <SideBar desctop top={2.4} />
-              <Section>{children}</Section>
-              <SideBar desctop top={2.4} />
-            </Row>
-          </>
-        ) : (
-          <>
-            <Row>
-              <SideBar share glue desctop top={1.5} />
-              <Section>{children}</Section>
-              <SideBar tag glue desctop top={1.5} />
-            </Row>
-          </>
-        )}
+  const { datoCmsSite } = useStaticQuery(
+    graphql`
+      query {
+        datoCmsSite {
+          id
+          domain
+          globalSeo {
+            siteName
+            titleSuffix
+            twitterAccount
+            facebookPageUrl
+            fallbackSeo {
+              title
+              description
+              twitterCard
+              image {
+                url
+              }
+            }
+          }
+        }
+      }
+    `
+  )
 
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "skill") {
-    return (
-      <>
-        <GlobalStyle theme={theme} />
-        <Header />
-        <Box big skill content={content} />
-        <Row>
-          <SideBar team desctop top={2.4} />
-          <Section>{children}</Section>
-          <SideBar desctop top={2.4} />
-        </Row>
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "contact") {
-    return (
-      <>
-        <GlobalStyle theme={theme} yellow />
-        <Header />
-        <Box big ads content={content} />
-        <Row>
-          <Section contact>{children}</Section>
-        </Row>
-        <Footer />
-      </>
-    )
-  } else if (siteBar === "repair") {
-    return (
-      <>
-        <GlobalStyle theme={theme} yellow />
-        <Header />
-        <Box big ads big content={content} />
-        <Row>
-          <SideBar repair tablet top={0.9} />
-          <Section repair>{children}</Section>
-          <SideBar help glue desctop top={0} />
-        </Row>
-        <Footer />
-      </>
-    )
-  } else {
-    return (
-      <>
-        <p>error templetes</p>
-      </>
-    )
-  }
+  const title = content.title ? content.title : datoCmsSite.globalSeo.siteName
+  const image = content.image ? content.image : datoCmsSite.globalSeo.fallbackSeo.image.url
+  const url = content.slug ? `https://www.uxu.pl/${content.slug}` : `https://www.uxu.pl/`
+  const description = content.description
+    ? content.description
+    : datoCmsSite.globalSeo.fallbackSeo.description
+
+  return (
+    <>
+      <Helmet>
+        {/* General tags */}
+        <title>
+          {title} {datoCmsSite.globalSeo.titleSuffix}
+        </title>
+        <meta name="description" content={description} />
+        <meta name="image" content={image} />
+        <link rel="canonical" href={url} />
+
+        {/* OpenGraph tags */}
+        <meta name="og:url" content={url} />
+        <meta name="og:image" content={image} />
+        <meta name="og:title" content={title} />
+        <meta name="og:description" content={description} />
+
+        {/* Twitter Card tags */}
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:image" content={image} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:creator" content={datoCmsSite.globalSeo.twitterAccount} />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@700&display=swap"
+          rel="stylesheet"
+          defer
+        />
+      </Helmet>
+
+      <GlobalStyle theme={{ theme: parameters.theme, settings: settings }} />
+      <Header />
+      {children}
+      <Footer />
+    </>
+  )
 }
 
-// EXPORT NEW COMPONENT
+// PropTpyes
+Root.propTypes = {
+  children: PropTypes.node.isRequired,
+  parameters: PropTypes.shape({
+    theme: PropTypes.string,
+  }),
+  content: PropTypes.shape({
+    title: PropTypes.string,
+    image: PropTypes.string,
+    description: PropTypes.string,
+  }),
+}
+
+// PropTpyes default
+Root.defaultProps = {
+  id: null,
+  key: null,
+  parameters: PropTypes.shape({
+    theme: false,
+  }),
+  content: PropTypes.shape({ title: false, description: false, image: null }),
+}
+
+// export new component
 export default Root

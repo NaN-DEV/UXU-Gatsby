@@ -5,8 +5,8 @@ const Row = styled.div`
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
-  padding: ${props => props.settings.break};
-  max-width: ${props => props.settings.max_width};
+  padding: ${props => props.theme.settings.break};
+  max-width: ${props => props.theme.settings.max_width};
 `
 
 export default Row

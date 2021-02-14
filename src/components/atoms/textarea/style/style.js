@@ -1,35 +1,49 @@
+import { Field } from "formik"
 import styled, { css } from "styled-components"
 
-const Textarea = styled.textarea`
+export const Box = styled.div`
+  flex: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  position: relative;
+  padding: 1.5rem 0;
+`
+export const Textarea = styled(Field)`
   width: 100%;
   height: 15rem;
+  padding: 1.5rem;
   font-size: 1.5rem;
   border-radius: 3px;
-  font-weight: normal;
+  font-weight: bold;
   -webkit-appearance: none;
-  color: ${props => props.theme.primary};
-  padding: ${props => props.theme.break};
-  font-family: ${props => props.theme.font_secondary};
-  ${props =>
-    props.className === "error"
-      ? css`
-          box-shadow: 3px 3px 0px ${props => props.theme.danger};
-          border: ${props => props.theme.border} solid red;
-        `
-      : css`
-          box-shadow: 3px 3px 0px ${props => props.theme.dark};
-          border: ${props => props.theme.border} solid ${props => props.theme.primary};
-        `}
+  font-family: "Montserrat", sans-serif;
+
+  ${props => {
+    if (props.errors) {
+      return css`
+        border: 3px solid ${props => props.theme.settings.danger};
+      `
+    } else if (props.value && props.value.length > 0) {
+      return css`
+        border: 3px solid ${props => props.theme.settings.primary};
+      `
+    } else {
+      return css`
+        border: 3px solid ${props => props.theme.settings.dark};
+      `
+    }
+  }}
+
   &::placeholder {
     opacity: 1;
-    font-weight: normal;
-    color: ${props => props.theme.primary};
-    transition: ${props => props.theme.animation};
+    font-weight: bold;
+    color: ${props => props.theme.settings.dark};
   }
+
   &:focus {
     outline: none;
-    box-shadow: 3px 3px 0px ${props => props.theme.primary};
-    border: ${props => props.theme.border} solid ${props => props.theme.primary};
+    border: 3px solid ${props => props.theme.settings.primary};
 
     &::placeholder {
       opacity: 0;
@@ -37,4 +51,12 @@ const Textarea = styled.textarea`
   }
 `
 
-export default Textarea
+export const Error = styled.p`
+  flex: 100%;
+  display: block;
+  max-width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 0.6rem;
+  color: ${props => props.theme.settings.danger};
+`

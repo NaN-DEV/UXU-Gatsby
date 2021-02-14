@@ -2,9 +2,9 @@ import { Link } from "gatsby"
 import styled, { css } from "styled-components"
 
 const buttonStyles = css`
-  opacity: 1;
   display: flex;
   outline: none;
+  cursor: pointer;
   font-weight: bold;
   font-size: 1.5rem;
   position: relative;
@@ -15,31 +15,28 @@ const buttonStyles = css`
 `
 
 const buttonColor = css`
-  &:hover {
-    opacity: 0.6;
-  }
-
   ${props => {
     switch (props.theme.choice) {
       case "primary":
         return css`
           height: 4.2rem;
           padding: 0 3rem;
+          color: white !important;
           border-radius: ${props.theme.settings.border};
-          color: ${props.theme.settings.secondary} !important;
-          background-color: ${props.theme.settings.primary} !important;
-          box-shadow: ${props.theme.settings.tertiary_5} ${props.theme.settings.border}
-            ${props.theme.settings.border} 0 !important;
+          background-color: ${props.theme.settings.primary};
+          &:hover {
+            background-color: ${props.theme.settings.dark};
+          }
         `
       case "secondary":
         return css`
           height: 4.2rem;
           padding: 0 3rem;
           border-radius: ${props.theme.settings.border};
-          color: ${props.theme.settings.primary} !important;
-          background-color: ${props.theme.settings.secondary} !important;
+          color: ${props.theme.settings.primary};
+          background-color: ${props.theme.settings.secondary};
           box-shadow: ${props.theme.settings.tertiary_5} ${props.theme.settings.border}
-            ${props.theme.settings.border} 0 !important;
+            ${props.theme.settings.border} 0;
         `
       default:
         return css`

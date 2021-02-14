@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<style type="text/css">
+	.contactIcon0{fill:#FDC147;}
+	.contactIcon1{fill:#FFD248;}
+	.contactIcon2{fill:#231F20;}
+</style>
+<g>
+	<g>
+		<polygon class="contactIcon0" points="23.51,4.65 12,11.51 0.49,4.65 		"/>
+		<polygon class="contactIcon1" points="23.51,4.65 23.51,19.35 0.49,19.35 0.49,4.65 12,11.51 		"/>
+	</g>
+	<path class="contactIcon2" d="M23.51,4.16H0.49C0.22,4.16,0,4.38,0,4.65v14.69c0,0.27,0.22,0.49,0.49,0.49h23.02c0.27,0,0.49-0.22,0.49-0.49
+		V4.65C24,4.38,23.78,4.16,23.51,4.16z M12,10.94l-9.73-5.8h19.46L12,10.94z M0.98,18.86V5.51l7.39,4.4l-5.24,4.15l0.61,0.77
+		l5.53-4.38l2.48,1.48C11.83,11.98,11.91,12,12,12s0.17-0.02,0.25-0.07l2.48-1.48l5.53,4.38l0.61-0.77l-5.24-4.15l7.39-4.4v13.34
+		H0.98z"/>
+</g>
+</svg>

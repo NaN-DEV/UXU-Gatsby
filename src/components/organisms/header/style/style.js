@@ -9,34 +9,6 @@ export const Header = styled.header`
   display: flex;
   position: fixed;
   background-color: ${props => props.theme.settings.secondary};
-
-  .hamburger {
-    &:hover {
-      opacity: 1 !important;
-      .box {
-        display: block;
-      }
-    }
-  }
-`
-
-export const MenuBox = styled.div`
-  top: 3rem;
-  left: -9rem;
-  display: none;
-  padding: ${props => props.theme.settings.break} 0;
-  position: absolute;
-`
-
-export const ListLink = styled.div`
-  border-radius: 3px;
-  padding: ${props => props.theme.settings.break};
-  background-color: ${props => props.theme.settings.muted};
-  box-shadow: 3px 3px 0px ${props => props.theme.settings.dark};
-  border: ${props => props.theme.settings.border} solid ${props => props.theme.settings.primary};
-  a {
-    padding: 0.3rem ${props => props.theme.settings.break};
-  }
 `
 
 export const BreakHeader = styled.div`

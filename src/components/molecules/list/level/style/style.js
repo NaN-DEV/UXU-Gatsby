@@ -1,30 +1,27 @@
 import styled from "styled-components"
 
 export const Ul = styled.ul`
-  flex: 100%;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   list-style: none;
-  justify-content: center;
-
-  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
-    flex: none;
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
     width: auto;
+    display: flex;
+    flex-wrap: wrap;
   }
 `
+
 export const Li = styled.li`
   flex: 100%;
-  width: 100%;
-  padding: 0.5rem 0;
-  font-size: 1.5rem;
+  max-width: 100%;
   text-align: center;
-  a {
-    font-size: 1.5rem;
-  }
-  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
+  padding: 0.75rem 0;
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
     flex: auto;
-    width: auto;
-    padding: 0 0 0 1.5rem;
+    max-width: max-content;
+    padding-right: ${props => props.theme.settings.break};
+    &:last-of-type {
+      padding-right: 0;
+    }
   }
 `

@@ -1,87 +1,59 @@
-// IMPORT PLUGIN
+// Important plugin
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
-// IMPORT COMPONENT
-
+// Important component
 import Layout from "../layouts/index"
-import Seo from "../components/atoms/seo/seo"
-import List from "../components/molecules/list/list"
-import Article from "../components/molecules/article/article"
+import Ads from "../components/molecules/ads/ads"
+import Section from "../components/organisms/section/section"
 
-// CREATE NEW COMPONENT
-
+// Create new component
 const ServiceCategory = props => {
-  const contentBoxAds = {
-    title: `Dane kontaktowe`,
-    description: `Poznajmy się`,
-  }
+  const { datoCmsContact, datoCmsPage } = useStaticQuery(
+    graphql`
+      query {
+        datoCmsContact {
+          id
+          nameCompany
+          street
+          postCode
+          city
+          country
+          krs
+          regon
+          vatId
+          mail
+        }
+        datoCmsPage(title: { eq: "contact" }) {
+          id
+          seo {
+            title
+            description
+            image {
+              url
+            }
+          }
+        }
+      }
+    `
+  )
 
   return (
     <>
-      <StaticQuery
-        query={graphql`
-          query Contact {
-            allDatoCmsBlog {
-              nodes {
-                id
-                title
-                excerpt
-                mainImage {
-                  fixed {
-                    ...GatsbyDatoCmsFixed
-                  }
-                }
-                slug
-                tag {
-                  name
-                  id
-                  slug
-                }
-                category {
-                  id
-                }
-                author {
-                  firstName
-                  lastName
-                  nick
-                  slug
-                  avatar {
-                    fixed {
-                      ...GatsbyDatoCmsFixed
-                    }
-                  }
-                }
-                meta {
-                  firstPublishedAt(formatString: "MMM DD")
-                }
-              }
-            }
-            allDatoCmsBlogCategory {
-              nodes {
-                name
-                slug
-                id
-              }
-            }
-          }
-        `}
-        render={data => {
-          return (
-            <>
-              <Layout siteBar="contact" content={contentBoxAds}>
-                <Seo
-                  title="Kontakt"
-                  description="Szukasz kontaktu do naszego serwisu albo masz ochortę pogadać znami na inny temat ? Śmiało pisz nie gryziemy."
-                />
-              </Layout>
-            </>
-          )
+      <Layout
+        content={{
+          title: datoCmsPage.seo.title,
+          description: datoCmsPage.seo.description,
+          image: datoCmsPage.seo.image,
         }}
-      />
+        parameters={{ theme: "secondary" }}
+      >
+        <Ads type="classic" content={{ title: "hej! poznajmy sie :)" }} />
+        <Section type="contact" content={{ title: "formularz" }} />
+      </Layout>
     </>
   )
 }
 
-// EXPORT NEW COMPONENT
+// Export new component
 export default ServiceCategory

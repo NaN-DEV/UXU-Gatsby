@@ -6,8 +6,11 @@ export const Footer = styled.footer`
   flex-wrap: wrap;
   position: relative;
   align-items: center;
-  background-color: ${props => props.theme.muted};
+  background-color: white;
 
+  .logo {
+    margin: 0 auto;
+  }
   .row {
     padding: 10px 15px;
     align-items: center;
@@ -15,12 +18,12 @@ export const Footer = styled.footer`
   }
   .links {
     padding-top: 15px;
-    a {
-      font-family: ${props => props.theme.font_secondary};
-    }
   }
 
-  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
+    .logo {
+      margin: 0;
+    }
     justify-content: flex-end;
     .links {
       padding-top: 0;
@@ -34,11 +37,12 @@ export const Footer = styled.footer`
 
 export const P = styled.p`
   display: none;
-  @media (min-width: ${props => props.theme.breakpoint_tablet}) {
-    display: block;
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
+    display: flex;
     font-weight: bold;
     font-size: 1.5rem;
     padding: 0 1.5rem;
-    font-family: ${props => props.theme.font_secondary};
+    align-items: center;
+    font-family: ${props => props.theme.settings.font_secondary};
   }
 `

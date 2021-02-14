@@ -1,32 +1,29 @@
 // IMPORT PLUGIN
 import React from "react"
+import PropTypes from "prop-types"
 
-// IMPORT SETTINGS STYLE
-import theme from "../../../layouts/settings"
-
-// IMPORT SETTINGS COMPONENT
-import Icon from "./icon/icon"
-import Menu from "./menu/menu"
-import Share from "./share/share"
+// IMPORT COMPONENT
 import Level from "./level/level"
-import Vertical from "./vertical/vertical"
-import Category from "./category/category"
+import Vertical from "./verical/verical"
+
 // CREATE NEW COMPONENT
-
 const ListComponent = props => {
-  const { level, icon, menu, items, vertical, category, share } = props
+  const { type, parameters, children } = props
 
-  return (
-    <>
-      {menu && <Menu items={items} />}
-      {level && <Level items={items} {...props} />}
-      {icon && <Icon items={items} {...props} />}
-      {vertical && <Vertical items={items} {...props} />}
-      {category && <Category items={items} {...props} />}
-      {share && <Share items={items} {...props} />}
-    </>
-  )
+  switch (type) {
+    case "level":
+      return <Level parameters={parameters}>{children}</Level>
+    case "vertical":
+      return <Vertical parameters={parameters}>{children}</Vertical>
+    default:
+      return "Please add type list :) "
+  }
 }
 
-// EXPORT NEW COMPONENT
+// PropTpyes
+ListComponent.propTypes = {
+  type: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+}
+
 export default ListComponent

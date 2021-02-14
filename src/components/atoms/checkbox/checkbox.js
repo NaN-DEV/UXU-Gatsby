@@ -1,47 +1,96 @@
-// IMPORT PLUGIN
+// Import plugin
 import React from "react"
+import PropTypes from "prop-types"
 
-// IMPORT SETTINGS STYLE
-import theme from "../../../layouts/settings"
+// Import settings style
+import settings from "../../../layouts/settings/settings"
 
-// IMPORT STYLES
-import { Box, CheckBox, Label } from "./style/style"
+// Import styles
+import { Box, CheckBox, Label, Error } from "./style/style"
 
-// CREATE NEW COMPONENT
-const CheckBoxComponent = props => {
-  const {
-    name,
-    value,
-    content,
-    checked,
+// Create new component
+const CheckClassicComponent = props => {
+  const { id, content, parameters } = props
 
-    info,
-    id,
-    onBlur,
-    onChange,
-    className,
-  } = props
   return (
     <>
-      <Box>
+      <Box theme={{ settings: settings }}>
         <CheckBox
           id={id}
-          name={name}
-          value={value}
-          theme={theme}
-          onBlur={onBlur}
           type="checkbox"
-          checked={checked}
-          onChange={onChange}
-          info={info ? 1 : 0}
-          className={className}
-          defaultChecked={checked ? true : false}
+          name={parameters.name}
+          value={parameters.value}
+          checked={parameters.checked}
+          theme={{ settings: settings }}
+          validate={parameters.validate}
+          onChange={parameters.onChange}
+          errors={content.errors ? true : false}
         />
-        <Label for={name} dangerouslySetInnerHTML={{ __html: content }} />
+        <Label
+          htmlFor={id}
+          theme={{ settings: settings }}
+          errors={content.errors ? true : false}
+          dangerouslySetInnerHTML={{ __html: content.description }}
+        />
+        <Error theme={{ settings: settings }}>{content.errors}</Error>
       </Box>
     </>
   )
 }
 
-// EXPORT NEW COMPONENT
-export default CheckBoxComponent
+// PropTypes
+CheckClassicComponent.propTypes = {
+  content: PropTypes.shape({
+    errors: PropTypes.string,
+    description: PropTypes.string,
+  }),
+  parameters: PropTypes.shape({
+    name: PropTypes.string,
+    theme: PropTypes.string,
+    checked: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+      PropTypes.array,
+      PropTypes.func,
+    ]),
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+      PropTypes.array,
+      PropTypes.func,
+    ]),
+    validate: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+      PropTypes.array,
+      PropTypes.func,
+    ]),
+    onChange: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+      PropTypes.array,
+      PropTypes.func,
+    ]),
+    className: PropTypes.string,
+  }),
+}
+
+// PropTypes default
+CheckClassicComponent.defaultProps = {
+  content: PropTypes.shape({
+    errors: "",
+    description: "add description",
+  }),
+  parameters: PropTypes.shape({
+    name: null,
+    theme: null,
+    checked: null,
+    value: null,
+    validate: null,
+    onChange: null,
+    className: null,
+  }),
+}
+
+// Export new component
+export default CheckClassicComponent

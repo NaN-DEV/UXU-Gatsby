@@ -1,43 +1,63 @@
+import { Field } from "formik"
 import styled, { css } from "styled-components"
 
-const Input = styled.input`
+export const Box = styled.div`
+  flex: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  position: relative;
+  padding: 1.5rem 0;
+`
+
+export const Input = styled(Field)`
   width: 100%;
-  font-weight: bold;
+  height: 6rem;
+  padding: 1.5rem;
   font-size: 1.5rem;
   border-radius: 3px;
+  font-weight: bold;
   -webkit-appearance: none;
-  color: ${props => props.theme.primary};
-  padding: 0 ${props => props.theme.break};
-  transition: ${props => props.theme.animation};
-  font-family: ${props => props.theme.font_secondary};
-  height: ${props => (props.type === "search" ? "3.7rem" : "6rem")};
+  font-family: "Montserrat", sans-serif;
 
-  ${props =>
-    props.className === "error"
-      ? css`
-          box-shadow: 3px 3px 0px ${props => props.theme.danger};
-          border: ${props => props.theme.border} solid red;
-        `
-      : css`
-          box-shadow: 3px 3px 0px ${props => props.theme.dark};
-          border: ${props => props.theme.border} solid ${props => props.theme.primary};
-        `}
+  ${props => {
+    if (props.theme.errors) {
+      return css`
+        border: 3px solid ${props => props.theme.settings.danger};
+      `
+    } else if (props.value.length > 0) {
+      return css`
+        border: 3px solid ${props => props.theme.settings.primary};
+      `
+    } else {
+      return css`
+        border: 3px solid ${props => props.theme.settings.dark};
+      `
+    }
+  }}
 
   &::placeholder {
     opacity: 1;
-    font-weight: normal;
-    color: ${props => props.theme.primary};
-    transition: ${props => props.theme.animation};
+    font-weight: bold;
+    color: ${props => props.theme.settings.dark};
   }
 
   &:focus {
     outline: none;
-    box-shadow: 3px 3px 0px ${props => props.theme.primary};
-    border: ${props => props.theme.border} solid ${props => props.theme.primary};
+    border: 3px solid ${props => props.theme.settings.primary};
 
     &::placeholder {
       opacity: 0;
     }
   }
 `
-export default Input
+
+export const Error = styled.p`
+  flex: 100%;
+  display: block;
+  max-width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 0.6rem;
+  color: ${props => props.theme.settings.danger};
+`

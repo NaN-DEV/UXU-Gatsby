@@ -16,12 +16,6 @@ module.exports = {
     { resolve: `gatsby-plugin-react-helmet` },
     { resolve: `gatsby-plugin-styled-components` },
     {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `UXU`,
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -37,7 +31,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/icon/uxu-icon.png`,
+        icon: `src/assets/icon/uxu.png`,
       },
     },
     {

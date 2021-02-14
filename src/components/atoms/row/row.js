@@ -1,23 +1,40 @@
-// IMPORT PLUGIN
+// Import plugin
 import React from "react"
 import PropTypes from "prop-types"
 
-// IMPORT STYLE
+// Import style
 import Row from "./style/style"
 
-// IMPORT SETTINGS STYLE
-import settings from "../../../layouts/settings"
+// Import style settings
+import settings from "../../../layouts/settings/settings"
 
-// CREATE NEW COMPONENT
+// Create new component
 const RowComponent = props => {
-  const { children, style, className } = props
+  const { parameters, children } = props
   return (
     <>
-      <Row style={style} className={className} settings={settings}>
+      <Row style={parameters.style} className={parameters.className} theme={{ settings: settings }}>
         {children}
       </Row>
     </>
   )
+}
+
+// PropTpyes
+RowComponent.propTypes = {
+  children: PropTypes.node.isRequired,
+  parameters: PropTypes.shape({
+    style: PropTypes.object,
+    className: PropTypes.string,
+  }),
+}
+
+// PropTpyes defaults
+RowComponent.defaultProps = {
+  parameters: PropTypes.shape({
+    style: null,
+    className: null,
+  }),
 }
 
 export default RowComponent

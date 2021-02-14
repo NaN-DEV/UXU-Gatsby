@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<style type="text/css">
+	.homeIcon0{fill:#67120F;}
+	.homeIcon1{fill:#C44028;}
+	.homeIcon2{fill:#24793C;}
+	.homeIcon3{fill:#269C48;}
+	.homeIcon4{fill:#FFFFFF;}
+	.homeIcon5{fill:#E9F6F9;}
+	.homeIcon6{fill:#F9A12D;}
+	.homeIcon7{fill:#E48725;}
+	.homeIcon8{fill:#DB5535;}
+	.homeIcon9{fill:#1075AF;}
+	.homeIcon10{fill:#1BA4C4;}
+	.homeIcon11{fill:#A92323;}
+</style>
+<rect x="17.45" y="2.31" class="st0" width="3.88" height="7.37"/>
+<rect x="17.06" y="1.53" class="st1" width="4.65" height="0.78"/>
+<g>
+	<rect y="20.92" class="homeIcon2" width="23.65" height="1.55"/>
+	<polygon class="homeIcon2" points="2.71,17.54 3.49,17.16 4.26,17.54 4.26,21.73 3.49,22.12 2.71,21.73 	"/>
+	<polygon class="homeIcon2" points="0,17.54 0.78,17.16 1.55,17.54 1.55,21.73 0.78,22.12 0,21.73 	"/>
+</g>
+<rect x="0.78" y="18.98" class="homeIcon3" width="2.71" height="0.78"/>
+<rect x="5.43" y="10.84" class="homeIcon4" width="15.9" height="10.86"/>
+<polyline class="homeIcon5" points="5.43,10.84 21.32,10.84 21.32,21.69 "/>
+<path class="homeIcon6" d="M12.41,20.92v-7.25c0-0.35-0.12-0.5-0.47-0.5H8.34c-0.35,0-0.58,0.19-0.58,0.5v7.25H12.41z"/>
+<path class="homeIcon7" d="M12.41,17.43v-3.76c0-0.35-0.12-0.5-0.47-0.5H8.34c-0.35,0-0.58,0.19-0.58,0.5"/>
+<path class="homeIcon8" d="M11.94,17.08c0,0.35-0.27,0.66-0.66,0.66c-0.35,0-0.66-0.27-0.66-0.66c0-0.35,0.27-0.66,0.66-0.66
+	C11.63,16.42,11.94,16.69,11.94,17.08z"/>
+<path class="homeIcon1" d="M11.75,16.61c0.27,0.23,0.23,0.66,0,0.93s-0.66,0.23-0.93,0"/>
+<path class="homeIcon9" d="M16.67,15.1H19v-1.43c0-0.35-0.39-0.5-0.74-0.5h-1.59V15.1z"/>
+<path class="homeIcon10" d="M16.28,15.1v-1.94h-1.74c-0.35,0-0.58,0.19-0.58,0.5v1.43H16.28z"/>
+<path class="homeIcon9" d="M16.28,15.49h-2.33V17c0,0.35,0.23,0.43,0.58,0.43h1.74V15.49z"/>
+<path class="homeIcon10" d="M16.67,15.49v1.94h1.59c0.35,0,0.74-0.08,0.74-0.43v-1.51H16.67z"/>
+<polygon class="homeIcon1" points="24,10.84 13.38,2.54 2.79,10.84 "/>
+<polygon class="homeIcon11" points="24,10.84 13.38,2.54 7.99,10.84 "/>
+<g>
+	<polygon class="homeIcon1" points="5.78,8.51 21.01,8.51 20.05,7.74 6.75,7.74 	"/>
+	<polygon class="homeIcon11" points="9.23,5.8 17.56,5.8 17.06,5.41 9.73,5.41 	"/>
+</g>
+</svg>

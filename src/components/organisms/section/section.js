@@ -1,42 +1,40 @@
-// IMPORT PLUGIN
+// Import plugin
 import React from "react"
 
-// IMPORT COMPONENT START
-import Row from "../../atoms/row/row"
-import SectionReapair from "./repair/repair"
-import SectionClassic from "./classic/classic"
-import SectionContact from "./contact/contact"
+// Import component
+import Section404 from "./section404/section404"
+import SectionArticle from "./sectionArticle/sectionArticle"
+import SectionContact from "./sectionContact/sectionContact"
+import SectionListArticle from "./sectionListArticle/sectionListArticle"
+import SectionListOfExpertArticles from "./sectionListOfExpertArticles/sectionListOfExpertArticles"
 
-// CREATE NEW COMPONENT
-
+// Create new component
 const SectionComponent = props => {
-  const { children, contact, repair } = props
-  if (contact) {
-    return (
-      <>
-        <SectionContact>
-          <Row className="row">{children}</Row>
-        </SectionContact>
-      </>
-    )
-  } else if (repair) {
-    return (
-      <>
-        <SectionReapair>
-          <Row className="row">{children}</Row>
-        </SectionReapair>
-      </>
-    )
-  } else {
-    return (
-      <>
-        <SectionClassic>
-          <Row className="row">{children}</Row>
-        </SectionClassic>
-      </>
-    )
+  const { type, parameters, content } = props
+
+  switch (type) {
+    case "section404":
+      return <Section404 />
+      break
+    case "article":
+      return <SectionArticle parameters={parameters} content={content} />
+      break
+    case "contact":
+      return <SectionContact parameters={parameters} content={content} />
+      break
+    case "listArticle":
+      return <SectionListArticle parameters={parameters} content={content} />
+      break
+    case "listOfExpertArticles":
+      return <SectionListOfExpertArticles parameters={parameters} content={content} />
+      break
+    case "listOfExpertArticles":
+      return <SectionListOfExpertArticles parameters={parameters} content={content} />
+      break
+    default:
+      return "add type section"
   }
 }
 
-// EXPORT NEW COMPONENT
+// Export new component
 export default SectionComponent

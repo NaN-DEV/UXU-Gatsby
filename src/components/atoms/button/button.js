@@ -6,18 +6,16 @@ import PropTypes from "prop-types"
 import { Button, LinkOut, LinkIn } from "./style/style"
 
 // IMPORT SETTINGS STYLE
-import settings from "../../../layouts/settings"
+import settings from "../../../layouts/settings/settings"
 
 // CREATE NEW COMPONENT
 const ButtonComponent = props => {
-  const { id, key, type, content, parameters, children } = props
+  const { type, content, parameters, children } = props
 
   switch (type) {
     case "button":
       return (
         <Button
-          id={id}
-          key={key}
           type={type}
           title={content.title}
           style={parameters.style}
@@ -31,28 +29,22 @@ const ButtonComponent = props => {
       )
     case "linkIn":
       return (
-        <>
-          <LinkIn
-            id={id}
-            key={key}
-            type={type}
-            to={content.to}
-            title={content.title}
-            style={parameters.style}
-            onClick={parameters.onClick}
-            disabled={parameters.disabled}
-            className={parameters.className}
-            theme={{ choice: parameters.theme, settings: settings }}
-          >
-            {children}
-          </LinkIn>
-        </>
+        <LinkIn
+          type={type}
+          to={content.to}
+          title={content.title}
+          style={parameters.style}
+          onClick={parameters.onClick}
+          disabled={parameters.disabled}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          {children}
+        </LinkIn>
       )
     case "linkOut":
       return (
         <LinkOut
-          id={id}
-          key={key}
           type={type}
           target="_blank"
           href={content.to}
@@ -69,8 +61,6 @@ const ButtonComponent = props => {
     case "sumbit":
       return (
         <Button
-          id={id}
-          key={key}
           type={type}
           title={content.title}
           style={parameters.style}
@@ -89,12 +79,9 @@ const ButtonComponent = props => {
 
 // PropTpyes
 ButtonComponent.propTypes = {
-  id: PropTypes.string,
-  key: PropTypes.string,
   children: PropTypes.node.isRequired,
-  content: PropTypes.shape({ title: PropTypes.string }),
+  content: PropTypes.shape({ title: PropTypes.string, to: PropTypes.string }),
   parameters: PropTypes.shape({
-    to: PropTypes.string,
     theme: PropTypes.string,
     style: PropTypes.object,
     onClick: PropTypes.func,
@@ -103,16 +90,14 @@ ButtonComponent.propTypes = {
   }),
 }
 
+// PropTypes default
 ButtonComponent.defaultProps = {
-  id: null,
-  key: null,
-  content: PropTypes.shape({ title: null }),
+  content: PropTypes.shape({ title: null, to: "/" }),
   parameters: PropTypes.shape({
-    to: "/",
     theme: null,
     style: null,
     onClick: null,
-    disabled: false,
+    disabled: null,
     className: null,
   }),
 }

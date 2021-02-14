@@ -1,27 +1,25 @@
-// IMPORT PLUGIN
+// Import plugin
 import React from "react"
 
-// IMPORT SETTINGS STYLE
-import theme from "../../../layouts/settings"
+// Import component
+import Full from "./articleFull/articleFull"
+import Short from "./articleShort/articleShort"
 
-// IMPORT SETTINGS COMPONENT
-import Full from "./full/full"
-import Short from "./short/short"
-import Author from "./author/author"
-
-// CREATE NEW COMPONENT
-
+// Create new component
 const ArticleComponent = props => {
-  const { content, short, fullBlog, fullService, fullTutorial, full, author } = props
+  const { type, parameters, content } = props
 
-  return (
-    <>
-      {short && <Short content={content} {...props} />}
-      {author && <Author content={content} {...props} />}
-      {full && <Full content={content} {...props} />}
-    </>
-  )
+  switch (type) {
+    case "full":
+      return <Full parameters={parameters} content={content} />
+
+    case "short":
+      return <Short parameters={parameters} content={content} />
+
+    default:
+      return "Add type article"
+  }
 }
 
-// EXPORT NEW COMPONENT
+// Export new component
 export default ArticleComponent

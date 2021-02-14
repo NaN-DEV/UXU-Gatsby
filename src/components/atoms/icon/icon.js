@@ -1,19 +1,27 @@
-// IMPORT PLUGIN
+// Import plugin
 import React from "react"
 import PropTypes from "prop-types"
 
-// IMPORT STYLES
+// Import styles
 import BoxIcon from "./style/style"
 
-// IMPORT SETTINGS STYLE
-import settings from "../../../layouts/settings"
+// Import settings
+import settings from "../../../layouts/settings/settings"
 
-// IMPORT SVG
-
+// Import svg
 import Logo from "../../../assets/brand/logo.svg"
-import Hamburger from "../../../assets/icon/hamburger.svg"
+import Pig from "../../../assets/icon/pig.svg"
+import Post from "../../../assets/icon/post.svg"
+import Home from "../../../assets/icon/home.svg"
+import Closed from "../../../assets/icon/closed.svg"
+import Github from "../../../assets/icon/github.svg"
+import Contact from "../../../assets/icon/contact.svg"
+import Twitter from "../../../assets/icon/twitter.svg"
+import Youtube from "../../../assets/icon/youtube.svg"
+import Facebook from "../../../assets/icon/facebook.svg"
+import Instagram from "../../../assets/icon/instagram.svg"
 
-// CREATE NEW COMPONENT
+// Create new component
 const IconComponent = props => {
   const { id, key, type, parameters } = props
 
@@ -31,7 +39,8 @@ const IconComponent = props => {
           <Logo />
         </BoxIcon>
       )
-    case "hamburger":
+
+    case "Post":
       return (
         <BoxIcon
           id={id}
@@ -41,7 +50,129 @@ const IconComponent = props => {
           className={parameters.className}
           theme={{ choice: parameters.theme, settings: settings }}
         >
-          <Hamburger />
+          <Post />
+        </BoxIcon>
+      )
+    case "Pig":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Pig />
+        </BoxIcon>
+      )
+
+    case "Home":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Home />
+        </BoxIcon>
+      )
+
+    case "Closed":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Closed />
+        </BoxIcon>
+      )
+
+    case "Github":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Github />
+        </BoxIcon>
+      )
+
+    case "Contact":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Contact />
+        </BoxIcon>
+      )
+
+    case "Twitter":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Twitter />
+        </BoxIcon>
+      )
+    case "Youtube":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Youtube />
+        </BoxIcon>
+      )
+    case "Facebook":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Facebook />
+        </BoxIcon>
+      )
+    case "Instagram":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Instagram />
         </BoxIcon>
       )
     default:

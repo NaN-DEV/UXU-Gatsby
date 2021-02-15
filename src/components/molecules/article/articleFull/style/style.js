@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import BgImg from "gatsby-background-image"
+import Img from "gatsby-image"
+import ImgBg from "gatsby-background-image"
 
 export const Article = styled.article`
   width: 100%;
@@ -29,8 +30,8 @@ export const Article = styled.article`
     padding: 1.5rem 0;
     p {
       opacity: 0.6;
+      font-size: 1rem;
       font-weight: bold;
-      padding: 0.6rem 0;
       transition: all 0.3s;
       border-radius: 0.3rem;
       padding: 0.3rem 0.6rem;
@@ -46,7 +47,7 @@ export const Article = styled.article`
   }
 `
 
-export const Image = styled(BgImg)`
+export const MainImage = styled(ImgBg)`
   flex: 100%;
   max-width: 100%;
   min-height: 42rem;
@@ -60,11 +61,11 @@ export const Box = styled.div`
 export const Title = styled.h1`
   width: 100%;
   display: block;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   padding-bottom: 0.6rem;
 `
 
-export const AuthorImg = styled(BgImg)`
+export const AuthorImg = styled(ImgBg)`
   width: 3rem;
   height: 3rem;
   display: block;
@@ -86,4 +87,82 @@ export const DateAddPost = styled.div`
   max-width: 100%;
   position: relative;
   color: ${props => props.theme.settings.dark};
+`
+
+export const Description = styled.div`
+  flex: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 1.5rem;
+
+  ul,
+  ol {
+    padding: revert;
+    margin: 1.5rem 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: 1.5rem 0;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+  h2 {
+    font-size: 3.2rem;
+  }
+  h3 {
+    font-size: 2.9rem;
+  }
+  h4 {
+    font-size: 2.6rem;
+  }
+  h5 {
+    font-size: 2.3rem;
+  }
+  h6 {
+    font-size: 2rem;
+  }
+
+  blockquote {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.6rem;
+    margin: 1.5rem 0.3rem 1.5rem 0;
+    padding: ${props => props.theme.settings.break};
+    background-color: ${props => props.theme.settings.light};
+    box-shadow: 3px 3px 0px ${props => props.theme.settings.dark};
+    border: ${props => props.theme.border} solid ${props => props.theme.settings.primary};
+    p {
+      width: 100%;
+      font-size: 2rem;
+      text-align: center;
+      font-weight: bold;
+      &::before {
+        content: "„";
+      }
+      &::after {
+        content: "”";
+      }
+    }
+  }
+`
+
+export const Image = styled(Img)`
+  flex: 100%;
+  max-width: 100%;
+  margin: 1.5rem 0;
+`
+
+export const CodeBox = styled.div`
+  flex: 100%;
+  max-width: 100%;
+  padding: 1.5rem 0;
+  position: relative;
 `

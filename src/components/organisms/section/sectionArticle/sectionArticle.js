@@ -24,7 +24,7 @@ class SectionArticleComponent extends React.Component {
   }
 
   render() {
-    const { image, title, author, tag, meta } = this.props.content
+    const { image, title, author, tag, meta, description } = this.props.content
     console.log(this.props.content)
     return (
       <>
@@ -34,7 +34,7 @@ class SectionArticleComponent extends React.Component {
             <BoxArticle theme={{ settings: settings }}>
               <Article
                 type="full"
-                content={{ image, title, author, tag, date: meta.firstPublishedAt }}
+                content={{ image, title, author, tag, date: meta.firstPublishedAt, description }}
               />
             </BoxArticle>
             <SiteBar theme={{ settings: settings, site: "right" }}></SiteBar>

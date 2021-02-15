@@ -1,7 +1,7 @@
 // Important plugin
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { CopyBlock, xt256 } from "react-code-blocks"
 
 // Important settings
 import settings from "../../../../layouts/settings/settings"
@@ -10,12 +10,15 @@ import settings from "../../../../layouts/settings/settings"
 import {
   Article,
   Box,
-  Image,
+  MainImage,
   Title,
   AuthorImg,
   AutorName,
   NameAuthor,
   DateAddPost,
+  Description,
+  Image,
+  CodeBox,
 } from "./style/style"
 
 // Important settings
@@ -90,11 +93,11 @@ class ArticleFullComponent extends React.Component {
   render() {
     const { date } = this.state
     const { id, key, type, parameters, content } = this.props
-    console.log(content.author)
+    console.log(content.description)
     return (
       <>
         <Article theme={{ settings: settings }} id={id} key={key}>
-          <Image theme={{ settings: settings }} fluid={content.image.fixed} />
+          <MainImage theme={{ settings: settings }} fluid={content.image.fixed} />
           <Row parameters={{ className: "row" }}>
             <Title theme={{ settings: settings }}>{content.title}</Title>
 
@@ -117,7 +120,6 @@ class ArticleFullComponent extends React.Component {
 
             <List type="level" parameters={{ className: "tag" }}>
               {content.tag.map((item, i) => {
-                console.log(item)
                 return (
                   <Button
                     type="linkIn"
@@ -138,6 +140,43 @@ class ArticleFullComponent extends React.Component {
                 )
               })}
             </List>
+
+            {content.description.map(item => {
+              console.log(item.__typename)
+              switch (item.__typename) {
+                case "DatoCmsImage":
+                  return (
+                    <>
+                      <Image theme={{ settings: settings }} fluid={item.image.fixed} />
+                    </>
+                  )
+                case "DatoCmsCode":
+                  return (
+                    <>
+                      <CodeBox>
+                        <CopyBlock
+                          text={item.code}
+                          language={item.language}
+                          showLineNumbers={true}
+                          theme={xt256}
+                          codeBlock
+                        />
+                      </CodeBox>
+                    </>
+                  )
+                case "DatoCmsText":
+                  return (
+                    <>
+                      <Description
+                        theme={{ settings: settings }}
+                        dangerouslySetInnerHTML={{ __html: item.text }}
+                      />
+                    </>
+                  )
+                default:
+                  return "unknown type"
+              }
+            })}
           </Row>
         </Article>
       </>

@@ -17,8 +17,8 @@ html{
 body {
    margin: 0;
    padding: 0;
+   font-size: 2rem;
    line-height: 1.3;
-   font-size: 2.4rem;
    font-style: normal;
    font-weight: normal;
    color: ${props => props.theme.settings.primary};

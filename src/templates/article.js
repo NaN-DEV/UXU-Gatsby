@@ -66,6 +66,7 @@ export const ArticlePageComponentQuery = graphql`
         ... on DatoCmsCode {
           id
           code
+          language
         }
         ... on DatoCmsGallery {
           id

@@ -79,7 +79,7 @@ class AdsListPostComponent extends React.Component {
                   <Button
                     type="linkIn"
                     key={`${item.id}_${i}_AdsListPost`}
-                    content={{ to: `/a/${content.title}` }}
+                    content={{ to: `/a/${item.slug}` }}
                     parameters={{ className: `adsListPostOnceArticle` }}
                   >
                     <p>{item.title}</p>

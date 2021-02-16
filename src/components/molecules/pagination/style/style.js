@@ -21,7 +21,7 @@ export const Li = styled.li`
   border-radius: 3px;
   text-align: center;
   margin: 1.5rem 0.3rem 1.5rem 0;
-  font-family: "Roboto Mono", monospace;
+
   ${props =>
     props.disablet
       ? css`

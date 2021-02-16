@@ -13,7 +13,14 @@ const ArticlePageComponent = props => {
 
   return (
     <>
-      <Layout content={{ title: datoCmsArticle.title }} parameters={{}}>
+      <Layout
+        content={{
+          title: datoCmsArticle.seo.title,
+          image: datoCmsArticle.seo.image,
+          description: datoCmsArticle.seo.description,
+        }}
+        parameters={{}}
+      >
         <Section type="article" content={{ ...datoCmsArticle }} />
       </Layout>
     </>
@@ -29,13 +36,30 @@ export const ArticlePageComponentQuery = graphql`
       title
       author {
         id
-        slug
         name
+        slug
         surname
+        portfolio
+        desciption
+        work
+        city
+        country
+        birthday
+        socialMedia {
+          id
+          url
+          title
+        }
         image {
+          url
           fixed {
             ...GatsbyDatoCmsFixed
           }
+        }
+        skills {
+          id
+          slug
+          title
         }
       }
       image {
@@ -93,6 +117,13 @@ export const ArticlePageComponentQuery = graphql`
       }
       meta {
         firstPublishedAt
+      }
+      seo {
+        title
+        description
+        image {
+          url
+        }
       }
     }
   }

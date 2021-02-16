@@ -86,60 +86,61 @@ class ArticleShortComponent extends React.Component {
       <>
         <Article theme={{ settings: settings }} id={id} key={key}>
           <Image theme={{ settings: settings }} fluid={content.image.fixed} />
+          <Row>
+            <Button
+              type="linkIn"
+              content={{
+                to: `/e/${content.author.slug}`,
+                title: `${content.author.name} ${content.author.surname}`,
+              }}
+              parameters={{ className: "authorAndDate" }}
+            >
+              <AutorImg fluid={content.author.image.fixed} />
+              <Row parameters={{ className: "row" }}>
+                <AutorName
+                  theme={{ settings: settings }}
+                >{`${content.author.name} ${content.author.surname}`}</AutorName>
+                <DatePost theme={{ settings: settings }}>{date}</DatePost>
+              </Row>
+            </Button>
 
-          <Button
-            type="linkIn"
-            parameters={{ className: "articleShortTitle" }}
-            content={{ to: `/a/${content.slug}`, title: content.title }}
-          >
-            {content.title}
-          </Button>
+            <Button
+              type="linkIn"
+              parameters={{ className: "articleShortTitle" }}
+              content={{ to: `/a/${content.slug}`, title: content.title }}
+            >
+              {content.title}
+            </Button>
 
-          <Button
-            type="linkIn"
-            content={{
-              to: `/e/${content.author.slug}`,
-              title: `${content.author.name} ${content.author.surname}`,
-            }}
-            parameters={{ className: "authorAndDate" }}
-          >
-            <AutorImg fluid={content.author.image.fixed} />
-            <Row parameters={{ className: "row" }}>
-              <AutorName
-                theme={{ settings: settings }}
-              >{`${content.author.name} ${content.author.surname}`}</AutorName>
-              <DatePost theme={{ settings: settings }}>{date}</DatePost>
-            </Row>
-          </Button>
+            <List type="level" parameters={{ className: "articleShortTag" }}>
+              {content.tag.map((item, i) => {
+                return (
+                  <Button
+                    type="linkIn"
+                    key={`${item.id}_${i}_ArticleShort`}
+                    parameters={{}}
+                    content={{ to: `/t/${item.slug}`, title: item.title }}
+                  >
+                    <p>
+                      <span>#</span>
+                      {item.title}
+                    </p>
+                  </Button>
+                )
+              })}
+            </List>
 
-          <List type="level" parameters={{ className: "articleShortTag" }}>
-            {content.tag.map((item, i) => {
-              return (
-                <Button
-                  type="linkIn"
-                  key={`${item.id}_${i}_ArticleShort`}
-                  parameters={{}}
-                  content={{ to: `/t/${item.slug}`, title: item.title }}
-                >
-                  <p>
-                    <span>#</span>
-                    {item.title}
-                  </p>
-                </Button>
-              )
-            })}
-          </List>
-
-          <Button
-            type="linkIn"
-            parameters={{
-              theme: "primary",
-              className: "articleShortMore",
-            }}
-            content={{ to: `/a/${content.slug}`, title: "więcej" }}
-          >
-            Więcej
-          </Button>
+            <Button
+              type="linkIn"
+              parameters={{
+                theme: "primary",
+                className: "articleShortMore",
+              }}
+              content={{ to: `/a/${content.slug}`, title: "więcej" }}
+            >
+              Więcej
+            </Button>
+          </Row>
         </Article>
       </>
     )

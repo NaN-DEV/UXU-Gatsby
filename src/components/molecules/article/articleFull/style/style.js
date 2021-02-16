@@ -7,40 +7,46 @@ export const Article = styled.article`
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  margin: 1.5rem auto;
+  margin-bottom: 1.5rem;
   border-radius: 0.6rem;
   background-color: white;
   border: 1px solid ${props => props.theme.settings.normal};
+
+  .row-article {
+    padding: 3rem 6rem;
+  }
 
   .authorAndDate {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    margin-bottom: 4.5rem;
     justify-content: flex-start;
 
     &:hover {
       h6 {
-        color: ${props => props.theme.settings.primary};
+        color: ${props => props.theme.settings.dark};
       }
     }
   }
 
   .tag {
-    padding: 1.5rem 0;
+    padding-bottom: 1.5rem;
     p {
-      opacity: 0.7;
+      opacity: 1;
       font-size: 1.5rem;
-      font-weight: normal;
+      font-weight: bold;
       transition: all 0.3s;
       border-radius: 0.3rem;
       padding: 0.3rem 0.6rem;
 
       span {
         opacity: 0.8;
+        font-weight: bold;
       }
       &:hover {
-        opacity: 1;
+        opacity: 0.7;
       }
     }
   }
@@ -53,6 +59,8 @@ export const MainImage = styled(ImgBg)`
 `
 
 export const Box = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   max-width: 100%;
   position: relative;
 `
@@ -60,13 +68,14 @@ export const Box = styled.div`
 export const Title = styled.h1`
   width: 100%;
   display: block;
-  font-size: 4.5rem;
+  font-size: 5rem;
+  font-weight: 800;
   padding-bottom: 0.6rem;
 `
 
 export const AuthorImg = styled(ImgBg)`
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 3.2rem;
+  height: 3.2rem;
   display: block;
   overflow: hidden;
   position: relative;
@@ -77,15 +86,16 @@ export const AuthorImg = styled(ImgBg)`
 export const AutorName = styled.h6`
   font-size: 1.5rem;
   font-weight: bold;
+  line-height: 3.2rem;
   transition: all 0.3s;
-  color: ${props => props.theme.settings.dark};
+  margin-right: 0.6rem;
+  color: ${props => props.theme.settings.black};
 `
 
 export const DateAddPost = styled.p`
-  flex: 100%;
-  font-size: 1rem;
-  max-width: 100%;
+  font-size: 1.5rem;
   position: relative;
+  line-height: 3.2rem;
   color: ${props => props.theme.settings.dark};
 `
 
@@ -137,7 +147,7 @@ export const Description = styled.div`
     padding: ${props => props.theme.settings.break};
     margin: ${props => props.theme.settings.break} 0;
     background-color: ${props => props.theme.settings.light};
-    border: 0.1rem solid ${props => props.theme.settings.nomral};
+    border: 0.1rem solid ${props => props.theme.settings.normal};
     p {
       width: 100%;
       font-size: 2rem;
@@ -165,6 +175,7 @@ export const CodeBox = styled.div`
   padding: 1.5rem 0;
   position: relative;
 `
+
 export const Comments = styled.div`
   width: 100%;
   display: block;

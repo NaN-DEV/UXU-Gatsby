@@ -9,4 +9,5 @@ export const Header = styled.header`
   display: block;
   position: relative;
   background-color: ${props => props.theme.settings.secondary};
+  border-bottom: 1px solid ${props => props.theme.settings.normal};
 `

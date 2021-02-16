@@ -1,31 +1,53 @@
 import styled, { css } from "styled-components"
 
 export const Section = styled.section`
-  min-height: calc(100vh - 23rem);
-  padding: ${props => props.theme.settings.break} 0;
+  width: 100%;
+  position: relative;
 `
 
 export const SiteBar = styled.div`
+  position: relative;
+
   ${props => {
     switch (props.theme.site) {
       case "left":
         return css`
-          flex: 8rem;
-          max-width: 8rem;
+          display: none;
+
+          @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
+            flex: 10rem;
+            display: block;
+            max-width: 10rem;
+            padding-right: 1.5rem;
+          }
         `
       default:
         return css`
-          flex: 30rem;
-          max-width: 30rem;
+          display: none;
+
+          @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
+            flex: 35rem;
+            display: block;
+            max-width: 35rem;
+            padding-left: 1.5rem;
+          }
         `
     }
   }}
-
-  position: relative;
 `
 
 export const BoxArticle = styled.div`
+  flex: 100%;
+  max-width: 100%;
   position: relative;
-  flex: calc(100% - 38rem);
-  max-width: calc(100% - 38rem);
+
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
+    flex: calc(100% - 10rem);
+    max-width: calc(100% - 10rem);
+  }
+
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
+    flex: calc(100% - 45rem);
+    max-width: calc(100% - 45rem);
+  }
 `

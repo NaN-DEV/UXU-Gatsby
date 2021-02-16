@@ -2,7 +2,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Disqus } from "gatsby-plugin-disqus"
-import { CopyBlock, xt256 } from "react-code-blocks"
+import { CopyBlock, monokaiSublime } from "react-code-blocks"
 
 // Important settings
 import settings from "../../../../layouts/settings/settings"
@@ -105,25 +105,8 @@ class ArticleFullComponent extends React.Component {
       <>
         <Article theme={{ settings: settings }} id={id} key={key}>
           <MainImage theme={{ settings: settings }} fluid={content.image.fixed} />
-          <Row parameters={{ className: "row" }}>
+          <Row parameters={{ className: "row-article" }}>
             <Title theme={{ settings: settings }}>{content.title}</Title>
-
-            <Button
-              type="linkIn"
-              content={{
-                to: `/e/${content.author.slug}`,
-                title: `${content.author.name} ${content.author.surname}`,
-              }}
-              parameters={{ className: "authorAndDate" }}
-            >
-              <AuthorImg theme={{ settings: settings }} fluid={content.author.image.fixed} />
-              <Box>
-                <AutorName
-                  theme={{ settings: settings }}
-                >{`${content.author.name} ${content.author.surname}`}</AutorName>
-                <DateAddPost theme={{ settings: settings }}>{date}</DateAddPost>
-              </Box>
-            </Button>
 
             <List type="level" parameters={{ className: "tag" }}>
               {content.tag.map((item, i) => {
@@ -148,6 +131,23 @@ class ArticleFullComponent extends React.Component {
               })}
             </List>
 
+            <Button
+              type="linkIn"
+              content={{
+                to: `/e/${content.author.slug}`,
+                title: `${content.author.name} ${content.author.surname}`,
+              }}
+              parameters={{ className: "authorAndDate" }}
+            >
+              <AuthorImg theme={{ settings: settings }} fluid={content.author.image.fixed} />
+              <Box>
+                <AutorName
+                  theme={{ settings: settings }}
+                >{`${content.author.name} ${content.author.surname}`}</AutorName>
+                <DateAddPost theme={{ settings: settings }}>{date}</DateAddPost>
+              </Box>
+            </Button>
+
             {content.description.map(item => {
               switch (item.__typename) {
                 case "DatoCmsImage":
@@ -164,7 +164,7 @@ class ArticleFullComponent extends React.Component {
                           text={item.code}
                           language={item.language}
                           showLineNumbers={true}
-                          theme={xt256}
+                          theme={monokaiSublime}
                           codeBlock
                         />
                       </CodeBox>

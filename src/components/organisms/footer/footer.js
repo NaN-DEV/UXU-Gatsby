@@ -31,10 +31,10 @@ const FooterComponent = props => {
           </Button>
           <P theme={{ settings: settings }}>Copyright 2020 - {new Date().getFullYear()}</P>
           <List type="level" parameters={{ className: "links" }}>
-            <Button type="linkIn" content={{ to: "privacy" }} parameters={{}}>
+            <Button type="linkIn" content={{ to: "/privacy" }} parameters={{}}>
               Polityka prywatności
             </Button>
-            <Button type="linkIn" content={{ to: "contact" }} parameters={{}}>
+            <Button type="linkIn" content={{ to: "/contact" }} parameters={{}}>
               Kontakt
             </Button>
           </List>

@@ -29,15 +29,17 @@ class SectionArticleComponent extends React.Component {
     return (
       <>
         <Section theme={{ settings: settings }}>
-          <Row>
-            <SiteBar theme={{ settings: settings, site: "left" }}></SiteBar>
+          <Row parameters={{ className: "row-section" }}>
+            <SiteBar theme={{ settings: settings, site: "left" }}>ygygyg njuhu huhgu</SiteBar>
             <BoxArticle theme={{ settings: settings }}>
               <Article
                 type="full"
                 content={{ image, title, author, tag, date: meta.firstPublishedAt, description }}
               />
             </BoxArticle>
-            <SiteBar theme={{ settings: settings, site: "right" }}></SiteBar>
+            <SiteBar theme={{ settings: settings, site: "right" }}>
+              <Ads type="adsExpertShort" content={{ ...author }} />
+            </SiteBar>
           </Row>
         </Section>
       </>

@@ -1,7 +1,7 @@
 const settings = {
   // settings color
   primary: "#000000",
-  secondary: "#FFCC00",
+  secondary: "#FFFFFF",
   tertiary: "#B9B9B9",
   dark: "#64707d",
   normal: "#e2e4e6",

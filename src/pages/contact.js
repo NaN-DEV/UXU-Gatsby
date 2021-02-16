@@ -46,7 +46,7 @@ const ServiceCategory = props => {
           description: datoCmsPage.seo.description,
           image: datoCmsPage.seo.image,
         }}
-        parameters={{ theme: "secondary" }}
+        parameters={{}}
       >
         <Ads type="classic" content={{ title: "hej! poznajmy sie :)" }} />
         <Section type="contact" content={{ title: "formularz" }} />

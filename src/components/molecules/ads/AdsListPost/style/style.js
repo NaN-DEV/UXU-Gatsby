@@ -51,7 +51,6 @@ export const Header = styled.div`
   a {
     flex-wrap: wrap;
     justify-content: flex-start;
-    font-family: "Roboto Mono", monospace;
     color: ${props => props.theme.settings.dark};
 
     p {

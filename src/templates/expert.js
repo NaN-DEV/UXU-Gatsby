@@ -29,7 +29,7 @@ const ExpertPageComponent = props => {
         content={{ title: `${name} ${surname} - ${work}`, desciption, image }}
       >
         <Ads
-          type="adsExpert"
+          type="adsExpertFull"
           content={{
             work,
             name,
@@ -83,6 +83,13 @@ export const ExpertPageComponentQuery = graphql`
         id
         slug
         title
+      }
+      seo {
+        title
+        description
+        image {
+          url
+        }
       }
     }
     allDatoCmsArticle(filter: { author: { id: { eq: $id } } }) {

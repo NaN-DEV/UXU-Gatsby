@@ -76,7 +76,7 @@ const Root = props => {
         <meta name="twitter:creator" content={datoCmsSite.globalSeo.twitterAccount} />
 
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap"
           rel="stylesheet"
           defer
         />

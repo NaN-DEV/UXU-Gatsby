@@ -53,7 +53,7 @@ const Root = props => {
 
   return (
     <>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: "pl" }}>
         {/* General tags */}
         <title>
           {title} {datoCmsSite.globalSeo.titleSuffix}

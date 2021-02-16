@@ -29,16 +29,15 @@ export const Article = styled.article`
   .tag {
     padding: 1.5rem 0;
     p {
-      opacity: 0.6;
-      font-size: 1rem;
-      font-weight: bold;
+      opacity: 0.7;
+      font-size: 1.5rem;
+      font-weight: normal;
       transition: all 0.3s;
       border-radius: 0.3rem;
       padding: 0.3rem 0.6rem;
 
       span {
         opacity: 0.8;
-        font-weight: bold;
       }
       &:hover {
         opacity: 1;
@@ -66,8 +65,8 @@ export const Title = styled.h1`
 `
 
 export const AuthorImg = styled(ImgBg)`
-  width: 3rem;
-  height: 3rem;
+  width: 4.5rem;
+  height: 4.5rem;
   display: block;
   overflow: hidden;
   position: relative;
@@ -76,12 +75,13 @@ export const AuthorImg = styled(ImgBg)`
 `
 
 export const AutorName = styled.h6`
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   transition: all 0.3s;
   color: ${props => props.theme.settings.dark};
 `
 
-export const DateAddPost = styled.div`
+export const DateAddPost = styled.p`
   flex: 100%;
   font-size: 1rem;
   max-width: 100%;

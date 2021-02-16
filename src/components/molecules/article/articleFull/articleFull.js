@@ -99,7 +99,6 @@ class ArticleFullComponent extends React.Component {
     let disqusConfig = {
       identifier: id,
       title: content.title,
-      url: `${window.location.href}`,
     }
 
     return (

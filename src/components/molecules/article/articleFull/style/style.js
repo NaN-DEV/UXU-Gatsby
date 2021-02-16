@@ -69,7 +69,14 @@ export const Article = styled.article`
 export const MainImage = styled(ImgBg)`
   flex: 100%;
   max-width: 100%;
-  min-height: 42rem;
+  min-height: 23rem;
+
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
+    min-height: 33rem;
+  }
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
+    min-height: 43rem;
+  }
 `
 
 export const Box = styled.div`

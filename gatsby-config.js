@@ -16,6 +16,12 @@ module.exports = {
     { resolve: `gatsby-plugin-react-helmet` },
     { resolve: `gatsby-plugin-styled-components` },
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: process.env.API_DISQUS,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

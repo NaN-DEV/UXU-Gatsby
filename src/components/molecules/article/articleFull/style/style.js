@@ -134,16 +134,15 @@ export const Description = styled.div`
     max-width: 100%;
     height: auto;
     border-radius: 0.6rem;
-    margin: 1.5rem 0.3rem 1.5rem 0;
     padding: ${props => props.theme.settings.break};
+    margin: ${props => props.theme.settings.break} 0;
     background-color: ${props => props.theme.settings.light};
-    box-shadow: 3px 3px 0px ${props => props.theme.settings.dark};
-    border: ${props => props.theme.border} solid ${props => props.theme.settings.primary};
+    border: 0.1rem solid ${props => props.theme.settings.nomral};
     p {
       width: 100%;
       font-size: 2rem;
-      text-align: center;
       font-weight: bold;
+      text-align: center;
       &::before {
         content: "„";
       }
@@ -165,4 +164,14 @@ export const CodeBox = styled.div`
   max-width: 100%;
   padding: 1.5rem 0;
   position: relative;
+`
+export const Comments = styled.div`
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  margin: 1.5rem auto;
+  border-radius: 0.6rem;
+  background-color: white;
+  padding: 1.5rem;
+  border: 1px solid ${props => props.theme.settings.normal};
 `

@@ -1,6 +1,7 @@
 // Important plugin
 import React from "react"
 import { Link } from "gatsby"
+import { Disqus } from "gatsby-plugin-disqus"
 import { CopyBlock, xt256 } from "react-code-blocks"
 
 // Important settings
@@ -19,6 +20,7 @@ import {
   Description,
   Image,
   CodeBox,
+  Comments,
 } from "./style/style"
 
 // Important settings
@@ -93,7 +95,13 @@ class ArticleFullComponent extends React.Component {
   render() {
     const { date } = this.state
     const { id, key, type, parameters, content } = this.props
-    console.log(content.description)
+
+    let disqusConfig = {
+      identifier: id,
+      title: content.title,
+      url: `${window.location.href}`,
+    }
+
     return (
       <>
         <Article theme={{ settings: settings }} id={id} key={key}>
@@ -142,7 +150,6 @@ class ArticleFullComponent extends React.Component {
             </List>
 
             {content.description.map(item => {
-              console.log(item.__typename)
               switch (item.__typename) {
                 case "DatoCmsImage":
                   return (
@@ -179,6 +186,9 @@ class ArticleFullComponent extends React.Component {
             })}
           </Row>
         </Article>
+        <Comments theme={{ settings: settings }}>
+          <Disqus config={disqusConfig} />
+        </Comments>
       </>
     )
   }

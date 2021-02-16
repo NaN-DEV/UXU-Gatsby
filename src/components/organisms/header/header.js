@@ -10,7 +10,7 @@ import Icon from "../../atoms/icon/icon"
 import Button from "../../atoms/button/button"
 
 // IMPORT STYLES
-import { Header, BreakHeader } from "./style/style"
+import { Header } from "./style/style"
 
 // CREATE NEW COMPONENT
 
@@ -28,7 +28,6 @@ const HeaderComponent = props => {
           </Button>
         </Row>
       </Header>
-      <BreakHeader />
     </>
   )
 }

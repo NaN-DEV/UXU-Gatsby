@@ -25,7 +25,7 @@ class SectionArticleComponent extends React.Component {
 
   render() {
     const { image, title, author, tag, meta, description } = this.props.content
-    console.log(this.props.content)
+
     return (
       <>
         <Section theme={{ settings: settings }}>

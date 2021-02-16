@@ -13,7 +13,13 @@ export const Article = styled.article`
   border: 1px solid ${props => props.theme.settings.normal};
 
   .row-article {
-    padding: 3rem 6rem;
+    padding: 1.5rem;
+    @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
+      padding: 3rem;
+    }
+    @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
+      padding: 3rem 6rem 6rem 6rem;
+    }
   }
 
   .authorAndDate {
@@ -32,7 +38,15 @@ export const Article = styled.article`
   }
 
   .tag {
+    display: flex;
+    flex-wrap: wrap;
     padding-bottom: 1.5rem;
+
+    li {
+      flex: auto;
+      padding-right: 1.5rem;
+      max-width: max-content;
+    }
     p {
       opacity: 1;
       font-size: 1.5rem;
@@ -84,19 +98,30 @@ export const AuthorImg = styled(ImgBg)`
 `
 
 export const AutorName = styled.h6`
+  flex: 100%;
+  max-width: 100%;
   font-size: 1.5rem;
   font-weight: bold;
-  line-height: 3.2rem;
   transition: all 0.3s;
   margin-right: 0.6rem;
   color: ${props => props.theme.settings.black};
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
+    flex: auto;
+    max-width: max-content;
+    line-height: 3.2rem;
+  }
 `
 
 export const DateAddPost = styled.p`
-  font-size: 1.5rem;
+  font-size: 1rem;
   position: relative;
-  line-height: 3.2rem;
   color: ${props => props.theme.settings.dark};
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
+    flex: auto;
+    font-size: 1.5rem;
+    line-height: 3.2rem;
+    max-width: max-content;
+  }
 `
 
 export const Description = styled.div`
@@ -185,4 +210,11 @@ export const Comments = styled.div`
   background-color: white;
   padding: 1.5rem;
   border: 1px solid ${props => props.theme.settings.normal};
+
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
+    padding: 3rem;
+  }
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
+    padding: 6rem;
+  }
 `

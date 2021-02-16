@@ -103,7 +103,7 @@ class ArticleFullComponent extends React.Component {
 
     return (
       <>
-        <Article theme={{ settings: settings }} id={id} key={key}>
+        <Article theme={{ settings: settings }}>
           <MainImage theme={{ settings: settings }} fluid={content.image.fixed} />
           <Row parameters={{ className: "row-article" }}>
             <Title theme={{ settings: settings }}>{content.title}</Title>

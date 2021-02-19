@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components"
 
 export const Section = styled.section`
+  position: relative;
   min-height: calc(100vh - 23rem);
-  padding: ${props => props.theme.settings.break} 0;
 `
 
 export const SiteBar = styled.div`
@@ -118,12 +118,12 @@ export const Title = styled.h6`
 export const BoxArticle = styled.div`
   flex: 100%;
   max-width: 100%;
-  padding: 0 1.5rem;
   position: relative;
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
     flex: calc(100% - 30rem);
     max-width: calc(100% - 30rem);
+    padding: 0 ${props => props.theme.settings.break};
   }
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {

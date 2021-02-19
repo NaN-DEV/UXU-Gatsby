@@ -85,8 +85,9 @@ class ArticleShortComponent extends React.Component {
     return (
       <>
         <Article theme={{ settings: settings }} id={id} key={key}>
-          <Image theme={{ settings: settings }} fluid={content.image.fixed} />
-          <Row>
+          <Image theme={{ settings: settings }} fluid={content.image.fluid} />
+
+          <Row parameters={{}}>
             <Button
               type="linkIn"
               content={{
@@ -95,8 +96,8 @@ class ArticleShortComponent extends React.Component {
               }}
               parameters={{ className: "authorAndDate" }}
             >
-              <AutorImg fluid={content.author.image.fixed} />
-              <Row parameters={{ className: "row" }}>
+              <AutorImg fluid={content.author.image.fluid} />
+              <Row parameters={{ className: "authorAndDateRow" }}>
                 <AutorName
                   theme={{ settings: settings }}
                 >{`${content.author.name} ${content.author.surname}`}</AutorName>

@@ -13,12 +13,15 @@ import Logo from "../../../assets/brand/logo.svg"
 import Pig from "../../../assets/icon/pig.svg"
 import Post from "../../../assets/icon/post.svg"
 import Home from "../../../assets/icon/home.svg"
+import Mail from "../../../assets/icon/mail.svg"
+import Point from "../../../assets/icon/point.svg"
 import Closed from "../../../assets/icon/closed.svg"
 import Github from "../../../assets/icon/github.svg"
 import Contact from "../../../assets/icon/contact.svg"
 import Twitter from "../../../assets/icon/twitter.svg"
 import Youtube from "../../../assets/icon/youtube.svg"
 import Facebook from "../../../assets/icon/facebook.svg"
+import Birthday from "../../../assets/icon/birthday.svg"
 import Instagram from "../../../assets/icon/instagram.svg"
 
 // Create new component
@@ -40,6 +43,20 @@ const IconComponent = props => {
         </BoxIcon>
       )
 
+    case "Pig":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Pig />
+        </BoxIcon>
+      )
+
     case "Post":
       return (
         <BoxIcon
@@ -53,7 +70,8 @@ const IconComponent = props => {
           <Post />
         </BoxIcon>
       )
-    case "Pig":
+
+    case "Point":
       return (
         <BoxIcon
           id={id}
@@ -63,7 +81,34 @@ const IconComponent = props => {
           className={parameters.className}
           theme={{ choice: parameters.theme, settings: settings }}
         >
-          <Pig />
+          <Point />
+        </BoxIcon>
+      )
+    case "Birthday":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Birthday />
+        </BoxIcon>
+      )
+
+    case "Mail":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Mail />
         </BoxIcon>
       )
 

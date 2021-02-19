@@ -19,7 +19,7 @@ const AdsClassicComponent = props => {
     <Row parameters={{ style: { maxWidth: "150rem" } }}>
       <AdsClassic theme={{ settings: settings }}>
         <BoxImg theme={{ settings: settings }}>
-          <Img fluid={content.image.fixed} />
+          <Img fluid={content.image.fluid} />
         </BoxImg>
         <BoxContent theme={{ settings: settings }}>
           <Title theme={{ settings: settings }}>

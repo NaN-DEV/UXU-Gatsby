@@ -6,8 +6,8 @@ export const Section = styled.section`
 `
 
 export const SiteBar = styled.div`
-  flex: 30rem;
-  max-width: 30rem;
+  flex: 35rem;
+  max-width: 35rem;
   position: relative;
 
 
@@ -93,9 +93,11 @@ export const SiteBar = styled.div`
 export const Point = styled.p`
   display: flex;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: normal;
+  color: ${props => props.theme.settings.dark};
 
   svg {
+    height: 2rem;
     padding-right: 0.6rem;
     fill: ${props => props.theme.settings.dark};
   }
@@ -110,16 +112,11 @@ export const Title = styled.h6`
 export const BoxArticle = styled.div`
   flex: 100%;
   max-width: 100%;
-  padding: 0 1.5rem;
   position: relative;
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
-    flex: calc(100% - 30rem);
-    max-width: calc(100% - 30rem);
-  }
-
-  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
-    flex: calc(100% - 60rem);
-    max-width: calc(100% - 60rem);
+    padding: 0 1.5rem;
+    flex: calc(100% - 35rem);
+    max-width: calc(100% - 35rem);
   }
 `

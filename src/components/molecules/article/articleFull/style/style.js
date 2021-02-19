@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import Img from "gatsby-image"
 import ImgBg from "gatsby-background-image"
+import Img from "gatsby-image"
 
 export const Article = styled.article`
   width: 100%;

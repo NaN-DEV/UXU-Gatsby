@@ -6,7 +6,7 @@ export const Article = styled.article`
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  margin: 1.5rem auto;
+  margin-bottom: 1.5rem;
   border-radius: 0.6rem;
   background-color: white;
   border: 1px solid ${props => props.theme.settings.normal};
@@ -21,7 +21,7 @@ export const Article = styled.article`
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    padding: ${props => props.theme.settings.break};
+    padding-bottom: ${props => props.theme.settings.break};
 
     &:hover {
       h6 {
@@ -29,7 +29,7 @@ export const Article = styled.article`
       }
     }
 
-    .row {
+    .authorAndDateRow {
       flex: calc(100% - 4rem);
       padding: 0 0.6rem;
     }
@@ -39,20 +39,23 @@ export const Article = styled.article`
     flex: 100%;
     max-width: 100%;
     font-size: 3.5rem;
+    padding-bottom: 0.6rem;
     justify-content: flex-start;
-    padding: 0 ${props => props.theme.settings.break};
 
     &:hover {
       color: ${props => props.theme.settings.dark};
     }
+
+    @media (min-width: ${props => `${props.theme.settings.breakpoint_mobile}px`}) {
+      padding-left: 3.5rem;
+    }
   }
 
   .articleShortTag {
+    flex: 100%;
     display: flex;
     flex-wrap: wrap;
-    flex: 100%;
     max-width: 100%;
-    padding: ${props => props.theme.settings.break};
 
     li {
       flex: auto !important;
@@ -64,23 +67,27 @@ export const Article = styled.article`
       color: ${props => props.theme.settings.dark};
 
       span {
-        opacity: 0.6;
+        opacity: 0.7;
       }
       &:hover {
         color: ${props => props.theme.settings.primary};
       }
     }
+
+    @media (min-width: ${props => `${props.theme.settings.breakpoint_mobile}px`}) {
+      padding-left: 3.5rem;
+    }
   }
 
   .articleShortMore {
-    margin: 0 ${props => props.theme.settings.break} ${props => props.theme.settings.break} auto;
+    margin-left: auto;
+    margin-top: ${props => props.theme.settings.break};
   }
 `
 
 export const Image = styled(BgImg)`
   flex: 100%;
   max-width: 100%;
-
   min-height: 30rem;
 `
 

@@ -118,14 +118,14 @@ const SectionClassicComponent = props => {
           </BoxArticle>
           <SiteBar theme={{ settings: settings }}>
             <Ads
-              type="listPost"
-              parameters={{}}
-              content={{ article: content.article, title: "marketing" }}
+              type="adslistArticle"
+              parameters={{ type: "title", filter: true }}
+              content={{ article: content.article, title: "Aktualności", slug: "aktualnosci" }}
             />
             <Ads
-              type="listPost"
-              parameters={{}}
-              content={{ article: content.article, title: "na-luzie" }}
+              type="adslistArticle"
+              parameters={{ type: "tag", filter: true }}
+              content={{ article: content.article, title: "na-luzie", slug: "na-luzie" }}
             />
           </SiteBar>
         </Row>

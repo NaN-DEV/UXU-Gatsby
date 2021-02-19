@@ -19,6 +19,9 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           id
           slug
+          author {
+            id
+          }
         }
       }
     }
@@ -44,7 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `a/${content.slug}`,
       component: require.resolve(`./src/templates/article.js`),
-      context: { id: content.id, content, index },
+      context: { id: content.id, author: content.author.id, content, index },
     })
   })
 }

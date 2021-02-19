@@ -9,19 +9,22 @@ import Section from "../components/organisms/section/section"
 
 // Create new component
 const ArticlePageComponent = props => {
-  const { datoCmsArticle } = props.data
+  const { datoCmsArticle, allDatoCmsArticle } = props.data
 
   return (
     <>
       <Layout
         content={{
           title: datoCmsArticle.seo.title,
-          image: datoCmsArticle.seo.image,
           description: datoCmsArticle.seo.description,
+          image: datoCmsArticle.seo.image.url,
         }}
         parameters={{}}
       >
-        <Section type="article" content={{ ...datoCmsArticle }} />
+        <Section
+          type="article"
+          content={{ ...datoCmsArticle, othersArticlesThisAuthor: allDatoCmsArticle.nodes }}
+        />
       </Layout>
     </>
   )
@@ -29,7 +32,7 @@ const ArticlePageComponent = props => {
 
 // Query GraphQL
 export const ArticlePageComponentQuery = graphql`
-  query ArticlePageComponentQuery($id: String) {
+  query ArticlePageComponentQuery($id: String, $author: String) {
     datoCmsArticle(id: { eq: $id }) {
       id
       slug
@@ -52,8 +55,8 @@ export const ArticlePageComponentQuery = graphql`
         }
         image {
           url
-          fixed {
-            ...GatsbyDatoCmsFixed
+          fluid {
+            ...GatsbyDatoCmsFluid
           }
         }
         skills {
@@ -64,8 +67,8 @@ export const ArticlePageComponentQuery = graphql`
       }
       image {
         url
-        fixed(imgixParams: { maxW: 1280 }) {
-          ...GatsbyDatoCmsFixed
+        fluid(imgixParams: { maxW: 1280 }) {
+          ...GatsbyDatoCmsFluid
         }
       }
       description {
@@ -76,8 +79,8 @@ export const ArticlePageComponentQuery = graphql`
         ... on DatoCmsImage {
           id
           image {
-            fixed(imgixParams: { maxW: 1280 }) {
-              ...GatsbyDatoCmsFixed
+            fluid(imgixParams: { maxW: 1280 }) {
+              ...GatsbyDatoCmsFluid
             }
           }
         }
@@ -95,8 +98,8 @@ export const ArticlePageComponentQuery = graphql`
         ... on DatoCmsGallery {
           id
           gallery {
-            fixed(imgixParams: { maxW: 1280 }) {
-              ...GatsbyDatoCmsFixed
+            fluid(imgixParams: { maxW: 1280 }) {
+              ...GatsbyDatoCmsFluid
             }
           }
         }
@@ -123,6 +126,37 @@ export const ArticlePageComponentQuery = graphql`
         description
         image {
           url
+        }
+      }
+    }
+    allDatoCmsArticle(filter: { author: { id: { eq: $author } } }) {
+      nodes {
+        id
+        slug
+        title
+        image {
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+        tag {
+          id
+          slug
+          title
+        }
+        author {
+          id
+          slug
+          name
+          surname
+          image {
+            fluid {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+        }
+        meta {
+          firstPublishedAt
         }
       }
     }

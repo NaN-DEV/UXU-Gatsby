@@ -40,8 +40,8 @@ export const TagPageComponentQuery = graphql`
       title
       description
       image {
-        fixed {
-          ...GatsbyDatoCmsFixed
+        fluid {
+          ...GatsbyDatoCmsFluid
         }
       }
       seo {
@@ -58,8 +58,8 @@ export const TagPageComponentQuery = graphql`
         slug
         title
         image {
-          fixed {
-            ...GatsbyDatoCmsFixed
+          fluid {
+            ...GatsbyDatoCmsFluid
           }
         }
         tag {
@@ -72,8 +72,8 @@ export const TagPageComponentQuery = graphql`
           surname
           slug
           image {
-            fixed {
-              ...GatsbyDatoCmsFixed
+            fluid {
+              ...GatsbyDatoCmsFluid
             }
           }
         }

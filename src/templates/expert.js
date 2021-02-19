@@ -20,13 +20,19 @@ const ExpertPageComponent = props => {
     city,
     country,
     birthday,
+    slug,
+    seo,
   } = props.data.datoCmsExpert
 
   return (
     <>
       <Layout
+        content={{
+          image: seo.image.url,
+          desciption: seo.description,
+          title: `${name} ${surname} - ${work}`,
+        }}
         parameters={{}}
-        content={{ title: `${name} ${surname} - ${work}`, desciption, image }}
       >
         <Ads
           type="adsExpertFull"
@@ -61,6 +67,7 @@ export const ExpertPageComponentQuery = graphql`
     datoCmsExpert(id: { eq: $id }) {
       id
       name
+      slug
       surname
       portfolio
       desciption
@@ -75,8 +82,8 @@ export const ExpertPageComponentQuery = graphql`
       }
       image {
         url
-        fixed {
-          ...GatsbyDatoCmsFixed
+        fluid {
+          ...GatsbyDatoCmsFluid
         }
       }
       skills {
@@ -98,8 +105,8 @@ export const ExpertPageComponentQuery = graphql`
         slug
         title
         image {
-          fixed {
-            ...GatsbyDatoCmsFixed
+          fluid {
+            ...GatsbyDatoCmsFluid
           }
         }
         tag {
@@ -113,8 +120,8 @@ export const ExpertPageComponentQuery = graphql`
           name
           surname
           image {
-            fixed {
-              ...GatsbyDatoCmsFixed
+            fluid {
+              ...GatsbyDatoCmsFluid
             }
           }
         }

@@ -24,13 +24,21 @@ class SectionArticleComponent extends React.Component {
   }
 
   render() {
-    const { image, title, author, tag, meta, description } = this.props.content
+    const {
+      tag,
+      meta,
+      image,
+      title,
+      author,
+      description,
+      othersArticlesThisAuthor,
+    } = this.props.content
 
     return (
       <>
         <Section theme={{ settings: settings }}>
           <Row parameters={{ className: "row-section" }}>
-            <SiteBar theme={{ settings: settings, site: "left" }}>ygygyg njuhu huhgu</SiteBar>
+            <SiteBar theme={{ settings: settings, site: "left" }}></SiteBar>
             <BoxArticle theme={{ settings: settings }}>
               <Article
                 type="full"
@@ -39,6 +47,18 @@ class SectionArticleComponent extends React.Component {
             </BoxArticle>
             <SiteBar theme={{ settings: settings, site: "right" }}>
               <Ads type="adsExpertShort" content={{ ...author }} />
+              <Ads
+                type="adslistArticle"
+                parameters={{
+                  filter: false,
+                  type: "author",
+                }}
+                content={{
+                  slug: author.slug,
+                  title: author.name,
+                  article: othersArticlesThisAuthor,
+                }}
+              />
             </SiteBar>
           </Row>
         </Section>

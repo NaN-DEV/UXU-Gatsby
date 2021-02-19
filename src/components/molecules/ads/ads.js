@@ -4,10 +4,9 @@ import PropTypes from "prop-types"
 
 // Import component
 import AdsTag from "./AdsTag/AdsTag"
-
 import AdsClassic from "./AdsClassic/AdsClassic"
-import AdsListPost from "./AdsListPost/AdsListPost"
 import AdsExpertFull from "./AdsExpertFull/AdsExpertFull"
+import AdsListArticle from "./AdsListArticle/AdsListArticle"
 import AdsExpertShort from "./AdsExpertShort/AdsExpertShort"
 import AdsClassicLight from "./AdsClassicLight/AdsClassicLight"
 
@@ -20,8 +19,8 @@ const AdsComponent = props => {
       return <AdsTag content={content} parameters={parameters} />
     case "classic":
       return <AdsClassic content={content} />
-    case "listPost":
-      return <AdsListPost content={content} parameters={parameters} />
+    case "adslistArticle":
+      return <AdsListArticle content={content} parameters={parameters} />
     case "adsExpertFull":
       return <AdsExpertFull content={content} />
     case "adsExpertShort":

@@ -28,10 +28,9 @@ import { Description } from "../AdsTag/style/style"
 // Create new component
 const AdsExpertComponent = props => {
   const { content } = props
-  console.log(content)
   return (
     <ExpertAds theme={{ settings: settings }}>
-      <Img fluid={content.image.fixed} />
+      <Img fluid={content.image.fluid} />
       <ExpertName theme={{ settings: settings }}>
         {content.name} {content.surname}
       </ExpertName>

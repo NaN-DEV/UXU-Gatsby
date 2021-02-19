@@ -104,7 +104,7 @@ class ArticleFullComponent extends React.Component {
     return (
       <>
         <Article theme={{ settings: settings }}>
-          <MainImage theme={{ settings: settings }} fluid={content.image.fixed} />
+          <MainImage theme={{ settings: settings }} fluid={content.image.fluid} />
           <Row parameters={{ className: "row-article" }}>
             <Title theme={{ settings: settings }}>{content.title}</Title>
 
@@ -113,7 +113,7 @@ class ArticleFullComponent extends React.Component {
                 return (
                   <Button
                     type="linkIn"
-                    key={`${item.id}_${i}_ArticleShort`}
+                    key={`${item.id}_fullArticleListTag`}
                     parameters={{}}
                     content={{ to: `/t/${item.slug}`, title: item.title }}
                   >
@@ -139,7 +139,7 @@ class ArticleFullComponent extends React.Component {
               }}
               parameters={{ className: "authorAndDate" }}
             >
-              <AuthorImg theme={{ settings: settings }} fluid={content.author.image.fixed} />
+              <AuthorImg theme={{ settings: settings }} fluid={content.author.image.fluid} />
               <Box>
                 <AutorName
                   theme={{ settings: settings }}
@@ -152,32 +152,27 @@ class ArticleFullComponent extends React.Component {
               switch (item.__typename) {
                 case "DatoCmsImage":
                   return (
-                    <>
-                      <Image theme={{ settings: settings }} fluid={item.image.fixed} />
-                    </>
+                    <Image key={item.id} fluid={item.image.fluid} theme={{ settings: settings }} />
                   )
                 case "DatoCmsCode":
                   return (
-                    <>
-                      <CodeBox>
-                        <CopyBlock
-                          text={item.code}
-                          language={item.language}
-                          showLineNumbers={true}
-                          theme={monokaiSublime}
-                          codeBlock
-                        />
-                      </CodeBox>
-                    </>
+                    <CodeBox key={item.id}>
+                      <CopyBlock
+                        text={item.code}
+                        language={item.language}
+                        showLineNumbers={true}
+                        theme={monokaiSublime}
+                        codeBlock
+                      />
+                    </CodeBox>
                   )
                 case "DatoCmsText":
                   return (
-                    <>
-                      <Description
-                        theme={{ settings: settings }}
-                        dangerouslySetInnerHTML={{ __html: item.text }}
-                      />
-                    </>
+                    <Description
+                      key={item.id}
+                      theme={{ settings: settings }}
+                      dangerouslySetInnerHTML={{ __html: item.text }}
+                    />
                   )
                 default:
                   return "unknown type"

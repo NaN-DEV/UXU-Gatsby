@@ -5,8 +5,8 @@ export const AdsClassicLight = styled.div`
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  margin-top: 1.5rem;
   border-radius: 0.6rem;
+  margin-bottom: 1.5rem;
   border: 1px solid ${props => props.theme.settings.normal};
 `
 

@@ -29,8 +29,8 @@ const IndexPage = () => {
             slug
             title
             image {
-              fixed {
-                ...GatsbyDatoCmsFixed
+              fluid {
+                ...GatsbyDatoCmsFluid
               }
             }
             tag {
@@ -43,8 +43,8 @@ const IndexPage = () => {
               surname
               slug
               image {
-                fixed {
-                  ...GatsbyDatoCmsFixed
+                fluid {
+                  ...GatsbyDatoCmsFluid
                 }
               }
             }
@@ -62,8 +62,8 @@ const IndexPage = () => {
       <Layout
         content={{
           title: datoCmsPage.seo.title,
+          image: datoCmsPage.seo.image.url,
           description: datoCmsPage.seo.description,
-          image: datoCmsPage.seo.image,
         }}
         parameters={{}}
       >

@@ -20,7 +20,6 @@ import Article from "../../../molecules/article/article"
 // Create new component
 const SectionListOfExpertArticlesComponent = props => {
   const { parameters, content } = props
-
   const { allDatoCmsTag, datoCmsContact, allDatoCmsArticle } = useStaticQuery(
     graphql`
       query {
@@ -66,7 +65,7 @@ const SectionListOfExpertArticlesComponent = props => {
               <List type="level" parameters={{ className: "score" }}>
                 <Point theme={{ settings: settings }}>
                   <Icon type="Post" parameters={{ size: 2 }} />
-                  Dodane posty {content.article.length}
+                  Dodał {content.article.length} posty
                 </Point>
               </List>
             </Ads>
@@ -89,13 +88,6 @@ const SectionListOfExpertArticlesComponent = props => {
               )
             })}
           </BoxArticle>
-          <SiteBar theme={{ settings: settings }}>
-            <Ads
-              type="listPost"
-              parameters={{}}
-              content={{ article: content.article, title: content.skills[0].title }}
-            />
-          </SiteBar>
         </Row>
       </Section>
     </>

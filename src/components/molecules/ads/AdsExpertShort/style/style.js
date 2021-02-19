@@ -11,6 +11,7 @@ export const ExpertAds = styled.div`
   border-radius: 0.6rem;
   background-color: white;
   padding: ${props => props.theme.settings.break};
+  margin-bottom: ${props => props.theme.settings.break};
   border: 0.1rem solid ${props => props.theme.settings.normal};
 
   a {

@@ -126,7 +126,7 @@ class SectionContactComponent extends React.Component {
                     }),
                   })
                     .then(() => {
-                      this.openModal("Hej! Dzieki za kontakt, niebawem Ci odpisze :)")
+                      this.openModal("Hej! Dzieki za kontakt, niebawem odpisze :)")
                       actions.resetForm()
                     })
                     .catch(() => {

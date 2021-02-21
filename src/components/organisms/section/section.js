@@ -6,6 +6,7 @@ import Section404 from "./section404/section404"
 import SectionArticle from "./sectionArticle/sectionArticle"
 import SectionContact from "./sectionContact/sectionContact"
 import SectionListArticle from "./sectionListArticle/sectionListArticle"
+import SectionPageInformation from "./sectionPageInformation/sectionPageInformation"
 import SectionListArticleWithTag from "./sectionListArticleWithTag/sectionListArticleWithTag"
 import SectionListOfExpertArticles from "./sectionListOfExpertArticles/sectionListOfExpertArticles"
 
@@ -26,7 +27,9 @@ const SectionComponent = props => {
     case "listArticle":
       return <SectionListArticle parameters={parameters} content={content} />
       break
-
+    case "pageInformation":
+      return <SectionPageInformation content={content} />
+      break
     case "listArticleWithTag":
       return <SectionListArticleWithTag parameters={parameters} content={content} />
       break

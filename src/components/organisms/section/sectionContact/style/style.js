@@ -29,7 +29,6 @@ export const BoxForm = styled.div`
     height: 1px;
     position: absolute;
     border: solid #000000;
-    box-shadow: 3px 3px 0px #64707d;
   }
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
@@ -45,7 +44,6 @@ export const BoxForm = styled.div`
       height: 100%;
       position: absolute;
       border: solid #000000;
-      box-shadow: 3px 3px 0px #64707d;
     }
   }
 `

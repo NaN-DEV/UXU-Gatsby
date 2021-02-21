@@ -137,82 +137,79 @@ class SectionContactComponent extends React.Component {
               >
                 {({ errors, touched, isValid, values, setFieldValue }) => (
                   <>
-                    <Box theme={{ settings: settings }}>
-                      <Title theme={{ settings: settings }}>Formularz </Title>
-                    </Box>
-
-                    <Input
-                      type="text"
-                      content={{
-                        placeholder: "Jak Ci na imię ?",
-                        errors: errors.username && touched.username && errors.username,
-                      }}
-                      parameters={{
-                        name: "username",
-                        required: true,
-                        validate: this.validateName,
-                        value: values.username,
-                      }}
-                    />
-
-                    <Input
-                      type="text"
-                      content={{
-                        placeholder: "Na jaki email mam odpisać ?",
-                        errors: errors.email && touched.email && errors.email,
-                      }}
-                      parameters={{
-                        name: "email",
-                        required: true,
-                        validate: this.validateEmail,
-                        value: values.email,
-                      }}
-                    />
-
-                    <TextArea
-                      content={{
-                        title: `Najpierw potrzebujesz NDA? Wyślij mi e-mail na adres : ${content.mail}`,
-                        placeholder: "Hej , opisz tutaj krótko swój pomysł lub problem",
-                        errors: errors.description && touched.description && errors.description,
-                      }}
-                      parameters={{
-                        name: "description",
-                        required: true,
-                        validate: this.validateDescription,
-                        value: values.description,
-                      }}
-                    />
-
-                    <CheckBox
-                      type="classic"
-                      id="rodoGroup-privacyPolicyAccepted-id"
-                      content={{
-                        description:
-                          "UXU potrzebuje twoich danych na czas odpowiedzi na twoje pytanie.  Masz prawo zrezygnować z przetwarzania twoich danych w dowolnym momencie, więcej informacji w polityce prywatności",
-                        errors: errors.rodoGroup && touched.rodoGroup && errors.rodoGroup,
-                      }}
-                      parameters={{
-                        name: "rodoGroup",
-                        required: true,
-                        validate: this.validateRodoGroup,
-                        onChange: event => {
-                          const value = event.target.checked ? "privacyPolicyAccepted" : null
-                          setFieldValue("rodoGroup.0", value)
-                        },
-                        checked: values.rodoGroup.includes("privacyPolicyAccepted"),
-                      }}
-                    />
-
-                    <Button
-                      type="sumbit"
-                      content={{ title: "Wyślij" }}
-                      parameters={{
-                        disabled: !isValid,
-                        theme: "primary",
-                      }}
-                    >
-                      Wyślij
-                    </Button>
+                    <Form name="contact" data-netlify={1}>
+                      <Box theme={{ settings: settings }}>
+                        <Title theme={{ settings: settings }}>Formularz </Title>
+                      </Box>
+                      <Input
+                        type="text"
+                        content={{
+                          placeholder: "Jak Ci na imię ?",
+                          errors: errors.username && touched.username && errors.username,
+                        }}
+                        parameters={{
+                          name: "username",
+                          required: true,
+                          validate: this.validateName,
+                          value: values.username,
+                        }}
+                      />
+                      <Input
+                        type="text"
+                        content={{
+                          placeholder: "Na jaki email mam odpisać ?",
+                          errors: errors.email && touched.email && errors.email,
+                        }}
+                        parameters={{
+                          name: "email",
+                          required: true,
+                          validate: this.validateEmail,
+                          value: values.email,
+                        }}
+                      />
+                      <TextArea
+                        content={{
+                          title: `Najpierw potrzebujesz NDA? Wyślij mi e-mail na adres : ${content.mail}`,
+                          placeholder: "Hej , opisz tutaj krótko swój pomysł lub problem",
+                          errors: errors.description && touched.description && errors.description,
+                        }}
+                        parameters={{
+                          name: "description",
+                          required: true,
+                          validate: this.validateDescription,
+                          value: values.description,
+                        }}
+                      />
+                      <CheckBox
+                        type="classic"
+                        id="rodoGroup-privacyPolicyAccepted-id"
+                        content={{
+                          description:
+                            "UXU potrzebuje twoich danych na czas odpowiedzi na twoje pytanie.  Masz prawo zrezygnować z przetwarzania twoich danych w dowolnym momencie, więcej informacji w polityce prywatności",
+                          errors: errors.rodoGroup && touched.rodoGroup && errors.rodoGroup,
+                        }}
+                        parameters={{
+                          name: "rodoGroup",
+                          required: true,
+                          validate: this.validateRodoGroup,
+                          onChange: event => {
+                            const value = event.target.checked ? "privacyPolicyAccepted" : null
+                            setFieldValue("rodoGroup.0", value)
+                          },
+                          checked: values.rodoGroup.includes("privacyPolicyAccepted"),
+                        }}
+                      />
+                      <Button
+                        type="sumbit"
+                        content={{ title: "Wyślij" }}
+                        parameters={{
+                          disabled: !isValid,
+                          theme: "primary",
+                        }}
+                      >
+                        Wyślij
+                      </Button>
+                    </Form>
                   </>
                 )}
               </Formik>

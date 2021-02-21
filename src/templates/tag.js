@@ -9,24 +9,23 @@ import Section from "../components/organisms/section/section"
 
 // Create new component
 const TagPageComponent = props => {
-  const { title, description, image, seo } = props.data.datoCmsTag
-
+  const { datoCmsTag } = props.data
+  console.log(datoCmsTag)
   return (
     <>
       <Layout
         content={{
-          title: seo.title,
-          description: seo.description,
-          image: seo.image,
+          title: datoCmsTag.seo.title,
+          image: datoCmsTag.seo.image.url,
+          description: datoCmsTag.seo.description,
         }}
         parameters={{}}
       >
-        <Ads
-          type="tag"
-          parameters={{ border: "#000", shadow: "#000" }}
-          content={{ title, description, image }}
+        <Ads type="tag" content={{ ...datoCmsTag }} />
+        <Section
+          type="listArticleWithTag"
+          content={{ article: props.data.allDatoCmsArticle.nodes }}
         />
-        <Section type="listArticle" content={{ article: props.data.allDatoCmsArticle.nodes }} />
       </Layout>
     </>
   )
@@ -42,6 +41,14 @@ export const TagPageComponentQuery = graphql`
       image {
         fluid {
           ...GatsbyDatoCmsFluid
+        }
+      }
+      color {
+        colorBackground {
+          hex
+        }
+        colorTxt {
+          hex
         }
       }
       seo {

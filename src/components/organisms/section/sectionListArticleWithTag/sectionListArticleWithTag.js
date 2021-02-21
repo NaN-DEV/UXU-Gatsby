@@ -1,8 +1,6 @@
 // Import plugin
 import React from "react"
 
-import { useStaticQuery, graphql } from "gatsby"
-
 // import settings
 import settings from "../../../../layouts/settings/settings"
 
@@ -18,49 +16,14 @@ import Button from "../../../atoms/button/button"
 import Article from "../../../molecules/article/article"
 
 // Create new component
-const SectionListOfExpertArticlesComponent = props => {
+const SectionListArticleWithTag = props => {
   const { parameters, content } = props
-  const { allDatoCmsTag, datoCmsContact, allDatoCmsArticle } = useStaticQuery(
-    graphql`
-      query {
-        datoCmsContact {
-          socialMedia {
-            url
-            title
-          }
-        }
-        allDatoCmsTag {
-          nodes {
-            id
-            title
-            slug
-          }
-        }
-      }
-    `
-  )
 
   return (
     <>
       <Section theme={{ settings: settings }}>
         <Row parameters={{ className: "row" }}>
           <SiteBar theme={{ settings: settings, breakPoint: "tablet" }}>
-            <Ads type="AdsClassicLight" content={{ title: "umiejętnosći" }} parameters={{}}>
-              <List type="level" parameters={{ className: "skills" }}>
-                {content.skills.map((item, i) => {
-                  return (
-                    <Button
-                      key={i}
-                      type="linkIn"
-                      content={{ to: `/t/${item.slug}` }}
-                      parameters={{ className: "menuLink" }}
-                    >
-                      #{item.title}
-                    </Button>
-                  )
-                })}
-              </List>
-            </Ads>
             <Ads type="AdsClassicLight" content={{}} parameters={{}}>
               <List type="level" parameters={{ className: "score" }}>
                 <Point theme={{ settings: settings }}>artykułów {content.article.length}</Point>
@@ -92,4 +55,4 @@ const SectionListOfExpertArticlesComponent = props => {
 }
 
 // Export new component
-export default SectionListOfExpertArticlesComponent
+export default SectionListArticleWithTag

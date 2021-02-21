@@ -24,7 +24,6 @@ import {
 
 // Import component
 import Row from "../../../atoms/row/row"
-import { Description } from "../AdsTag/style/style"
 
 // Create new component
 const AdsExpertComponent = props => {

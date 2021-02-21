@@ -3,7 +3,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 // Import component
-import AdsTag from "./AdsTag/AdsTag"
+import AdsTagFull from "./AdsTagFull/AdsTagFull"
 import AdsClassic from "./AdsClassic/AdsClassic"
 import AdsExpertFull from "./AdsExpertFull/AdsExpertFull"
 import AdsListArticle from "./AdsListArticle/AdsListArticle"
@@ -16,7 +16,7 @@ const AdsComponent = props => {
 
   switch (type) {
     case "tag":
-      return <AdsTag content={content} parameters={parameters} />
+      return <AdsTagFull content={content} />
     case "classic":
       return <AdsClassic content={content} />
     case "adslistArticle":

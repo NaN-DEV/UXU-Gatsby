@@ -21,22 +21,9 @@ body {
    line-height: 1.3;
    font-style: normal;
    font-weight: normal;
-   color: ${props => props.theme.settings.primary};
    font-family: 'Montserrat', sans-serif;
-   ${props => {
-     switch (props.theme.theme) {
-       case "secondary":
-         return css`
-           color: ${props => props.theme.settings.primary};
-           background-color: ${props.theme.settings.secondary};
-         `
-       default:
-         return css`
-           color: ${props => props.theme.settings.primary};
-           background-color: ${props.theme.settings.light};
-         `
-     }
-   }}
+   color: ${props => props.theme.settings.colorText};
+   background-color: ${props => props.theme.settings.colorBody};
 }
 
 p,
@@ -71,8 +58,11 @@ span{
 a {
    font-weight: bold;
    text-decoration: none;
-   color: ${props => props.theme.settings.primary};
+   color: ${props => props.theme.settings.colorText};
    transition: ${props => props.theme.settings.animation};
+   &:hover{
+     color: ${props => props.theme.settings.colorTextDisactive};
+   }
 }
 
 button{

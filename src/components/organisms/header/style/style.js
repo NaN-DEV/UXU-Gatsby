@@ -8,6 +8,14 @@ export const Header = styled.header`
   z-index: 999;
   display: block;
   position: relative;
-  background-color: ${props => props.theme.settings.secondary};
-  border-bottom: 1px solid ${props => props.theme.settings.normal};
+  background-color: ${props => props.theme.settings.colorMainBackGround};
+  border-bottom: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
+
+  .logo {
+    &:hover {
+      svg {
+        fill: ${props => props.theme.settings.colorTextDisactive};
+      }
+    }
+  }
 `

@@ -18,7 +18,7 @@ const AdsClassicComponent = props => {
   return (
     <Row parameters={{ style: { maxWidth: "150rem" } }}>
       <AdsClassic theme={{ settings: settings }}>
-        <Title>{content.title}</Title>
+        <Title theme={{ settings: settings }}>{content.title}</Title>
       </AdsClassic>
     </Row>
   )

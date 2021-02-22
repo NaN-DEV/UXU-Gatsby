@@ -11,7 +11,7 @@ const buttonStyles = css`
   align-items: center;
   justify-content: center;
   transform: ${props => props.theme.settings.animation};
-  border-radius: ${props => props.theme.settings.border};
+  border-radius: ${props => props.theme.settings.borderRadius};
 `
 
 const buttonColor = css`
@@ -20,24 +20,24 @@ const buttonColor = css`
       case "primary":
         return css`
           height: 4.2rem;
-          padding: 0 3rem;
-          color: white !important;
-          border-radius: ${props.theme.settings.border};
-          background-color: ${props.theme.settings.primary};
+          padding: 0 ${props.theme.settings.breakFat};
+          border-radius: ${props.theme.settings.borderRadius};
+          background-color: ${props.theme.settings.colorTextActive};
+          color: ${props.theme.settings.colorMainBackGround} !important;
+
           &:hover {
-            background-color: ${props.theme.settings.dark};
+            background-color: ${props.theme.settings.colorTextDisactive};
           }
         `
       case "secondary":
         return css`
           height: 4.2rem;
-          padding: 0 3rem;
-          border-radius: ${props.theme.settings.border};
-          color: ${props.theme.settings.primary};
-          background-color: ${props.theme.settings.secondary};
-          box-shadow: ${props.theme.settings.tertiary_5} ${props.theme.settings.border}
-            ${props.theme.settings.border} 0;
+          padding: 0 ${props.theme.settings.breakFat};
+          color: ${props.theme.settings.colorTextActive};
+          border-radius: ${props.theme.settings.borderRadius};
+          background-color: ${props.theme.settings.colorMainBackGround};
         `
+
       default:
         return css`
           background-color: transparent;

@@ -14,11 +14,11 @@ export const BoxForm = styled.div`
   flex: 100%;
   max-width: 100%;
   position: relative;
-  padding: 3rem 1.5rem;
+  padding: ${props => props.theme.settings.breakFat} ${props => props.theme.settings.break};
 
   button {
     width: 100%;
-    margin: 1.5rem 0;
+    margin: ${props => props.theme.settings.break} 0;
   }
 
   &::before {
@@ -28,13 +28,14 @@ export const BoxForm = styled.div`
     width: 100%;
     height: 1px;
     position: absolute;
-    border: solid #000000;
+    border: ${props => props.theme.settings.border} solid ${props => props.theme.settings.colorBorder};
   }
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
     flex: 50%;
     max-width: 50%;
-    padding: 3rem 6rem 3rem 0;
+    padding: ${props => props.theme.settings.breakFat} ${props => props.theme.settings.breakBig}
+      ${props => props.theme.settings.breakFat} 0;
 
     &::before {
       top: 0;
@@ -43,7 +44,7 @@ export const BoxForm = styled.div`
       bottom: auto;
       height: 100%;
       position: absolute;
-      border: solid #000000;
+      border: solid ${props => props.theme.settings.colorBorder};
     }
   }
 `
@@ -51,13 +52,15 @@ export const Box = styled.div`
   flex: 100%;
   width: 100%;
   display: block;
-  padding: 1.5rem 0;
   position: relative;
+  padding: ${props => props.theme.settings.break} 0;
 `
 
 export const Title = styled.h1`
   font-size: 3rem;
   text-align: center;
+  color: ${props => props.theme.settings.colorTextDisactive};
+
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
     text-align: left;
   }
@@ -66,12 +69,13 @@ export const BoxDataCompany = styled.div`
   flex: 100%;
   max-width: 100%;
   position: relative;
-  padding: 3rem 1.5rem;
+  padding: ${props => props.theme.settings.breakFat} ${props => props.theme.settings.break};
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
     flex: 50%;
     max-width: 50%;
-    padding: 3rem 0 3rem 6rem;
+    padding: ${props => props.theme.settings.breakFat} 0 ${props => props.theme.settings.breakFat}
+      ${props => props.theme.settings.breakBig};
   }
 `
 export const Point = styled.p`
@@ -82,15 +86,15 @@ export const Point = styled.p`
   justify-content: center;
 
   strong {
-    padding-right: 1.5rem;
+    padding-right: ${props => props.theme.settings.break};
+    color: ${props => props.theme.settings.colorTextDisactive};
   }
+
   a {
     opacity: 1;
     font-size: 2.4rem;
-    &:hover {
-      opacity: 0.6;
-    }
   }
+
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
     justify-content: flex-start;
   }

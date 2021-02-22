@@ -7,18 +7,19 @@ export const Article = styled.article`
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  margin-bottom: 1.5rem;
-  border-radius: 0.6rem;
-  background-color: white;
-  border: 1px solid ${props => props.theme.settings.normal};
+  margin-bottom: ${props => props.theme.settings.break};
+  border-radius: ${props => props.theme.settings.borderRadius};
+  background-color: ${props => props.theme.settings.colorMainBackGround};
+  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   .row-article {
     padding: 1.5rem;
     @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
-      padding: 3rem;
+      padding: ${props => props.theme.settings.breakFat};
     }
     @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
-      padding: 3rem 6rem 6rem 6rem;
+      padding: ${props => props.theme.settings.breakFat} ${props => props.theme.settings.breakBig}
+        ${props => props.theme.settings.breakBig} ${props => props.theme.settings.breakBig};
     }
   }
 
@@ -32,7 +33,7 @@ export const Article = styled.article`
 
     &:hover {
       h6 {
-        color: ${props => props.theme.settings.dark};
+        color: ${props => props.theme.settings.colorTextDisactive};
       }
     }
   }
@@ -40,27 +41,28 @@ export const Article = styled.article`
   .tag {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 1.5rem;
+    padding-bottom: ${props => props.theme.settings.break};
 
     li {
       flex: auto;
-      padding-right: 1.5rem;
       max-width: max-content;
+      padding-right: ${props => props.theme.settings.break};
     }
+
     p {
       opacity: 1;
       font-size: 1.5rem;
       font-weight: bold;
       transition: all 0.3s;
-      border-radius: 0.3rem;
-      padding: 0.3rem 0.6rem;
+      border-radius: ${props => props.theme.settings.borderRadius};
+      padding: ${props => props.theme.settings.breakLight} ${props => props.theme.settings.break};
 
       span {
-        opacity: 0.8;
+        opacity: 0.6;
         font-weight: bold;
       }
       &:hover {
-        opacity: 0.7;
+        opacity: 0.6;
       }
     }
   }
@@ -91,7 +93,7 @@ export const Title = styled.h1`
   display: block;
   font-size: 5rem;
   font-weight: 800;
-  padding-bottom: 0.6rem;
+  padding-bottom: ${props => props.theme.settings.breakLight};
 `
 
 export const AuthorImg = styled(ImgBg)`
@@ -101,7 +103,7 @@ export const AuthorImg = styled(ImgBg)`
   overflow: hidden;
   position: relative;
   border-radius: 100%;
-  margin-right: 0.6rem;
+  margin-right: ${props => props.theme.settings.breakLight};
 `
 
 export const AutorName = styled.h6`
@@ -111,7 +113,8 @@ export const AutorName = styled.h6`
   font-weight: bold;
   transition: all 0.3s;
   margin-right: 0.6rem;
-  color: ${props => props.theme.settings.black};
+  color: ${props => props.theme.settings.colorTextActive};
+
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
     flex: auto;
     max-width: max-content;
@@ -122,7 +125,8 @@ export const AutorName = styled.h6`
 export const DateAddPost = styled.p`
   font-size: 1rem;
   position: relative;
-  color: ${props => props.theme.settings.dark};
+  color: ${props => props.theme.settings.colorTextDisactive};
+
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
     flex: auto;
     font-size: 1.5rem;
@@ -178,13 +182,15 @@ export const Description = styled.div`
     border-radius: 0.6rem;
     padding: ${props => props.theme.settings.break};
     margin: ${props => props.theme.settings.break} 0;
-    background-color: ${props => props.theme.settings.light};
-    border: 0.1rem solid ${props => props.theme.settings.normal};
+    border: 0.1rem solid ${props => props.theme.settings.colorBorder};
+    background-color: ${props => props.theme.settings.colorMainBackGround};
+
     p {
       width: 100%;
       font-size: 2rem;
       font-weight: bold;
       text-align: center;
+
       &::before {
         content: "„";
       }
@@ -198,25 +204,25 @@ export const Description = styled.div`
 export const Image = styled(Img)`
   flex: 100%;
   max-width: 100%;
-  margin: 1.5rem 0;
+  margin: ${props => props.theme.settings.break} 0;
 `
 
 export const CodeBox = styled.div`
   flex: 100%;
   max-width: 100%;
-  padding: 1.5rem 0;
   position: relative;
+  padding: ${props => props.theme.settings.break} 0;
 `
 
 export const Comments = styled.div`
   width: 100%;
   display: block;
   overflow: hidden;
-  margin: 1.5rem auto;
-  border-radius: 0.6rem;
-  background-color: white;
-  padding: 1.5rem;
-  border: 1px solid ${props => props.theme.settings.normal};
+  padding: ${props => props.theme.settings.break};
+  margin: ${props => props.theme.settings.break} auto;
+  border-radius: ${props => props.theme.settings.borderRadius};
+  background-color: ${props => props.theme.settings.colorMainBackGround};
+  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
     padding: 3rem;

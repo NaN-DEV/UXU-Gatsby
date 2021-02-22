@@ -9,7 +9,7 @@ export const SiteBar = styled.div`
   flex: 30rem;
   max-width: 30rem;
   position: relative;
-  padding-bottom: 1.5rem;
+  padding-bottom: ${props => props.theme.settings.break};
 
   ${props => {
     switch (props.theme.breakPoint) {
@@ -35,22 +35,22 @@ export const SiteBar = styled.div`
 
     .menuLink {
       width: 100%;
-      padding: 1.5rem;
       font-weight: normal;
       justify-content: flex-start;
+      padding: ${props => props.theme.settings.break};
       border-radius: ${props => props.theme.settings.border};
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        color: ${props => props.theme.settings.primary};
+        color: ${props => props.theme.settings.colorText};
+        background-color: ${props => props.theme.settings.colorBoxHover};
       }
     }
 
     a {
       width: 100%;
-      padding: 1.5rem;
       font-weight: normal;
       justify-content: flex-start;
+      padding: ${props => props.theme.settings.break};
 
       &:hover {
         opacity: 1 !important;
@@ -59,8 +59,8 @@ export const SiteBar = styled.div`
   }
 
   .siteBarListSocialMedia {
-    padding-top: 1.5rem;
     display: flex !important;
+    padding-top: ${props => props.theme.settings.break};
 
     li {
       flex: auto !important;
@@ -77,14 +77,12 @@ export const SiteBar = styled.div`
     justify-content: center;
 
     svg {
-      fill: ${props => props.theme.settings.dark};
+      fill: ${props => props.theme.settings.colorTextActive};
     }
 
     &:hover {
-      opacity: 1 !important;
-
       svg {
-        fill: ${props => props.theme.settings.primary};
+        fill: ${props => props.theme.settings.colorTextDisactive};
       }
     }
   }
@@ -113,6 +111,7 @@ export const Title = styled.h6`
   font-size: 2rem;
   padding-top: 3rem;
   padding-bottom: ${props => props.theme.settings.break};
+  color: ${props => props.theme.settings.colorTextDisactive};
 `
 
 export const BoxArticle = styled.div`

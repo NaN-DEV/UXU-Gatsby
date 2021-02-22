@@ -113,13 +113,10 @@ class AdsListPostComponent extends React.Component {
                       {newInfo[i] ? (
                         <Info theme={{ settings: settings }}>NOWE</Info>
                       ) : (
-                        <TagCloud>
+                        <TagCloud theme={{ settings: settings }}>
                           {item.tag.map((tag, i) => {
                             return (
-                              <Tag
-                                theme={{ settings: settings }}
-                                key={`${tag.id}_${item.id}_${i}_AdsListPostTag`}
-                              >
+                              <Tag theme={{ settings: settings }} key={`${tag.id}_${item.id}_${i}_AdsListPostTag`}>
                                 <span>#</span>
                                 {tag.title}
                               </Tag>

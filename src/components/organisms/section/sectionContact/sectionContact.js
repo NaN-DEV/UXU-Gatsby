@@ -98,11 +98,7 @@ class SectionContactComponent extends React.Component {
     return (
       <>
         {isModalOpen && (
-          <Modal
-            type="info"
-            content={{ info: isModalMessage }}
-            parameters={{ switchPower: this.clouseModal }}
-          />
+          <Modal type="info" content={{ info: isModalMessage }} parameters={{ switchPower: this.clouseModal }} />
         )}
         <Section theme={{ settings: settings }}>
           <Row parameters={{}}>
@@ -223,7 +219,7 @@ class SectionContactComponent extends React.Component {
                 <Point theme={{ settings: settings }}>ul. Serwituty 25</Point>
                 <Point theme={{ settings: settings }}>02-233 Warszawa</Point>
                 <Point theme={{ settings: settings }}>Polska</Point>
-                <Box>
+                <Box theme={{ settings: settings }}>
                   <Point theme={{ settings: settings }}>
                     <strong>KRS :</strong>0000649985
                   </Point>
@@ -235,7 +231,7 @@ class SectionContactComponent extends React.Component {
                     5223077290
                   </Point>
                 </Box>
-                <Box>
+                <Box theme={{ settings: settings }}>
                   <Point theme={{ settings: settings }}>
                     <strong>MAIL :</strong>
                     <Button

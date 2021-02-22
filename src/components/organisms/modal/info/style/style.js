@@ -29,7 +29,7 @@ export const Modal = styled.div`
   min-width: 100vw;
   min-height: 100vh;
   position: relative;
-  background-color: ${props => props.theme.settings.secondary};
+  background-color: ${props => props.theme.settings.colorBody};
 
   .closed {
     opacity: 1;

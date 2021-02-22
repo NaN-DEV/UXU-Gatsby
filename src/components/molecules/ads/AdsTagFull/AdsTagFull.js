@@ -19,16 +19,14 @@ const AdsTagFullComponent = props => {
   const { content } = props
   console.log(content)
   return (
-    <AdsTagBox theme={{ settings: settings, color: content.color }}>
+    <AdsTagBox theme={{ settings: settings }}>
       <Row parameters={{ style: { maxWidth: "150rem" }, className: "AdsExpertRow" }}>
-        <AdsTag theme={{ settings: settings, color: content.color }}>
-          <Img theme={{ settings: settings, color: content.color }} fluid={content.image.fluid} />
+        <AdsTag theme={{ settings: settings }}>
+          <Img theme={{ settings: settings }} fluid={content.image.fluid} />
 
           <BoxContent theme={{ settings: settings }}>
             <AdsTagName theme={{ settings: settings }}>{content.title}</AdsTagName>
-            <AdsTagDescription theme={{ settings: settings }}>
-              {content.description}
-            </AdsTagDescription>
+            <AdsTagDescription theme={{ settings: settings }}>{content.description}</AdsTagDescription>
           </BoxContent>
         </AdsTag>
       </Row>

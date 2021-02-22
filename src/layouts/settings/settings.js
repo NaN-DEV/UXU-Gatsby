@@ -1,17 +1,22 @@
 const settings = {
   // settings color
-  primary: "#000000",
-  secondary: "#FFFFFF",
-  tertiary: "#B9B9B9",
-  dark: "#64707d",
-  normal: "#e2e4e6",
-  light: "#eef0f1",
-  succes: "#155724",
-  waring: "#FFCC00",
   danger: "#ff0000",
+
+  colorBox: "#f7f7f7",
+  colorBoxHover: "#d2d2d2",
+  colorBody: "#eef0f1",
+  colorBorder: "#e2e4e6",
+  colorText: "#000000",
+  colorTextActive: "#000000",
+  colorTextImportant: "#15523a",
+  colorTextDisactive: "#64707d",
+  colorMainBackGround: "#ffffff",
 
   // settings break
   break: "1.5rem",
+  breakFat: "3rem",
+  breakBig: "6rem",
+  breakLight: "0.6rem",
 
   // settings breakpoint
   breakpoint_mobile: 525,
@@ -27,7 +32,11 @@ const settings = {
   animation_slow: "all 0.6s",
 
   // setings border
+
   border: "0.3rem",
+  borderFat: "1.5rem",
+  borderLight: "0.1rem",
+  borderRadius: "0.6rem",
 }
 
 export default settings

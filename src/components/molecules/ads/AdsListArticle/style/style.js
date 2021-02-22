@@ -5,9 +5,9 @@ export const AdsListPost = styled.div`
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  border-radius: 0.6rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid ${props => props.theme.settings.normal};
+  margin-bottom: ${props => props.theme.settings.break};
+  border-radius: ${props => props.theme.settings.borderRadius};
+  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   ul {
     width: 100%;
@@ -15,21 +15,21 @@ export const AdsListPost = styled.div`
 
   li {
     padding: 0;
-
-    border-bottom: 1px solid ${props => props.theme.settings.normal};
+    border-bottom: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
     .adsListPostOnceArticle {
       width: 100%;
       flex-wrap: wrap;
       font-size: 1.8rem;
       font-weight: normal;
-      background-color: #f9fafa;
       justify-content: flex-start;
-      color: ${props => props.theme.settings.primary};
+      color: ${props => props.theme.settings.colorText};
       padding: ${props => props.theme.settings.break} !important;
+      background-color: ${props => props.theme.settings.colorBox};
+
       &:hover {
-        background-color: white;
-        color: ${props => props.theme.settings.dark};
+        color: ${props => props.theme.settings.colorTextDisactive};
+        background-color: ${props => props.theme.settings.colorMainBackGround};
       }
     }
   }
@@ -41,16 +41,16 @@ export const Header = styled.div`
   font-size: 2rem;
   white-space: nowrap;
   background-color: #f9fafa;
-  color: ${props => props.theme.settings.primary};
   padding: 1rem ${props => props.theme.settings.break};
-  border-bottom: 1px solid ${props => props.theme.settings.normal};
+  color: ${props => props.theme.settings.colorTextDisactive};
+  border-bottom: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   a {
-    color: #15523a;
     font-size: 1.5rem;
     margin-left: auto;
     font-weight: normal;
     max-width: max-content;
+    color: ${props => props.theme.settings.colorTextActive};
   }
 `
 
@@ -62,27 +62,14 @@ export const Title = styled.h3`
   a {
     font-size: 2rem;
     font-weight: bold;
-    padding-left: 0.6rem;
     display: inline-block;
     max-width: max-content;
-    ${props => {
-      switch (props.theme.theme) {
-        case "primary":
-          return css`
-            color: ${props.theme.settings.primary};
-            &:hover {
-              color: ${props.theme.settings.dark};
-            }
-          `
-        default:
-          return css`
-            color: #15523a;
-            &:hover {
-              color: ${props.theme.settings.dark};
-            }
-          `
-      }
-    }}
+    padding-left: ${props => props.theme.settings.breakLight};
+
+    color: ${props => props.theme.settings.colorTextActive};
+    &:hover {
+      color: ${props => props.theme.settings.colorTextDisactive};
+    }
   }
 `
 
@@ -93,7 +80,7 @@ export const Info = styled.div`
   margin-top: 0.6rem;
   border-radius: 0.6rem;
   padding: 0.3rem 0.6rem;
-  background-color: ${props => props.theme.settings.primary};
+  background-color: ${props => props.theme.settings.colorText};
 `
 
 export const TagCloud = styled.div`
@@ -101,19 +88,19 @@ export const TagCloud = styled.div`
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  padding-top: 0.6rem;
+  padding-top: ${props => props.theme.settings.breakLight};
 `
 
 export const Tag = styled.p`
   display: block;
   font-size: 1.2rem;
   position: relative;
-  padding-right: 0.6rem;
   max-width: max-content !important;
-  color: ${props => props.theme.settings.dark};
+  color: ${props => props.theme.settings.colorTextDisactive};
+  padding-right: ${props => props.theme.settings.breakLight};
 
   span {
-    opacity: 0.7;
+    opacity: 0.6;
   }
 `
 
@@ -122,8 +109,8 @@ export const ErrorArticle = styled.p`
   flex-wrap: wrap;
   font-size: 1.8rem;
   font-weight: normal;
-  background-color: #f9fafa;
   justify-content: flex-start;
-  color: ${props => props.theme.settings.primary};
+  color: ${props => props.theme.settings.colorTextDisactive};
   padding: ${props => props.theme.settings.break} !important;
+  background-color: ${props => props.theme.settings.colorBox};
 `

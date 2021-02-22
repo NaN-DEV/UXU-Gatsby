@@ -18,7 +18,7 @@ export const SiteBar = styled.div`
             flex: 10rem;
             display: block;
             max-width: 10rem;
-            padding-right: 1.5rem;
+            padding-right: ${props => props.theme.settings.break};
           }
         `
       default:
@@ -29,7 +29,7 @@ export const SiteBar = styled.div`
             flex: 35rem;
             display: block;
             max-width: 35rem;
-            padding-left: 1.5rem;
+            padding-left: ${props => props.theme.settings.break};
           }
         `
     }

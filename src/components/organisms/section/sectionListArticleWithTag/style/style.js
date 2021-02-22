@@ -33,14 +33,8 @@ export const SiteBar = styled.div`
 export const Point = styled.p`
   display: flex;
   font-size: 1.5rem;
-  font-weight: normal;
-  color: ${props => props.theme.settings.dark};
-
-  svg {
-    height: 2rem;
-    padding-right: 0.6rem;
-    fill: ${props => props.theme.settings.dark};
-  }
+  font-weight: bold;
+  color: ${props => props.theme.settings.colorTextDisactive};
 `
 
 export const Title = styled.h6`

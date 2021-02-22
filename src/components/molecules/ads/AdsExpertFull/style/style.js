@@ -18,18 +18,19 @@ export const AdsExpertBox = styled.div`
     height: 12rem;
     display: block;
     position: absolute;
-    background-color: #15523a;
+    background-color: ${props => props.theme.settings.colorBorder};
   }
 `
 
 export const AdsExpert = styled.div`
+  z-index: 1;
   width: 100%;
   display: block;
   position: relative;
-  border-radius: 0.6rem;
-  background-color: white;
   padding: ${props => props.theme.settings.break};
-  border: ${props => props.theme.border} solid #15523a;
+  border-radius: ${props => props.theme.settings.borderRadius};
+  background-color: ${props => props.theme.settings.colorMainBackGround};
+  border: ${props => props.theme.border} solid ${props => props.theme.settings.colorBorder};
 `
 
 export const Img = styled(Image)`
@@ -40,8 +41,8 @@ export const Img = styled(Image)`
   overflow: hidden;
   border-radius: 50%;
   left: calc(50% - 6.5rem);
-  border: 1rem solid #15523a;
   position: absolute !important;
+  border: ${props => props.theme.settings.borderFat} solid ${props => props.theme.settings.colorBorder};
 `
 
 export const BoxContent = styled.div`
@@ -65,7 +66,7 @@ export const ExpertDescription = styled.p`
   max-width: 100%;
   font-size: 2rem;
   text-align: center;
-  padding: 0.6rem 0;
+  padding: ${props => props.theme.settings.break} 0;
 `
 
 export const ExpertPage = styled.div`
@@ -76,11 +77,11 @@ export const ExpertPage = styled.div`
 
   a {
     svg {
-      fill: ${props => props.theme.settings.dark};
+      fill: ${props => props.theme.settings.colorTextActive};
     }
     &:hover {
       svg {
-        fill: ${props => props.theme.settings.primary};
+        fill: ${props => props.theme.settings.colorTextDisactive};
       }
     }
   }
@@ -90,13 +91,13 @@ export const Point = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding-right: 1.5rem;
+  padding-right: ${props => props.theme.settings.break};
 `
 
 export const PointIcon = styled.h6`
-  padding: 0 0.6rem;
+  padding: 0 ${props => props.theme.settings.breakLight};
   svg {
-    fill: ${props => props.theme.settings.dark};
+    fill: ${props => props.theme.settings.colorTextDisactive};
   }
 `
 

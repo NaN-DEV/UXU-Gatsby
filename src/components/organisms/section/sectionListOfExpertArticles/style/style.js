@@ -25,8 +25,6 @@ export const SiteBar = styled.div`
 
     .tag {
   
- 
-
     li {
       padding: 0;
     }
@@ -37,10 +35,12 @@ export const SiteBar = styled.div`
       font-weight: normal;
       justify-content: flex-start;
       border-radius: ${props => props.theme.settings.border};
+      color: ${props => props.theme.settings.colorTextDisactive};
+      background-color: ${props => props.theme.settings.colorBox};
+
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        color: ${props => props.theme.settings.primary};
+        color: ${props => props.theme.settings.colorTextDisactive};
       }
     }
 
@@ -92,15 +92,9 @@ export const SiteBar = styled.div`
 
 export const Point = styled.p`
   display: flex;
+  font-weight: bold;
   font-size: 1.5rem;
-  font-weight: normal;
-  color: ${props => props.theme.settings.dark};
-
-  svg {
-    height: 2rem;
-    padding-right: 0.6rem;
-    fill: ${props => props.theme.settings.dark};
-  }
+  color: ${props => props.theme.settings.colorTextDisactive};
 `
 
 export const Title = styled.h6`
@@ -115,8 +109,8 @@ export const BoxArticle = styled.div`
   position: relative;
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
-    padding: 0 1.5rem;
     flex: calc(100% - 35rem);
     max-width: calc(100% - 35rem);
+    padding: 0 ${props => props.theme.settings.break};
   }
 `

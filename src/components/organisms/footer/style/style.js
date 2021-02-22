@@ -10,12 +10,20 @@ export const Footer = styled.footer`
 
   .logo {
     margin: 0 auto;
+
+    &:hover {
+      svg {
+        fill: ${props => props.theme.settings.colorTextDisactive};
+      }
+    }
   }
+
   .row {
     padding: 10px 15px;
     align-items: center;
     justify-content: center;
   }
+
   .links {
     padding-top: 15px;
   }
@@ -24,10 +32,12 @@ export const Footer = styled.footer`
     .logo {
       margin: 0;
     }
+
     justify-content: flex-end;
     .links {
       padding-top: 0;
       margin-left: auto;
+
       a {
         font-size: 1.5rem;
       }
@@ -37,12 +47,13 @@ export const Footer = styled.footer`
 
 export const P = styled.p`
   display: none;
+
   @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
     display: flex;
     font-weight: bold;
     font-size: 1.5rem;
-    padding: 0 1.5rem;
     align-items: center;
-    font-family: ${props => props.theme.settings.font_secondary};
+    color: ${props => props.theme.settings.colorText};
+    padding: 0 ${props => props.theme.settings.break};
   }
 `

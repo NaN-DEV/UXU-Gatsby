@@ -11,27 +11,27 @@ export const Article = styled.div`
   flex-wrap: wrap;
   overflow: hidden;
   position: relative;
-  margin-bottom: 1.5rem;
-  border-radius: 0.6rem;
-  background-color: white;
-  border: 1px solid ${props => props.theme.settings.normal};
+  margin-bottom: ${props => props.theme.settings.break};
+  border-radius: ${props => props.theme.settings.borderRadius};
+  background-color: ${props => props.theme.settings.colorMainBackGround};
+  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 `
 
 export const Description = styled.div`
   flex: 100%;
-  padding: 1.5rem;
   max-width: 100%;
   overflow: hidden;
   position: relative;
+  padding: ${props => props.theme.settings.break};
 
   p {
-    padding: 1.5rem 0;
+    padding: ${props => props.theme.settings.break} 0;
   }
 
   ul,
   ol {
     padding: revert;
-    margin: 1.5rem 0;
+    margin: ${props => props.theme.settings.break} 0;
 
     li {
       padding: 0.5rem 0;
@@ -44,7 +44,7 @@ export const Description = styled.div`
   h4,
   h5,
   h6 {
-    padding: 1.5rem 0;
+    padding: ${props => props.theme.settings.break} 0;
   }
 
   h1 {
@@ -72,16 +72,19 @@ export const Description = styled.div`
     border-radius: 0.6rem;
     padding: ${props => props.theme.settings.break};
     margin: ${props => props.theme.settings.break} 0;
-    background-color: ${props => props.theme.settings.light};
-    border: 0.1rem solid ${props => props.theme.settings.normal};
+    background-color: ${props => props.theme.settings.colorMainBackGround};
+    border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
+
     p {
       width: 100%;
       font-size: 2rem;
       font-weight: bold;
       text-align: center;
+
       &::before {
         content: "„";
       }
+
       &::after {
         content: "”";
       }
@@ -89,9 +92,9 @@ export const Description = styled.div`
   }
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
-    padding: 3rem;
+    padding: ${props => props.theme.settings.breakFat};
   }
   @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
-    padding: 6rem;
+    padding: ${props => props.theme.settings.breakBig};
   }
 `

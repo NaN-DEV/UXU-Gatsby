@@ -8,14 +8,8 @@ export const Article = styled.article`
   overflow: hidden;
   margin-bottom: 1.5rem;
   border-radius: 0.6rem;
-  background-color: white;
-  border: 1px solid ${props => props.theme.settings.normal};
-
-  &:hover {
-    a {
-      opacity: 1 !important;
-    }
-  }
+  background-color: ${props => props.theme.settings.colorMainBackGround};
+  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   .authorAndDate {
     display: flex;
@@ -23,15 +17,9 @@ export const Article = styled.article`
     position: relative;
     padding-bottom: ${props => props.theme.settings.break};
 
-    &:hover {
-      h6 {
-        color: ${props => props.theme.settings.primary};
-      }
-    }
-
     .authorAndDateRow {
       flex: calc(100% - 4rem);
-      padding: 0 0.6rem;
+      padding: 0 ${props => props.theme.settings.breakLight};
     }
   }
 
@@ -39,8 +27,8 @@ export const Article = styled.article`
     flex: 100%;
     max-width: 100%;
     font-size: 3.5rem;
-    padding-bottom: 0.6rem;
     justify-content: flex-start;
+    padding-bottom: ${props => props.theme.settings.breakLight};
 
     &:hover {
       color: ${props => props.theme.settings.dark};
@@ -60,17 +48,19 @@ export const Article = styled.article`
     li {
       flex: auto !important;
       max-width: max-content !important;
-      padding: 0 0.6rem 0.6rem 0;
+      padding: 0 ${props => props.theme.settings.breakLight} ${props => props.theme.settings.breakLight} 0;
     }
+
     p {
       font-weight: normal;
-      color: ${props => props.theme.settings.dark};
+      color: ${props => props.theme.settings.colorTextActive};
 
       span {
-        opacity: 0.7;
+        opacity: 0.6;
       }
+
       &:hover {
-        color: ${props => props.theme.settings.primary};
+        color: ${props => props.theme.settings.colorTextDisactive};
       }
     }
 
@@ -103,7 +93,6 @@ export const AutorImg = styled(BgImg)`
 export const AutorName = styled.h6`
   font-size: 1.4rem;
   transition: all 0.3s;
-  color: ${props => props.theme.settings.dark};
 `
 
 export const DatePost = styled.p`
@@ -111,5 +100,5 @@ export const DatePost = styled.p`
   font-size: 1rem;
   max-width: 100%;
   position: relative;
-  color: ${props => props.theme.settings.dark};
+  color: ${props => props.theme.settings.colorTextDisactive};
 `

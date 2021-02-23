@@ -44,7 +44,7 @@ const SectionClassicComponent = props => {
   return (
     <>
       <Section theme={{ settings: settings }}>
-        <Row parameters={{ className: "row" }}>
+        <Row parameters={{ className: "sectionListArticle" }}>
           <SiteBar theme={{ settings: settings, breakPoint: "tablet" }}>
             <List type="vertical" parameters={{ className: "siteBarList siteBarListButton" }}>
               <Button type="linkIn" content={{ to: "/" }} parameters={{ className: "menuLink" }}>
@@ -59,11 +59,7 @@ const SectionClassicComponent = props => {
                 <Icon type="Pig" parameters={{ size: 2 }} />
                 &nbsp; O mnie
               </Button>
-              <Button
-                type="linkIn"
-                content={{ to: "/contact" }}
-                parameters={{ className: "menuLink" }}
-              >
+              <Button type="linkIn" content={{ to: "/contact" }} parameters={{ className: "menuLink" }}>
                 <Icon type="Contact" parameters={{ size: 2 }} />
                 &nbsp; Kontakt
               </Button>

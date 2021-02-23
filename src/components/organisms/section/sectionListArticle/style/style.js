@@ -3,6 +3,10 @@ import styled, { css } from "styled-components"
 export const Section = styled.section`
   position: relative;
   min-height: calc(100vh - 23rem);
+
+  .sectionListArticle {
+    padding: 0 ${props => props.theme.settings.break};
+  }
 `
 
 export const SiteBar = styled.div`

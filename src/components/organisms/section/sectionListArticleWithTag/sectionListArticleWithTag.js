@@ -22,7 +22,7 @@ const SectionListArticleWithTag = props => {
   return (
     <>
       <Section theme={{ settings: settings }}>
-        <Row parameters={{ className: "row" }}>
+        <Row parameters={{ className: "sectionListArticleWithTag" }}>
           <SiteBar theme={{ settings: settings, breakPoint: "tablet" }}>
             <Ads type="AdsClassicLight" content={{}} parameters={{}}>
               <List type="level" parameters={{ className: "score" }}>

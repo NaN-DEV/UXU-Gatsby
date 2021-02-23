@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components"
 
 export const Section = styled.section`
-  min-height: calc(100vh - 23rem);
-  padding: ${props => props.theme.settings.break} 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
 `
 
 export const SiteBar = styled.div`

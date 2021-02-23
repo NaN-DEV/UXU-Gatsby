@@ -6,7 +6,8 @@ export const AdsExpertBox = styled.div`
   position: relative;
 
   .AdsExpertRow {
-    padding-top: 7rem;
+    padding-bottom: 0;
+    padding-top: 6.7rem;
   }
 
   &::before {
@@ -15,7 +16,7 @@ export const AdsExpertBox = styled.div`
     z-index: 0;
     content: "";
     width: 100%;
-    height: 12rem;
+    height: 13rem;
     display: block;
     position: absolute;
     background-color: ${props => props.theme.settings.colorBorder};

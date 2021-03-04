@@ -1,16 +1,13 @@
 const settings = {
   // settings color
-  danger: "#ff0000",
 
-  colorBox: "#f7f7f7",
-  colorBoxHover: "#d2d2d2",
-  colorBody: "#eef0f1",
-  colorBorder: "#e2e4e6",
-  colorText: "#000000",
-  colorTextActive: "#000000",
-  colorTextImportant: "#15523a",
-  colorTextDisactive: "#64707d",
-  colorMainBackGround: "#ffffff",
+  danger: "#ffcc00",
+  colorBorder: "#737373",
+  colorText: "#A6A6A6",
+  colorTextActive: "#F2F2F2",
+  colorBackgroundDark: "#262626",
+  colorBackgroundLight: "#404040",
+  colorBackgroundDisactive: "#363636",
 
   // settings break
   break: "1.5rem",
@@ -36,7 +33,7 @@ const settings = {
   border: "0.3rem",
   borderFat: "1.5rem",
   borderLight: "0.1rem",
-  borderRadius: "0.6rem",
+  borderRadius: "0.3rem",
 }
 
 export default settings

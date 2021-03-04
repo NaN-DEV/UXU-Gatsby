@@ -15,8 +15,10 @@ export const Textarea = styled(Field)`
   font-size: 1.5rem;
   font-weight: bold;
   -webkit-appearance: none;
+  background-color: transparent;
   font-family: "Montserrat", sans-serif;
   padding: ${props => props.theme.settings.break};
+  color: ${props => props.theme.settings.colorTextActive};
   border-radius: ${props => props.theme.settings.borderRadius};
 
   &::placeholder {

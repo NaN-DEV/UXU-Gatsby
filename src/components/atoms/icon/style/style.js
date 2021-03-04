@@ -6,7 +6,7 @@ const BoxIcon = styled.div`
   svg {
     display: block;
     transition: all 0.3s;
-    fill: ${props => props.theme.settings.colorTextActive};
+    fill: ${props => props.theme.settings.colorText};
 
     ${props =>
       props.size

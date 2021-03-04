@@ -6,9 +6,8 @@ export const Article = styled.article`
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  margin-bottom: 1.5rem;
-  border-radius: 0.6rem;
-  background-color: ${props => props.theme.settings.colorMainBackGround};
+  background-color: transparent;
+  margin-bottom: ${props => props.theme.settings.break};
   border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   .authorAndDate {
@@ -28,10 +27,11 @@ export const Article = styled.article`
     max-width: 100%;
     font-size: 3.5rem;
     justify-content: flex-start;
+    color: ${props => props.theme.settings.colorTextActive};
     padding-bottom: ${props => props.theme.settings.breakLight};
 
     &:hover {
-      color: ${props => props.theme.settings.dark};
+      color: ${props => props.theme.settings.colorText};
     }
 
     @media (min-width: ${props => `${props.theme.settings.breakpoint_mobile}px`}) {
@@ -60,7 +60,7 @@ export const Article = styled.article`
       }
 
       &:hover {
-        color: ${props => props.theme.settings.colorTextDisactive};
+        color: ${props => props.theme.settings.colorText};
       }
     }
 
@@ -100,5 +100,5 @@ export const DatePost = styled.p`
   font-size: 1rem;
   max-width: 100%;
   position: relative;
-  color: ${props => props.theme.settings.colorTextDisactive};
+  color: ${props => props.theme.settings.colorText};
 `

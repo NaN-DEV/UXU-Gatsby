@@ -46,7 +46,7 @@ export const SiteBar = styled.div`
 
       &:hover {
         color: ${props => props.theme.settings.colorText};
-        background-color: ${props => props.theme.settings.colorBoxHover};
+        background-color: ${props => props.theme.settings.colorBackgroundDisactive};
       }
     }
 
@@ -86,7 +86,7 @@ export const SiteBar = styled.div`
 
     &:hover {
       svg {
-        fill: ${props => props.theme.settings.colorTextDisactive};
+        fill: ${props => props.theme.settings.colorText};
       }
     }
   }
@@ -115,7 +115,7 @@ export const Title = styled.h6`
   font-size: 2rem;
   padding-top: 3rem;
   padding-bottom: ${props => props.theme.settings.break};
-  color: ${props => props.theme.settings.colorTextDisactive};
+  color: ${props => props.theme.settings.colorText};
 `
 
 export const BoxArticle = styled.div`

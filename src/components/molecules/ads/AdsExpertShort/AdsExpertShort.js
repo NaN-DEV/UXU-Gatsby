@@ -36,7 +36,7 @@ const AdsExpertComponent = props => {
       <ExpertDescription theme={{ settings: settings }}>{content.desciption}</ExpertDescription>
       <Button
         type="linkIn"
-        parameters={{ theme: "primary" }}
+        parameters={{ button: true }}
         content={{ title: `${content.name} ${content.surname}`, to: `/e/${content.slug}` }}
       >
         więcej

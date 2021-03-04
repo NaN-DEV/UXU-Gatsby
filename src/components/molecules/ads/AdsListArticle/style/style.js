@@ -6,7 +6,6 @@ export const AdsListPost = styled.div`
   flex-wrap: wrap;
   overflow: hidden;
   margin-bottom: ${props => props.theme.settings.break};
-  border-radius: ${props => props.theme.settings.borderRadius};
   border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   ul {
@@ -23,13 +22,13 @@ export const AdsListPost = styled.div`
       font-size: 1.8rem;
       font-weight: normal;
       justify-content: flex-start;
-      color: ${props => props.theme.settings.colorText};
+      background-color: transparent;
+      color: ${props => props.theme.settings.colorTextActive};
       padding: ${props => props.theme.settings.break} !important;
-      background-color: ${props => props.theme.settings.colorBox};
 
       &:hover {
-        color: ${props => props.theme.settings.colorTextDisactive};
-        background-color: ${props => props.theme.settings.colorMainBackGround};
+        color: ${props => props.theme.settings.colorText};
+        background-color: ${props => props.theme.settings.colorBackgroundDisactive};
       }
     }
   }
@@ -40,9 +39,9 @@ export const Header = styled.div`
   display: flex;
   font-size: 2rem;
   white-space: nowrap;
-  background-color: #f9fafa;
+  color: ${props => props.theme.settings.colorText};
   padding: 1rem ${props => props.theme.settings.break};
-  color: ${props => props.theme.settings.colorTextDisactive};
+  background-color: ${props => props.theme.settings.colorBackgroundDisactive};
   border-bottom: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   a {
@@ -51,6 +50,10 @@ export const Header = styled.div`
     font-weight: normal;
     max-width: max-content;
     color: ${props => props.theme.settings.colorTextActive};
+
+    &:hover {
+      color: ${props => props.theme.settings.colorText};
+    }
   }
 `
 
@@ -64,9 +67,9 @@ export const Title = styled.h3`
     font-weight: bold;
     display: inline-block;
     max-width: max-content;
+    color: ${props => props.theme.settings.colorTextActive};
     padding-left: ${props => props.theme.settings.breakLight};
 
-    color: ${props => props.theme.settings.colorTextActive};
     &:hover {
       color: ${props => props.theme.settings.colorTextDisactive};
     }
@@ -96,7 +99,7 @@ export const Tag = styled.p`
   font-size: 1.2rem;
   position: relative;
   max-width: max-content !important;
-  color: ${props => props.theme.settings.colorTextDisactive};
+  color: ${props => props.theme.settings.colorText};
   padding-right: ${props => props.theme.settings.breakLight};
 
   span {
@@ -110,7 +113,7 @@ export const ErrorArticle = styled.p`
   font-size: 1.8rem;
   font-weight: normal;
   justify-content: flex-start;
-  color: ${props => props.theme.settings.colorTextDisactive};
+  background-color: transparent;
+  color: ${props => props.theme.settings.colorText};
   padding: ${props => props.theme.settings.break} !important;
-  background-color: ${props => props.theme.settings.colorBox};
 `

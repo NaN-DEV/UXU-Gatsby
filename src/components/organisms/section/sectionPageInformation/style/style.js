@@ -12,8 +12,7 @@ export const Article = styled.div`
   overflow: hidden;
   position: relative;
   margin-bottom: ${props => props.theme.settings.break};
-  border-radius: ${props => props.theme.settings.borderRadius};
-  background-color: ${props => props.theme.settings.colorMainBackGround};
+  background-color: ${props => props.theme.settings.colorBackgroundDark};
   border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 `
 
@@ -72,7 +71,7 @@ export const Description = styled.div`
     border-radius: 0.6rem;
     padding: ${props => props.theme.settings.break};
     margin: ${props => props.theme.settings.break} 0;
-    background-color: ${props => props.theme.settings.colorMainBackGround};
+    background-color: ${props => props.theme.settings.colorBackgroundDark};
     border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
     p {

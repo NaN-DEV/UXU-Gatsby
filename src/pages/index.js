@@ -67,7 +67,7 @@ const IndexPage = () => {
         }}
         parameters={{}}
       >
-        <Ads type="classic" content={{ title: "z pamiętnika pato programisty..." }} />
+        <Ads type="classic" content={{ title: "żyję z commitowania..." }} />
         <Section type="listArticle" content={{ article: allDatoCmsArticle.nodes }} />
       </Layout>
     </>

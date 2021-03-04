@@ -8,10 +8,9 @@ export const ExpertAds = styled.div`
   flex-wrap: wrap;
   overflow: hidden;
   position: relative;
-  border-radius: 0.6rem;
-  background-color: white;
   padding: ${props => props.theme.settings.break};
   margin-bottom: ${props => props.theme.settings.break};
+  background-color: ${props => props.theme.settings.colorBackgroundDark};
   border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   a {
@@ -28,7 +27,7 @@ export const ExpertAds = styled.div`
     height: 3rem;
     display: block;
     position: absolute;
-    background-color: ${props => props.theme.settings.colorText};
+    background-color: ${props => props.theme.settings.colorBackgroundDisactive};
   }
 `
 
@@ -70,7 +69,7 @@ export const Point = styled.div`
 
 export const PointTitle = styled.h6`
   font-size: 1.5rem;
-  color: ${props => props.theme.settings.colorTextDisactive};
+  color: ${props => props.theme.settings.colorBackgroundDisactive};
 `
 
 export const PointScore = styled.p`

@@ -22,7 +22,7 @@ const ButtonComponent = props => {
           onClick={parameters.onClick}
           disabled={parameters.disabled}
           className={parameters.className}
-          theme={{ choice: parameters.theme, settings: settings }}
+          theme={{ button: parameters.button, settings: settings }}
         >
           {children}
         </Button>
@@ -37,7 +37,7 @@ const ButtonComponent = props => {
           onClick={parameters.onClick}
           disabled={parameters.disabled}
           className={parameters.className}
-          theme={{ choice: parameters.theme, settings: settings }}
+          theme={{ button: parameters.button, settings: settings }}
         >
           {children}
         </LinkIn>
@@ -53,7 +53,7 @@ const ButtonComponent = props => {
           onClick={parameters.onClick}
           disabled={parameters.disabled}
           className={parameters.className}
-          theme={{ choice: parameters.theme, settings: settings }}
+          theme={{ button: parameters.button, settings: settings }}
         >
           {children}
         </LinkOut>
@@ -67,7 +67,7 @@ const ButtonComponent = props => {
           onClick={parameters.onClick}
           disabled={parameters.disabled}
           className={parameters.className}
-          theme={{ choice: parameters.theme, settings: settings }}
+          theme={{ button: parameters.button, settings: settings }}
         >
           {children}
         </Button>
@@ -82,7 +82,7 @@ ButtonComponent.propTypes = {
   children: PropTypes.node.isRequired,
   content: PropTypes.shape({ title: PropTypes.string, to: PropTypes.string }),
   parameters: PropTypes.shape({
-    theme: PropTypes.string,
+    button: PropTypes.bool,
     style: PropTypes.object,
     onClick: PropTypes.func,
     disabled: PropTypes.bool,
@@ -94,8 +94,8 @@ ButtonComponent.propTypes = {
 ButtonComponent.defaultProps = {
   content: PropTypes.shape({ title: null, to: "/" }),
   parameters: PropTypes.shape({
-    theme: null,
     style: null,
+    button: false,
     onClick: null,
     disabled: null,
     className: null,

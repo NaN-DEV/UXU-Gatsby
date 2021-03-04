@@ -4,9 +4,8 @@ export const AdsClassic = styled.div`
   width: 100%;
   height: auto;
   padding: ${props => props.theme.settings.break};
-  border-radius: ${props => props.theme.settings.borderRadius};
-  background-color: ${props => props.theme.settings.colorMainBackGround};
-  border: ${props => props.theme.settings.border} solid ${props => props.theme.settings.colorBorder};
+  margin: ${props => props.theme.settings.breakFat} 0;
+  background-color: ${props => props.theme.settings.colorBackgroundLight};
 `
 
 export const Title = styled.h1`
@@ -14,5 +13,5 @@ export const Title = styled.h1`
   margin: 0 auto;
   font-size: 3rem;
   text-align: center;
-  color: ${props => props.theme.settings.colorTextDisactive};
+  color: ${props => props.theme.settings.colorText};
 `

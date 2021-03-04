@@ -134,7 +134,7 @@ class ArticleShortComponent extends React.Component {
             <Button
               type="linkIn"
               parameters={{
-                theme: "primary",
+                button: true,
                 className: "articleShortMore",
               }}
               content={{ to: `/a/${content.slug}`, title: "więcej" }}

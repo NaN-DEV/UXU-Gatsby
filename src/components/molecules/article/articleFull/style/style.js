@@ -8,12 +8,12 @@ export const Article = styled.article`
   flex-wrap: wrap;
   overflow: hidden;
   margin-bottom: ${props => props.theme.settings.break};
-  border-radius: ${props => props.theme.settings.borderRadius};
-  background-color: ${props => props.theme.settings.colorMainBackGround};
+  background-color: ${props => props.theme.settings.colorBackgroundDark};
   border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   .row-article {
-    padding: 1.5rem;
+    padding: ${props => props.theme.settings.break};
+
     @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
       padding: ${props => props.theme.settings.breakFat};
     }
@@ -33,7 +33,7 @@ export const Article = styled.article`
 
     &:hover {
       h6 {
-        color: ${props => props.theme.settings.colorTextDisactive};
+        color: ${props => props.theme.settings.colorText};
       }
     }
   }
@@ -125,7 +125,7 @@ export const AutorName = styled.h6`
 export const DateAddPost = styled.p`
   font-size: 1rem;
   position: relative;
-  color: ${props => props.theme.settings.colorTextDisactive};
+  color: ${props => props.theme.settings.colorText};
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
     flex: auto;
@@ -177,13 +177,12 @@ export const Description = styled.div`
   }
 
   blockquote {
-    max-width: 100%;
     height: auto;
-    border-radius: 0.6rem;
+    max-width: 100%;
     padding: ${props => props.theme.settings.break};
     margin: ${props => props.theme.settings.break} 0;
-    border: 0.1rem solid ${props => props.theme.settings.colorBorder};
-    background-color: ${props => props.theme.settings.colorMainBackGround};
+    background-color: ${props => props.theme.settings.colorBackgroundDark};
+    border: ${props => props.theme.settings.colorBorderLight} solid ${props => props.theme.settings.colorBorder};
 
     p {
       width: 100%;
@@ -220,8 +219,7 @@ export const Comments = styled.div`
   overflow: hidden;
   padding: ${props => props.theme.settings.break};
   margin: ${props => props.theme.settings.break} auto;
-  border-radius: ${props => props.theme.settings.borderRadius};
-  background-color: ${props => props.theme.settings.colorMainBackGround};
+  background-color: ${props => props.theme.settings.colorBackgroundDark};
   border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {

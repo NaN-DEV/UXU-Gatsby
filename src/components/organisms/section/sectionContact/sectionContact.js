@@ -181,7 +181,7 @@ class SectionContactComponent extends React.Component {
                         id="rodoGroup-privacyPolicyAccepted-id"
                         content={{
                           description:
-                            "UXU potrzebuje twoich danych na czas odpowiedzi na twoje pytanie.  Masz prawo zrezygnować z przetwarzania twoich danych w dowolnym momencie, więcej informacji w polityce prywatności",
+                            "<p>potrzebuje Twoich danych do czasu udzielenia odpowiedzi . Masz prawo zrezygnować z przetwarzania Twoich danych lub żądać ich usunięcia w dowolnym momencie. Więcej informacji znajdziesz w <a href='../politics/'>polityce prywatności</a></p>",
                           errors: errors.rodoGroup && touched.rodoGroup && errors.rodoGroup,
                         }}
                         parameters={{
@@ -199,8 +199,8 @@ class SectionContactComponent extends React.Component {
                         type="sumbit"
                         content={{ title: "Wyślij" }}
                         parameters={{
+                          button: true,
                           disabled: !isValid,
-                          theme: "primary",
                         }}
                       >
                         Wyślij

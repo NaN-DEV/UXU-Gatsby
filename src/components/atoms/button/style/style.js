@@ -1,10 +1,10 @@
-import { Link } from "gatsby"
 import styled, { css } from "styled-components"
+import { Link } from "gatsby"
 
 const buttonStyles = css`
+  opacity: 1;
   display: flex;
   outline: none;
-  cursor: pointer;
   font-weight: bold;
   font-size: 1.5rem;
   position: relative;
@@ -15,40 +15,39 @@ const buttonStyles = css`
 `
 
 const buttonColor = css`
-  ${props => {
-    switch (props.theme.choice) {
-      case "primary":
-        return css`
-          height: 4.2rem;
-          padding: 0 ${props.theme.settings.breakFat};
-          border-radius: ${props.theme.settings.borderRadius};
-          background-color: ${props.theme.settings.colorTextActive};
-          color: ${props.theme.settings.colorMainBackGround} !important;
+  color: ${props => props.theme.settings.colorTextActive};
 
-          &:hover {
-            background-color: ${props.theme.settings.colorTextDisactive};
-          }
-        `
-      case "secondary":
-        return css`
-          height: 4.2rem;
-          padding: 0 ${props.theme.settings.breakFat};
-          color: ${props.theme.settings.colorTextActive};
-          border-radius: ${props.theme.settings.borderRadius};
-          background-color: ${props.theme.settings.colorMainBackGround};
-        `
+  svg {
+    fill: ${props => props.theme.settings.colorTextActive};
+  }
 
-      default:
-        return css`
-          background-color: transparent;
-        `
+  &:hover {
+    color: ${props => props.theme.settings.colorText};
+
+    svg {
+      fill: ${props => props.theme.settings.colorText};
     }
-  }}
+  }
+
+  ${props =>
+    props.theme.button === true &&
+    css`
+      height: 4.2rem;
+      padding: 1.5rem 3rem;
+      color: ${props.theme.settings.colorTextActive};
+      background-color: ${props.theme.settings.colorBackgroundDisactive};
+
+      &:hover {
+        color: ${props.theme.settings.colorBackgroundDisactive};
+        background-color: ${props.theme.settings.colorTextActive};
+      }
+    `}
 `
 
 export const LinkOut = styled.a`
   ${buttonColor}
   ${buttonStyles}
+  cursor: pointer;
 `
 
 export const Button = styled.button`
@@ -57,12 +56,20 @@ export const Button = styled.button`
     ${props =>
       props.disabled &&
       css`
-        opacity: 0.1 !important;
+        opacity: 0.2;
         cursor: no-drop !important;
+        color: ${props.theme.settings.colorText};
+        background-color: ${props.theme.settings.colorBackgroundDisactive};
+
+        &:hover {
+          color: ${props.theme.settings.colorText};
+          background-color: ${props.theme.settings.colorBackgroundDisactive};
+        }
       `}
 `
 
 export const LinkIn = styled(Link)`
   ${buttonColor}
   ${buttonStyles}
+  cursor: pointer;
 `

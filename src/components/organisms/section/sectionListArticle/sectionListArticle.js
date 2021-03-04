@@ -53,7 +53,7 @@ const SectionClassicComponent = props => {
               </Button>
               <Button
                 type="linkOut"
-                content={{ to: "https://www.nan.nz/expert/pawel-niedzwiecki" }}
+                content={{ to: "https://www.nan.nz/about/" }}
                 parameters={{ className: "menuLink" }}
               >
                 <Icon type="Pig" parameters={{ size: 2 }} />

@@ -19,7 +19,7 @@ export const AdsExpertBox = styled.div`
     height: 13rem;
     display: block;
     position: absolute;
-    background-color: ${props => props.theme.settings.colorBorder};
+    background-color: ${props => props.theme.settings.colorBackgroundDisactive};
   }
 `
 
@@ -29,9 +29,8 @@ export const AdsExpert = styled.div`
   display: block;
   position: relative;
   padding: ${props => props.theme.settings.break};
-  border-radius: ${props => props.theme.settings.borderRadius};
-  background-color: ${props => props.theme.settings.colorMainBackGround};
-  border: ${props => props.theme.border} solid ${props => props.theme.settings.colorBorder};
+  background-color: ${props => props.theme.settings.colorBackgroundDark};
+  border: ${props => props.theme.border} solid ${props => props.theme.settings.colorBackgroundDisactive};
 `
 
 export const Img = styled(Image)`
@@ -43,16 +42,16 @@ export const Img = styled(Image)`
   border-radius: 50%;
   left: calc(50% - 6.5rem);
   position: absolute !important;
-  border: ${props => props.theme.settings.borderFat} solid ${props => props.theme.settings.colorBorder};
+  border: ${props => props.theme.settings.borderFat} solid ${props => props.theme.settings.colorBackgroundDisactive};
 `
 
 export const BoxContent = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 6rem;
   position: relative;
   justify-content: center;
   padding: 0 ${props => props.theme.settings.break};
+  margin-top: ${props => props.theme.settings.breakBig};
 `
 
 export const ExpertName = styled.h1`
@@ -82,7 +81,7 @@ export const ExpertPage = styled.div`
     }
     &:hover {
       svg {
-        fill: ${props => props.theme.settings.colorTextDisactive};
+        fill: ${props => props.theme.settings.colorText};
       }
     }
   }
@@ -97,9 +96,6 @@ export const Point = styled.div`
 
 export const PointIcon = styled.h6`
   padding: 0 ${props => props.theme.settings.breakLight};
-  svg {
-    fill: ${props => props.theme.settings.colorTextDisactive};
-  }
 `
 
 export const PointScore = styled.p`

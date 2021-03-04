@@ -47,9 +47,7 @@ const Root = props => {
   const title = content.title ? content.title : datoCmsSite.globalSeo.siteName
   const image = content.image ? content.image : datoCmsSite.globalSeo.fallbackSeo.image.url
   const url = content.slug ? `https://www.uxu.pl/${content.slug}` : `https://www.uxu.pl/`
-  const description = content.description
-    ? content.description
-    : datoCmsSite.globalSeo.fallbackSeo.description
+  const description = content.description ? content.description : datoCmsSite.globalSeo.fallbackSeo.description
 
   return (
     <>

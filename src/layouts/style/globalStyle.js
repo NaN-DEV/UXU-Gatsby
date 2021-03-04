@@ -23,7 +23,7 @@ body {
    font-weight: normal;
    font-family: 'Montserrat', sans-serif;
    color: ${props => props.theme.settings.colorText};
-   background-color: ${props => props.theme.settings.colorBody};
+   background-color: ${props => props.theme.settings.colorBackgroundDark};
 }
 
 p,
@@ -58,10 +58,10 @@ span{
 a {
    font-weight: bold;
    text-decoration: none;
-   color: ${props => props.theme.settings.colorText};
    transition: ${props => props.theme.settings.animation};
+   color: ${props => props.theme.settings.colorTextActive};
    &:hover{
-     color: ${props => props.theme.settings.colorTextDisactive};
+     color: ${props => props.theme.settings.colorText};
    }
 }
 

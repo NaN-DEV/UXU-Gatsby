@@ -7,7 +7,7 @@ export const Section = styled.section`
   overflow: hidden;
   position: relative;
   align-items: center;
-  min-height: calc(100vh - 22rem);
+  min-height: calc(100vh - 27.2rem);
 `
 
 export const BoxForm = styled.div`
@@ -59,7 +59,7 @@ export const Box = styled.div`
 export const Title = styled.h1`
   font-size: 3rem;
   text-align: center;
-  color: ${props => props.theme.settings.colorTextDisactive};
+  color: ${props => props.theme.settings.colorText};
 
   @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
     text-align: left;
@@ -86,8 +86,8 @@ export const Point = styled.p`
   justify-content: center;
 
   strong {
+    color: ${props => props.theme.settings.colorText};
     padding-right: ${props => props.theme.settings.break};
-    color: ${props => props.theme.settings.colorTextDisactive};
   }
 
   a {

@@ -6,14 +6,17 @@ export const Footer = styled.footer`
   flex-wrap: wrap;
   position: relative;
   align-items: center;
-  background-color: white;
+  background-color: ${props => props.theme.settings.colorBackgroundLight};
 
   .logo {
     margin: 0 auto;
 
+    svg {
+      fill: ${props => props.theme.settings.colorTextActive};
+    }
     &:hover {
       svg {
-        fill: ${props => props.theme.settings.colorTextDisactive};
+        fill: ${props => props.theme.settings.colorText};
       }
     }
   }

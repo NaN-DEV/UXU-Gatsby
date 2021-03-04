@@ -18,7 +18,7 @@ export const AdsTagBox = styled.div`
     height: 13rem;
     display: block;
     position: absolute;
-    background-color: ${props => props.theme.settings.colorBorder};
+    background-color: ${props => props.theme.settings.colorBackgroundDisactive};
   }
 `
 
@@ -27,9 +27,8 @@ export const AdsTag = styled.div`
   display: block;
   position: relative;
   padding: ${props => props.theme.settings.break};
-  border-radius: ${props => props.theme.settings.borderRadius};
-  background-color: ${props => props.theme.settings.colorMainBackGround};
-  border: ${props => props.theme.border} solid ${props => props.theme.settings.colorBorder};
+  background-color: ${props => props.theme.settings.colorBackgroundDark};
+  border: ${props => props.theme.border} solid ${props => props.theme.settings.colorBackgroundDisactive};
 `
 
 export const Img = styled(Image)`
@@ -41,7 +40,7 @@ export const Img = styled(Image)`
   border-radius: 50%;
   left: calc(50% - 6.5rem);
   position: absolute !important;
-  border: ${props => props.theme.settings.borderFat} solid ${props => props.theme.settings.colorBorder};
+  border: ${props => props.theme.settings.borderFat} solid ${props => props.theme.settings.colorBackgroundDisactive};
 `
 
 export const BoxContent = styled.div`

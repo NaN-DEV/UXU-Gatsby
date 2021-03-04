@@ -14,8 +14,8 @@ export const Title = styled.h1`
   width: 100%;
   font-size: 2rem;
   padding: ${props => props.theme.settings.break};
-  color: ${props => props.theme.settings.colorTextDisactive};
-  background-color: ${props => props.theme.settings.colorMainBackGround};
+  color: ${props => props.theme.settings.colorText};
+  background-color: ${props => props.theme.settings.colorBackgroundDisactive};
   border-bottom: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 `
 
@@ -23,5 +23,5 @@ export const BoxContent = styled.div`
   width: 100%;
   position: relative;
   padding: ${props => props.theme.settings.break};
-  background-color: ${props => props.theme.settings.colorMainBackGround};
+  background-color: ${props => props.theme.settings.colorBackgroundDark};
 `

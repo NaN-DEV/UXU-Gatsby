@@ -15,10 +15,11 @@ export const Input = styled(Field)`
   height: 6rem;
   font-size: 1.5rem;
   font-weight: bold;
-  border-radius: 3px;
   -webkit-appearance: none;
+  background-color: transparent;
   font-family: "Montserrat", sans-serif;
   padding: ${props => props.theme.settings.break};
+  color: ${props => props.theme.settings.colorTextActive};
   border-radius: ${props => props.theme.settings.borderRadius};
 
   &::placeholder {

@@ -18,10 +18,9 @@ export const CheckBox = styled(Field)`
   border-radius: 3px;
   font-weight: normal;
   -webkit-appearance: none;
+  background-color: transparent;
   padding: ${props => props.theme.settings.break};
-  color: ${props => props.theme.settings.colorTextActive};
   border-radius: ${props => props.theme.settings.borderRadius};
-  background-color: ${props => props.theme.settings.colorMainBackGround};
 
   ${props => {
     if (props.errors) {
@@ -58,21 +57,38 @@ export const Label = styled.label`
   width: calc(100% - 4.3rem);
   display: flex;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 1.2rem;
   border-radius: 3px;
   align-items: center;
   -webkit-appearance: none;
   padding: 0 0 0 ${props => props.theme.settings.break};
 
+  p {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
   ${props => {
     if (props.errors) {
       return css`
         color: ${props => props.theme.settings.danger};
+
+        a {
+          color: ${props => props.theme.settings.danger};
+          &:hover {
+            color: ${props => props.theme.settings.colorText};
+          }
+        }
       `
     } else {
       return css`
-        color: ${props => props.theme.settings.colorTextActive};
+        color: ${props => props.theme.settings.colorText};
+
+        a {
+          color: ${props => props.theme.settings.colorTextActive};
+          &:hover {
+            color: ${props => props.theme.settings.colorText};
+          }
+        }
       `
     }
   }}

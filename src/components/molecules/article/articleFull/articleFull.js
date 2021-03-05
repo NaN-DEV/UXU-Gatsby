@@ -1,7 +1,6 @@
 // Important plugin
 import React from "react"
 import { Link } from "gatsby"
-import { Disqus } from "gatsby-plugin-disqus"
 import { CopyBlock, monokaiSublime } from "react-code-blocks"
 
 // Important settings
@@ -20,7 +19,6 @@ import {
   Description,
   Image,
   CodeBox,
-  Comments,
 } from "./style/style"
 
 // Important settings
@@ -147,16 +145,15 @@ class ArticleFullComponent extends React.Component {
                 <DateAddPost theme={{ settings: settings }}>{date}</DateAddPost>
               </Box>
             </Button>
+            {console.log(content.description)}
 
             {content.description.map(item => {
-              switch (item.__typename) {
-                case "DatoCmsImage":
+              switch (item.model.apiKey) {
+                case "image":
+                  return <Image key={item.id} fluid={item.image.fluid} theme={{ settings: settings }} />
+                case "code":
                   return (
-                    <Image key={item.id} fluid={item.image.fluid} theme={{ settings: settings }} />
-                  )
-                case "DatoCmsCode":
-                  return (
-                    <CodeBox key={item.id}>
+                    <CodeBox key={item.id} theme={{ settings: settings }}>
                       <CopyBlock
                         text={item.code}
                         language={item.language}
@@ -166,7 +163,7 @@ class ArticleFullComponent extends React.Component {
                       />
                     </CodeBox>
                   )
-                case "DatoCmsText":
+                case "text":
                   return (
                     <Description
                       key={item.id}
@@ -180,9 +177,6 @@ class ArticleFullComponent extends React.Component {
             })}
           </Row>
         </Article>
-        <Comments theme={{ settings: settings }}>
-          <Disqus config={disqusConfig} />
-        </Comments>
       </>
     )
   }

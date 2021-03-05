@@ -212,20 +212,3 @@ export const CodeBox = styled.div`
   position: relative;
   padding: ${props => props.theme.settings.break} 0;
 `
-
-export const Comments = styled.div`
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  padding: ${props => props.theme.settings.break};
-  margin: ${props => props.theme.settings.break} auto;
-  background-color: ${props => props.theme.settings.colorBackgroundDark};
-  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
-
-  @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
-    padding: 3rem;
-  }
-  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
-    padding: 6rem;
-  }
-`

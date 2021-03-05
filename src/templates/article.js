@@ -21,10 +21,7 @@ const ArticlePageComponent = props => {
         }}
         parameters={{}}
       >
-        <Section
-          type="article"
-          content={{ ...datoCmsArticle, othersArticlesThisAuthor: allDatoCmsArticle.nodes }}
-        />
+        <Section type="article" content={{ ...datoCmsArticle, othersArticlesThisAuthor: allDatoCmsArticle.nodes }} />
       </Layout>
     </>
   )
@@ -75,9 +72,15 @@ export const ArticlePageComponentQuery = graphql`
         ... on DatoCmsText {
           id
           text
+          model {
+            apiKey
+          }
         }
         ... on DatoCmsImage {
           id
+          model {
+            apiKey
+          }
           image {
             fluid(imgixParams: { maxW: 1280 }) {
               ...GatsbyDatoCmsFluid
@@ -86,6 +89,9 @@ export const ArticlePageComponentQuery = graphql`
         }
         ... on DatoCmsVideo {
           id
+          model {
+            apiKey
+          }
           video {
             url
           }
@@ -94,9 +100,15 @@ export const ArticlePageComponentQuery = graphql`
           id
           code
           language
+          model {
+            apiKey
+          }
         }
         ... on DatoCmsGallery {
           id
+          model {
+            apiKey
+          }
           gallery {
             fluid(imgixParams: { maxW: 1280 }) {
               ...GatsbyDatoCmsFluid

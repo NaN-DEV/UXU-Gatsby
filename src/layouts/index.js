@@ -28,12 +28,9 @@ const Root = props => {
           globalSeo {
             siteName
             titleSuffix
-            twitterAccount
-            facebookPageUrl
             fallbackSeo {
               title
               description
-              twitterCard
               image {
                 url
               }
@@ -71,7 +68,6 @@ const Root = props => {
         <meta name="twitter:image" content={image} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:creator" content={datoCmsSite.globalSeo.twitterAccount} />
 
         <link
           rel="preload"

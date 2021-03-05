@@ -1,7 +1,12 @@
 require("dotenv").config()
 
 module.exports = {
-  flags: { PRESERVE_WEBPACK_CACHE: true },
+  siteMetadata: {
+    title: `UXU`,
+    description: `żyję z commitowania`,
+    author: `@pawelNiedzwiecki`,
+    siteUrl: `https://www.uxu.pl`,
+  },
   plugins: [
     {
       resolve: "gatsby-source-datocms",

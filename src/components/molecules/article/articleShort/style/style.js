@@ -6,9 +6,8 @@ export const Article = styled.article`
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  background-color: transparent;
   margin-bottom: ${props => props.theme.settings.break};
-  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
+  background-color: ${props => props.theme.settings.colorBackgroundLight};
 
   .authorAndDate {
     display: flex;

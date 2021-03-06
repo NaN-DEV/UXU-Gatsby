@@ -10,8 +10,7 @@ export const ExpertAds = styled.div`
   position: relative;
   padding: ${props => props.theme.settings.break};
   margin-bottom: ${props => props.theme.settings.break};
-  background-color: ${props => props.theme.settings.colorBackgroundDark};
-  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
+  background-color: ${props => props.theme.settings.colorBackgroundLight};
 
   a {
     flex: 100%;
@@ -69,7 +68,7 @@ export const Point = styled.div`
 
 export const PointTitle = styled.h6`
   font-size: 1.5rem;
-  color: ${props => props.theme.settings.colorBackgroundDisactive};
+  color: ${props => props.theme.settings.colorBackgroundDark};
 `
 
 export const PointScore = styled.p`

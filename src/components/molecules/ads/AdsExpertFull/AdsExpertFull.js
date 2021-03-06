@@ -39,9 +39,7 @@ const AdsExpertComponent = props => {
             <ExpertName theme={{ settings: settings }}>
               {content.name} {content.surname}
             </ExpertName>
-            <ExpertDescription theme={{ settings: settings }}>
-              {content.desciption}
-            </ExpertDescription>
+            <ExpertDescription theme={{ settings: settings }}>{content.desciption}</ExpertDescription>
 
             <ExpertPage theme={{ settings: settings }}>
               <List type="level" parameters={{}}>
@@ -53,7 +51,7 @@ const AdsExpertComponent = props => {
                     {content.city}, {content.country}
                   </PointScore>
                 </Point>
-
+                {console.log(content.socialMedia)}
                 {content.socialMedia.map((item, i) => {
                   return (
                     <Button

@@ -6,16 +6,12 @@ export const AdsListPost = styled.div`
   flex-wrap: wrap;
   overflow: hidden;
   margin-bottom: ${props => props.theme.settings.break};
-  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   ul {
     width: 100%;
   }
 
   li {
-    padding: 0;
-    border-bottom: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
-
     .adsListPostOnceArticle {
       width: 100%;
       flex-wrap: wrap;
@@ -23,8 +19,8 @@ export const AdsListPost = styled.div`
       font-weight: normal;
       justify-content: flex-start;
       background-color: transparent;
+      padding: 1rem ${props => props.theme.settings.break};
       color: ${props => props.theme.settings.colorTextActive};
-      padding: ${props => props.theme.settings.break} !important;
 
       &:hover {
         color: ${props => props.theme.settings.colorText};
@@ -41,8 +37,6 @@ export const Header = styled.div`
   white-space: nowrap;
   color: ${props => props.theme.settings.colorText};
   padding: 1rem ${props => props.theme.settings.break};
-  background-color: ${props => props.theme.settings.colorBackgroundDisactive};
-  border-bottom: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 
   a {
     font-size: 1.5rem;
@@ -68,7 +62,6 @@ export const Title = styled.h3`
     display: inline-block;
     max-width: max-content;
     color: ${props => props.theme.settings.colorTextActive};
-    padding-left: ${props => props.theme.settings.breakLight};
 
     &:hover {
       color: ${props => props.theme.settings.colorTextDisactive};

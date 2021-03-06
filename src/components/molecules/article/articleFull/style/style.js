@@ -8,8 +8,7 @@ export const Article = styled.article`
   flex-wrap: wrap;
   overflow: hidden;
   margin-bottom: ${props => props.theme.settings.break};
-  background-color: ${props => props.theme.settings.colorBackgroundDark};
-  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
+  background-color: ${props => props.theme.settings.colorBackgroundLight};
 
   .row-article {
     padding: ${props => props.theme.settings.break};

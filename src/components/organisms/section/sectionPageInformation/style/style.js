@@ -11,9 +11,16 @@ export const Article = styled.div`
   flex-wrap: wrap;
   overflow: hidden;
   position: relative;
+  padding: ${props => props.theme.settings.break};
   margin-bottom: ${props => props.theme.settings.break};
-  background-color: ${props => props.theme.settings.colorBackgroundDark};
-  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
+  background-color: ${props => props.theme.settings.colorBackgroundLight};
+
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
+    padding: ${props => props.theme.settings.breakFat};
+  }
+  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
+    padding: ${props => props.theme.settings.breakBig};
+  }
 `
 
 export const Description = styled.div`
@@ -21,7 +28,6 @@ export const Description = styled.div`
   max-width: 100%;
   overflow: hidden;
   position: relative;
-  padding: ${props => props.theme.settings.break};
 
   p {
     padding: ${props => props.theme.settings.break} 0;
@@ -88,12 +94,5 @@ export const Description = styled.div`
         content: "”";
       }
     }
-  }
-
-  @media (min-width: ${props => `${props.theme.settings.breakpoint_tablet}px`}) {
-    padding: ${props => props.theme.settings.breakFat};
-  }
-  @media (min-width: ${props => `${props.theme.settings.breakpoint_desktop}px`}) {
-    padding: ${props => props.theme.settings.breakBig};
   }
 `

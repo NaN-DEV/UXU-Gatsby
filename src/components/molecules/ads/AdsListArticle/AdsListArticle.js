@@ -81,7 +81,11 @@ class AdsListPostComponent extends React.Component {
               <>
                 <Title theme={{ settings: settings }}>
                   Więcej od
-                  <Button type="linkIn" content={{ to: `/e/${content.slug}` }} parameters={{}}>
+                  <Button
+                    type="linkIn"
+                    content={{ to: `/e/${content.slug}` }}
+                    parameters={{ style: { paddingLeft: settings.breakLight } }}
+                  >
                     {content.title}
                   </Button>
                 </Title>

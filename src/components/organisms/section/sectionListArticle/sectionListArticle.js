@@ -48,20 +48,17 @@ const SectionClassicComponent = props => {
           <SiteBar theme={{ settings: settings, breakPoint: "tablet" }}>
             <List type="vertical" parameters={{ className: "siteBarList siteBarListButton" }}>
               <Button type="linkIn" content={{ to: "/" }} parameters={{ className: "menuLink" }}>
-                <Icon type="Home" parameters={{ size: 2 }} />
-                &nbsp; Home
+                Home
               </Button>
               <Button
                 type="linkOut"
                 content={{ to: "https://www.nan.nz/about/" }}
                 parameters={{ className: "menuLink" }}
               >
-                <Icon type="Pig" parameters={{ size: 2 }} />
-                &nbsp; O mnie
+                O mnie
               </Button>
               <Button type="linkIn" content={{ to: "/contact" }} parameters={{ className: "menuLink" }}>
-                <Icon type="Contact" parameters={{ size: 2 }} />
-                &nbsp; Kontakt
+                Kontakt
               </Button>
             </List>
             <List type="level" parameters={{ className: "siteBarList  siteBarListSocialMedia" }}>

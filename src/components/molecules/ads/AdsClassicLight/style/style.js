@@ -6,8 +6,6 @@ export const AdsClassicLight = styled.div`
   flex-wrap: wrap;
   overflow: hidden;
   margin-bottom: ${props => props.theme.settings.break};
-  border-radius: ${props => props.theme.settings.borderRadius};
-  border: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
 `
 
 export const Title = styled.h1`
@@ -15,13 +13,13 @@ export const Title = styled.h1`
   font-size: 2rem;
   padding: ${props => props.theme.settings.break};
   color: ${props => props.theme.settings.colorText};
-  background-color: ${props => props.theme.settings.colorBackgroundDisactive};
-  border-bottom: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBorder};
+  background-color: ${props => props.theme.settings.colorBackgroundLight};
+  border-bottom: ${props => props.theme.settings.borderLight} solid ${props => props.theme.settings.colorBackgroundDark};
 `
 
 export const BoxContent = styled.div`
   width: 100%;
   position: relative;
   padding: ${props => props.theme.settings.break};
-  background-color: ${props => props.theme.settings.colorBackgroundDark};
+  background-color: ${props => props.theme.settings.colorBackgroundLight};
 `

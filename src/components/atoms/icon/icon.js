@@ -20,6 +20,7 @@ import Github from "../../../assets/icon/github.svg"
 import Contact from "../../../assets/icon/contact.svg"
 import Twitter from "../../../assets/icon/twitter.svg"
 import Youtube from "../../../assets/icon/youtube.svg"
+import Linkedin from "../../../assets/icon/linkedin.svg"
 import Facebook from "../../../assets/icon/facebook.svg"
 import Birthday from "../../../assets/icon/birthday.svg"
 import Instagram from "../../../assets/icon/instagram.svg"
@@ -137,6 +138,20 @@ const IconComponent = props => {
           theme={{ choice: parameters.theme, settings: settings }}
         >
           <Closed />
+        </BoxIcon>
+      )
+
+    case "Linkedin":
+      return (
+        <BoxIcon
+          id={id}
+          key={key}
+          size={parameters.size}
+          style={parameters.style}
+          className={parameters.className}
+          theme={{ choice: parameters.theme, settings: settings }}
+        >
+          <Linkedin />
         </BoxIcon>
       )
 
